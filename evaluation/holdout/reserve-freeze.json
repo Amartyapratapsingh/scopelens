@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-10-11T12:32:22.200798+00:00",
+  "pre_exposure_source_commit": "a217236b5aed791c3d9bbc3cae15a8ed18ffaf84",
+  "scanner_exposure": false,
+  "admitted_cases": 485,
+  "native_inputs": 322,
+  "xss_html_shared_inputs": 163,
+  "files_sha256": {
+    "evaluation/holdout/oracle.json": "a80a69cbb74c95f2301c573577fa1a75948ae4cd9033a467aae1ed55b8dede64",
+    "evaluation/protocols/active-holdout.yaml": "5e0a4b78ba92ad3278e6ca3fab4233634fa09908ddf0873b47e2a5b5e3ae5933",
+    "evaluation/manifests/holdout.yaml": "d720b5797db46111a69856c265b3428695ec2a5bfd4c3ae922f2282b1bc76403",
+    "evaluation/holdout/admission.json": "46263e18105cc11e02220a34cda7463a49c6d56f772286da03d7e528b579014c"
+  },
+  "qualification": "Not measured; source reserve only."
+}

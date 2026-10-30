@@ -1,0 +1,186 @@
+{
+  "tokens": [
+    [
+      "--token-321c6e46-9653-4950-8f81-dafe20bc328e",
+      "#2f2f2f"
+    ],
+    [
+      "--token-a0293709-63ca-4eac-98f6-516ade0bba3b",
+      "#0f0f0f"
+    ],
+    [
+      "--token-ebbf5a63-aa2c-4b9b-837f-9673f8367439",
+      "#000"
+    ],
+    [
+      "--token-e6ab417e-ec6f-4245-983a-a118f72894a6",
+      "#d9d9d999"
+    ],
+    [
+      "--token-4dfcbf08-c2bf-471d-8f89-259f1f953096",
+      "#a0a0a0"
+    ],
+    [
+      "--token-da979bfa-4160-4f6b-86bf-de5ba1d1f08b",
+      "#282441"
+    ],
+    [
+      "--token-2c9e447b-35a1-433c-bdde-bc15f9bb7ac8",
+      "#fff"
+    ]
+  ],
+  "display": {
+    "name": null,
+    "tag": "H1",
+    "text": "Smarter Chats For Faster Results",
+    "bg": "rgba(0, 0, 0, 0)",
+    "image": "none",
+    "fill": "rgb(0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "border": "0px none rgb(0, 0, 0)",
+    "shadow": "none",
+    "radius": "0px",
+    "gap": "normal",
+    "padding": "0px"
+  },
+  "textSpan": [
+    {
+      "name": null,
+      "tag": "SPAN",
+      "text": "Smarter Chats For Faster Results",
+      "bg": "rgba(0, 0, 0, 0)",
+      "image": "linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(120, 120, 120) 100%)",
+      "fill": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "border": "0px none rgb(0, 0, 0)",
+      "shadow": "none",
+      "radius": "0px",
+      "gap": "normal",
+      "padding": "10.2px"
+    }
+  ],
+  "cards": [
+    {
+      "name": "Workflow Card 1",
+      "tag": "DIV",
+      "text": "Multi-Language MasteryCommunicates naturally ",
+      "bg": "rgb(15, 15, 15)",
+      "image": "none",
+      "fill": "rgb(0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "border": "0px none rgb(0, 0, 0)",
+      "shadow": "none",
+      "radius": "20px",
+      "gap": "100px",
+      "padding": "100px 32px 32px"
+    },
+    {
+      "name": "Navigation",
+      "tag": "DIV",
+      "text": "Navigation",
+      "bg": "rgba(0, 0, 0, 0)",
+      "image": "none",
+      "fill": "rgb(0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "border": "0px none rgb(0, 0, 0)",
+      "shadow": "none",
+      "radius": "0px",
+      "gap": "normal",
+      "padding": "0px"
+    }
+  ],
+  "backgrounds": [
+    "rgb(0, 0, 0)",
+    "rgba(203, 203, 232, 0)",
+    "rgb(255, 255, 255)",
+    "rgb(15, 15, 15)",
+    "rgba(255, 255, 255, 0.06)",
+    "rgb(255, 255, 3)",
+    "rgb(0, 112, 79)"
+  ],
+  "media": [
+    "@media (max-width: 1439px) and (min-width: 810px) {\n  .framer-saruH .framer-styles-preset-1c9qut5:not(.rich-text-wrapper), .framer-saruH .framer-styles-preset-1",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-saruH .framer-styles-preset-1c9qut5:not(.rich-text-wrapper), .framer-saruH .framer-styles-preset-1c9qut",
+    "@media (max-width: 1439px) and (min-width: 810px) {\n  .framer-wMcUw .framer-styles-preset-7zv6xk:not(.rich-text-wrapper), .framer-wMcUw .framer-styles-preset-7z",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-wMcUw .framer-styles-preset-7zv6xk:not(.rich-text-wrapper), .framer-wMcUw .framer-styles-preset-7zv6xk.",
+    "@media (max-width: 1439px) and (min-width: 810px) {\n  .framer-saruH .framer-styles-preset-1c9qut5:not(.rich-text-wrapper), .framer-saruH .framer-styles-preset-1",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-saruH .framer-styles-preset-1c9qut5:not(.rich-text-wrapper), .framer-saruH .framer-styles-preset-1c9qut",
+    "@media (max-width: 1439px) and (min-width: 810px) {\n  .framer-Kec8E .framer-styles-preset-18i9slu:not(.rich-text-wrapper), .framer-Kec8E .framer-styles-preset-1",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-Kec8E .framer-styles-preset-18i9slu:not(.rich-text-wrapper), .framer-Kec8E .framer-styles-preset-18i9sl",
+    "@media (max-width: 1439px) and (min-width: 810px) {\n  .framer-WxbbQ .framer-styles-preset-d94lz1:not(.rich-text-wrapper), .framer-WxbbQ .framer-styles-preset-d9",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-WxbbQ .framer-styles-preset-d94lz1:not(.rich-text-wrapper), .framer-WxbbQ .framer-styles-preset-d94lz1.",
+    "@media (max-width: 1199px) and (min-width: 810px) {\n  .framer-HGlhw .framer-styles-preset-a29ql5:not(.rich-text-wrapper), .framer-HGlhw .framer-styles-preset-a2",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-HGlhw .framer-styles-preset-a29ql5:not(.rich-text-wrapper), .framer-HGlhw .framer-styles-preset-a29ql5.",
+    "@media (min-width: 810px) and (max-width: 1439.98px) {\n  .framer-jABFp.framer-72rtr7 { width: 810px; }\n  .framer-jABFp .framer-1q6jcc0 { gap: 100px; }\n  .framer",
+    "@media (max-width: 809.98px) {\n  .framer-jABFp.framer-72rtr7 { width: 390px; }\n  .framer-jABFp .framer-1q6jcc0 { gap: 80px; }\n  .framer-jABFp .framer-2mra27 { g",
+    "@media (max-width: 1199px) and (min-width: 810px) {\n  .framer-HGlhw .framer-styles-preset-a29ql5:not(.rich-text-wrapper), .framer-HGlhw .framer-styles-preset-a2",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-HGlhw .framer-styles-preset-a29ql5:not(.rich-text-wrapper), .framer-HGlhw .framer-styles-preset-a29ql5.",
+    "@media (max-width: 1439px) and (min-width: 810px) {\n  .framer-saruH .framer-styles-preset-1c9qut5:not(.rich-text-wrapper), .framer-saruH .framer-styles-preset-1",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-saruH .framer-styles-preset-1c9qut5:not(.rich-text-wrapper), .framer-saruH .framer-styles-preset-1c9qut",
+    "@media (max-width: 1199px) and (min-width: 810px) {\n  .framer-HGlhw .framer-styles-preset-a29ql5:not(.rich-text-wrapper), .framer-HGlhw .framer-styles-preset-a2",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-HGlhw .framer-styles-preset-a29ql5:not(.rich-text-wrapper), .framer-HGlhw .framer-styles-preset-a29ql5.",
+    "@media (max-width: 1439px) and (min-width: 810px) {\n  .framer-saruH .framer-styles-preset-1c9qut5:not(.rich-text-wrapper), .framer-saruH .framer-styles-preset-1",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-saruH .framer-styles-preset-1c9qut5:not(.rich-text-wrapper), .framer-saruH .framer-styles-preset-1c9qut",
+    "@media (max-width: 1199px) and (min-width: 810px) {\n  .framer-HGlhw .framer-styles-preset-a29ql5:not(.rich-text-wrapper), .framer-HGlhw .framer-styles-preset-a2",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-HGlhw .framer-styles-preset-a29ql5:not(.rich-text-wrapper), .framer-HGlhw .framer-styles-preset-a29ql5.",
+    "@media (max-width: 1439px) and (min-width: 810px) {\n  .framer-saruH .framer-styles-preset-1c9qut5:not(.rich-text-wrapper), .framer-saruH .framer-styles-preset-1",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-saruH .framer-styles-preset-1c9qut5:not(.rich-text-wrapper), .framer-saruH .framer-styles-preset-1c9qut",
+    "@media (max-width: 1439px) and (min-width: 810px) {\n  .framer-B7mkK .framer-styles-preset-1yg7gpz:not(.rich-text-wrapper), .framer-B7mkK .framer-styles-preset-1",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-B7mkK .framer-styles-preset-1yg7gpz:not(.rich-text-wrapper), .framer-B7mkK .framer-styles-preset-1yg7gp",
+    "@media (max-width: 1439px) and (min-width: 810px) {\n  .framer-0efZc .framer-styles-preset-3nm5bj:not(.rich-text-wrapper), .framer-0efZc .framer-styles-preset-3n",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-0efZc .framer-styles-preset-3nm5bj:not(.rich-text-wrapper), .framer-0efZc .framer-styles-preset-3nm5bj.",
+    "@media (max-width: 1439px) and (min-width: 810px) {\n  .framer-saruH .framer-styles-preset-1c9qut5:not(.rich-text-wrapper), .framer-saruH .framer-styles-preset-1",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-saruH .framer-styles-preset-1c9qut5:not(.rich-text-wrapper), .framer-saruH .framer-styles-preset-1c9qut",
+    "@media (max-width: 1199px) and (min-width: 810px) {\n  .framer-HGlhw .framer-styles-preset-a29ql5:not(.rich-text-wrapper), .framer-HGlhw .framer-styles-preset-a2",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-HGlhw .framer-styles-preset-a29ql5:not(.rich-text-wrapper), .framer-HGlhw .framer-styles-preset-a29ql5.",
+    "@media (max-width: 1439px) and (min-width: 810px) {\n  .framer-saruH .framer-styles-preset-1c9qut5:not(.rich-text-wrapper), .framer-saruH .framer-styles-preset-1",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-saruH .framer-styles-preset-1c9qut5:not(.rich-text-wrapper), .framer-saruH .framer-styles-preset-1c9qut",
+    "@media (max-width: 1439px) and (min-width: 810px) {\n  .framer-Kec8E .framer-styles-preset-18i9slu:not(.rich-text-wrapper), .framer-Kec8E .framer-styles-preset-1",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-Kec8E .framer-styles-preset-18i9slu:not(.rich-text-wrapper), .framer-Kec8E .framer-styles-preset-18i9sl",
+    "@media (max-width: 1439px) and (min-width: 810px) {\n  .framer-saruH .framer-styles-preset-1c9qut5:not(.rich-text-wrapper), .framer-saruH .framer-styles-preset-1",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-saruH .framer-styles-preset-1c9qut5:not(.rich-text-wrapper), .framer-saruH .framer-styles-preset-1c9qut",
+    "@media (max-width: 1199px) and (min-width: 810px) {\n  .framer-zZvVS .framer-styles-preset-nnukee:not(.rich-text-wrapper), .framer-zZvVS .framer-styles-preset-nn",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-zZvVS .framer-styles-preset-nnukee:not(.rich-text-wrapper), .framer-zZvVS .framer-styles-preset-nnukee.",
+    "@media (max-width: 1439px) and (min-width: 810px) {\n  .framer-saruH .framer-styles-preset-1c9qut5:not(.rich-text-wrapper), .framer-saruH .framer-styles-preset-1",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-saruH .framer-styles-preset-1c9qut5:not(.rich-text-wrapper), .framer-saruH .framer-styles-preset-1c9qut",
+    "@media (max-width: 1439px) and (min-width: 810px) {\n  .framer-saruH .framer-styles-preset-1c9qut5:not(.rich-text-wrapper), .framer-saruH .framer-styles-preset-1",
+    "@media (max-width: 809px) and (min-width: 0) {\n  .framer-saruH .framer-styles-preset-1c9qut5:not(.rich-text-wrapper), .framer-saruH .framer-styles-preset-1c9qut"
+  ],
+  "fontFaces": [
+    "@font-face { font-family: Geist; font-style: normal; font-weight: 600; font-display: swap; src: url(\"https://fonts.gstatic.com/s/geist/v5/gyBhhwUxId8gMGYQMKR3pzfaWI_RQuQIl5na-1Q.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
+    "@font-face { font-family: Geist; font-style: normal; font-weight: 600; font-display: swap; src: url(\"https://fonts.gstatic.com/s/geist/v5/gyBhhwUxId8gMGYQMKR3pzfaWI_RQuQInpna-1Q.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
+    "@font-face { font-family: Geist; font-style: normal; font-weight: 600; font-display: swap; src: url(\"https://fonts.gstatic.com/s/geist/v5/gyBhhwUxId8gMGYQMKR3pzfaWI_RQuQIlZna-1Q.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }",
+    "@font-face { font-family: Geist; font-style: normal; font-weight: 600; font-display: swap; src: url(\"https://fonts.gstatic.com/s/geist/v5/gyBhhwUxId8gMGYQMKR3pzfaWI_RQuQIlJna-1Q.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }"
+  ],
+  "animations": [
+    {
+      "name": null,
+      "timing": {
+        "delay": 0,
+        "direction": "normal",
+        "duration": 47466.66666666667,
+        "easing": "linear",
+        "endDelay": 0,
+        "fill": "auto",
+        "iterationStart": 0,
+        "iterations": null
+      },
+      "frames": [
+        {
+          "offset": null,
+          "easing": "linear",
+          "composite": "auto",
+          "transform": "translateX(0px)",
+          "computedOffset": 0
+        },
+        {
+          "offset": null,
+          "easing": "linear",
+          "composite": "auto",
+          "transform": "translateX(-2848px)",
+          "computedOffset": 1
+        }
+      ]
+    }
+  ]
+}

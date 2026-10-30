@@ -1,0 +1,394 @@
+# ScopeLens development stack (Build Plan §3, §5.3, §5.4).
+#
+# Compose is a development convenience, not the isolation proof (Build Plan §5.4). What it
+# does provide is the network topology that makes the scope boundary real rather than
+# advisory.
+#
+# NETWORK TOPOLOGY — this is the load-bearing part of the file
+#
+#   control      api, redis, postgres, proxy, tls-lane, supervisor, dispatcher
+#                (non-internal; the api publishes a loopback port)
+#   worker_net   supervisor, proxy, workers        [internal: true]
+#                The only route out of a worker. A worker attempting a direct connection
+#                to a target fails at the network layer, not at a policy check.
+#   egress       proxy, tls-lane                   (non-internal, has a route out)
+#                Only these two can reach the internet, and both validate every
+#                destination against the scan's frozen scope before using it.
+#   labs         proxy, tls-lane                   (external, created by labs/compose)
+#                How a scan reaches the lab fixtures: through the proxy, never directly.
+#
+# A worker is on `worker_net` and nowhere else. It has no route to postgres, none to redis,
+# none to the api and none to the internet — so "no direct egress" is a property of the
+# network, not a rule the worker is trusted to follow.
+name: scopelens-dev
+
+networks:
+  control:
+    driver: bridge
+
+  # Where workers live. `internal: true` means no route out except to siblings on this
+  # network, which is to say: the proxy.
+  worker_net:
+    driver: bridge
+    internal: true
+    name: scopelens_worker_net
+
+  # The only networks with a route to the outside world, and only these two services are
+  # attached to them.
+  egress:
+    driver: bridge
+    name: scopelens_egress_net
+
+  # Created by the labs stack. `make labs-up` must run first; the Makefile checks and says
+  # so rather than letting compose fail with a bare "network not found".
+  labs:
+    external: true
+    name: scopelens_labs_net
+
+x-api-env: &api-env
+  SCOPELENS_ENVIRONMENT: dev
+  SCOPELENS_DATABASE_URL: postgresql+psycopg://${SCOPELENS_POSTGRES_USER}:${SCOPELENS_POSTGRES_PASSWORD}@postgres:5432/${SCOPELENS_POSTGRES_DB}
+  SCOPELENS_REDIS_URL: redis://:${SCOPELENS_REDIS_PASSWORD}@redis:6379/0
+  SCOPELENS_PROXY_HOST: proxy
+  SCOPELENS_SCOPE_MAX_IN_FLIGHT: ${SCOPELENS_SCOPE_MAX_IN_FLIGHT:-8}
+  SCOPELENS_SCOPE_MAX_REQUESTS_PER_SECOND: ${SCOPELENS_SCOPE_MAX_REQUESTS_PER_SECOND:-10}
+  SCOPELENS_BROWSER_MAX_ACTIVE_ACTIONS: ${SCOPELENS_BROWSER_MAX_ACTIVE_ACTIONS:-500}
+  SCOPELENS_TLS_LANE_URL: http://tls-lane:8080
+  SCOPELENS_WORKER_NETWORK: scopelens_worker_net
+  SCOPELENS_TOOL_WORKER_IMAGE: scopelens/tool-worker:dev
+  SCOPELENS_PROXY_CA_PATH: /var/lib/mitmproxy/mitmproxy-ca-cert.pem
+  # Only credential intake and the private policy service receive the master key.
+  SCOPELENS_IDENTITY_ENCRYPTION_KEY: ""
+  SCOPELENS_CALLBACK_SIGNING_KEY: ""
+
+x-api-build: &api-build
+  context: ..
+  dockerfile: deploy/api.Dockerfile
+
+services:
+  postgres:
+    image: postgres:16-alpine@sha256:721873c34ceb9f8d8fc265984940dc982404c105f19ad51be9fdc5970a6080ea
+    environment:
+      POSTGRES_USER: ${SCOPELENS_POSTGRES_USER:?set SCOPELENS_POSTGRES_USER in .env}
+      POSTGRES_PASSWORD: ${SCOPELENS_POSTGRES_PASSWORD:?set SCOPELENS_POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${SCOPELENS_POSTGRES_DB:?set SCOPELENS_POSTGRES_DB in .env}
+    ports:
+      - "127.0.0.1:${SCOPELENS_POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks: [control]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+      start_period: 5s
+    restart: unless-stopped
+
+  redis:
+    # Delivery only. PostgreSQL owns scan truth (Build Plan §5.2).
+    image: redis:7.4-alpine@sha256:858f009f9709ce576febc734aa78b8f6d624b82571f9ddb6bda4377c833b3499
+    command:
+      - sh
+      - -c
+      - >
+        exec redis-server --save "" --appendonly no
+        --requirepass "$$SCOPELENS_REDIS_PASSWORD"
+    environment:
+      SCOPELENS_REDIS_PASSWORD: ${SCOPELENS_REDIS_PASSWORD:?set SCOPELENS_REDIS_PASSWORD in .env}
+    networks: [control]
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - redis-cli -a "$$SCOPELENS_REDIS_PASSWORD" --no-auth-warning ping
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  proxy:
+    build:
+      context: ..
+      dockerfile: deploy/proxy.Dockerfile
+    networks:
+      control: {}
+      worker_net: {}
+      egress: {}
+      labs: {}
+    volumes:
+      - ../backend/scopelens/broker/mitm_addon.py:/addons/scope_enforcer.py:ro
+      - proxy_ca:/var/lib/mitmproxy
+    environment:
+      SCOPELENS_POLICY_URL: http://policy:8000
+      SCOPELENS_PROXY_MAX_IN_FLIGHT: ${SCOPELENS_PROXY_MAX_IN_FLIGHT:-8}
+      SCOPELENS_SCOPE_MAX_IN_FLIGHT: ${SCOPELENS_SCOPE_MAX_IN_FLIGHT:-8}
+    entrypoint:
+      - mitmdump
+      - --set
+      - confdir=/var/lib/mitmproxy
+      - --listen-host
+      - 0.0.0.0
+      - --listen-port
+      - "8080"
+      # No upstream socket may be opened before a policy decision. mitmproxy's default
+      # `eager` strategy connects upstream on CONNECT, which makes the `http_connect`
+      # decision too late to prevent the connection the decision is about.
+      - --set
+      - connection_strategy=lazy
+      # Raw TCP passthrough is disabled outright. With it enabled, a CONNECT tunnel whose
+      # bytes are neither TLS nor HTTP is relayed as raw TCP: the `request` hook never
+      # fires, so the broker is never consulted and a worker can reach anything the proxy
+      # can reach — including Redis and PostgreSQL on the control network.
+      #
+      # `flow.kill()` from the tcp_start hook was measured NOT to prevent the relay (the
+      # payload still reached the target), so this option — which stops raw TCP from being
+      # selected as a protocol at all — is the mechanism that actually holds.
+      - --set
+      - rawtcp=false
+      - -s
+      - /addons/scope_enforcer.py
+      # Upstream certificate verification is OFF, deliberately.
+      #
+      # This is a scanner: an expired, self-signed or mis-issued certificate is a finding
+      # to report, not a reason to refuse to connect. Refusing would make the product
+      # unable to assess exactly the transport problems it exists to find. The certificate
+      # is measured for real, and independently, by the TLS lane (broker/tls_lane.py),
+      # which opens its own connection to the upstream outside the proxy.
+      - --ssl-insecure
+      - -q
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import socket;s=socket.create_connection(('127.0.0.1',8080),3);s.close()\""]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 15s
+    restart: unless-stopped
+
+  tls-lane:
+    build:
+      context: ..
+      dockerfile: workers/kali-tool.Dockerfile
+    networks:
+      control: {}
+      egress: {}
+      labs: {}
+    environment:
+      <<: *api-env
+      SCOPELENS_ENVIRONMENT: dev
+      SCOPELENS_TLS_LAB_CA_FILE: /lab-ca/ca.crt
+    command:
+      - sh
+      - -c
+      - exec uvicorn scopelens.broker.tls_lane_service:app --host 0.0.0.0 --port 8080
+    volumes:
+      - ../labs/fixtures/certs/ca.crt:/lab-ca/ca.crt:ro
+      - ../backend:/app/backend:ro
+      - ../checks_registry:/app/checks_registry:ro
+      - ../skills:/app/skills:ro
+      - ../deploy:/app/deploy:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import socket;s=socket.create_connection(('127.0.0.1',8080),3);s.close()\""]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+    restart: unless-stopped
+
+  model-gateway:
+    build: *api-build
+    env_file: [../.env]
+    depends_on:
+      redis:
+        condition: service_healthy
+    environment:
+      SCOPELENS_REDIS_URL: redis://:${SCOPELENS_REDIS_PASSWORD}@redis:6379/0
+      SCOPELENS_IDENTITY_ENCRYPTION_KEY: ""
+      SCOPELENS_CALLBACK_SIGNING_KEY: ""
+    networks: [control, egress]
+    volumes:
+      - ../backend:/app/backend:ro
+    command: ["uvicorn", "scopelens.adapters.model_service:app", "--host", "0.0.0.0", "--port", "8080"]
+    restart: unless-stopped
+
+  policy:
+    # The broker's decision endpoint. Deliberately a separate service on a port that is
+    # NOT published to the host: the operator API's port is published, so mounting this
+    # route there made it reachable from the host as well.
+    #
+    # Control network only. Workers are not on this network and cannot reach it.
+    build: *api-build
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file:
+      - ../.env
+    environment:
+      <<: *api-env
+      SCOPELENS_CALLBACK_SIGNING_KEY: ${SCOPELENS_CALLBACK_SIGNING_KEY:-}
+      SCOPELENS_IDENTITY_ENCRYPTION_KEY: ${SCOPELENS_IDENTITY_ENCRYPTION_KEY:-}
+      SCOPELENS_IDENTITY_STORE_PATH: /var/lib/scopelens/identity-secrets
+    networks: [control]
+    command:
+      - sh
+      - -c
+      - exec uvicorn scopelens.internal_app:app --host 0.0.0.0 --port 8000
+    volumes:
+      - ../backend:/app/backend:ro
+      - ../checks_registry:/app/checks_registry:ro
+      - ../skills:/app/skills:ro
+      - ../deploy:/app/deploy:ro
+      - identity_credentials:/var/lib/scopelens/identity-secrets:ro
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import socket;s=socket.create_connection(('127.0.0.1',8000),3);s.close()\""]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+    restart: unless-stopped
+
+  api:
+    build: *api-build
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    env_file:
+      - ../.env
+    environment:
+      <<: *api-env
+      SCOPELENS_CALLBACK_SIGNING_KEY: ${SCOPELENS_CALLBACK_SIGNING_KEY:-}
+      SCOPELENS_SCANNER_EXECUTION_ENABLED: "true"
+      SCOPELENS_IDENTITY_ENCRYPTION_KEY: ${SCOPELENS_IDENTITY_ENCRYPTION_KEY:-}
+      SCOPELENS_IDENTITY_STORE_PATH: /var/lib/scopelens/identity-secrets
+    networks: [control]
+    ports:
+      - "127.0.0.1:${SCOPELENS_API_PORT:-8090}:8000"
+    volumes:
+      - ../backend:/app/backend:ro
+      - ../checks_registry:/app/checks_registry:ro
+      - ../skills:/app/skills:ro
+      - ../deploy:/app/deploy:ro
+      - evidence:/app/runs/evidence
+      - identity_credentials:/var/lib/scopelens/identity-secrets
+    command:
+      - sh
+      - -c
+      - |
+        set -e
+        scopelens migrate
+        scopelens seed-operator
+        scopelens reconcile
+        exec uvicorn scopelens.main:app --host 0.0.0.0 --port 8000
+    restart: unless-stopped
+
+  callback-receiver:
+    profiles: [callbacks]
+    build: *api-build
+    environment:
+      SCOPELENS_ENVIRONMENT: dev
+      SCOPELENS_DATABASE_URL: postgresql+psycopg://${SCOPELENS_POSTGRES_USER}:${SCOPELENS_POSTGRES_PASSWORD}@postgres:5432/${SCOPELENS_POSTGRES_DB}
+      SCOPELENS_CALLBACK_SIGNING_KEY: ${SCOPELENS_CALLBACK_SIGNING_KEY:-}
+      SCOPELENS_CALLBACK_COLLECTOR_ORIGINS: "${SCOPELENS_CALLBACK_COLLECTOR_ORIGINS:-[]}"
+    networks:
+      control: {}
+      labs:
+        ipv4_address: 172.28.0.17
+    # No published port, worker network, credential store or access log.
+    command: ["uvicorn", "scopelens.callback_app:create_callback_app", "--factory", "--host", "0.0.0.0", "--port", "8091", "--no-access-log", "--no-proxy-headers"]
+    volumes:
+      - ../backend:/app/backend:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8091/healthz')"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    restart: unless-stopped
+
+  dispatcher:
+    build: *api-build
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    env_file:
+      - ../.env
+    environment:
+      <<: *api-env
+      SCOPELENS_SCANNER_EXECUTION_ENABLED: "true"
+    networks: [control]
+    volumes:
+      - ../backend:/app/backend:ro
+      - ../checks_registry:/app/checks_registry:ro
+      - ../skills:/app/skills:ro
+      - ../deploy:/app/deploy:ro
+    command:
+      - sh
+      - -c
+      - |
+        set -e
+        scopelens migrate
+        exec scopelens dispatch --interval 1
+    restart: unless-stopped
+
+  supervisor:
+    # The trusted component. It holds the Docker socket and the database credentials, and
+    # it starts and stops worker containers. Workers hold none of those.
+    #
+    # See docs/OPEN_QUESTIONS.md Q-10: this is the most privileged container in the stack,
+    # it is the M1 development baseline, and §5.4 requires a stronger boundary (a worker
+    # VM) before any generated code runs in M4.
+    build: *api-build
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    env_file:
+      - ../.env
+    environment:
+      <<: *api-env
+      SCOPELENS_CALLBACK_SIGNING_KEY: ${SCOPELENS_CALLBACK_SIGNING_KEY:-}
+      SCOPELENS_SCANNER_EXECUTION_ENABLED: "true"
+    networks:
+      control: {}
+      worker_net: {}
+    volumes:
+      - ../backend:/app/backend:ro
+      - ../checks_registry:/app/checks_registry:ro
+      - ../skills:/app/skills:ro
+      - ../deploy:/app/deploy:ro
+      - evidence:/app/runs/evidence
+      # The only component that may manage containers.
+      - /var/run/docker.sock:/var/run/docker.sock
+      # The proxy CA, so the supervisor can hand it to workers.
+      - proxy_ca:/var/lib/mitmproxy:ro
+    # Celery worker: acks-late, one task at a time (see scopelens/tasks.py).
+    command:
+      - sh
+      - -c
+      - |
+        set -e
+        scopelens migrate
+        exec celery -A scopelens.tasks.app worker --loglevel=info --concurrency=1
+    healthcheck:
+      test: ["CMD-SHELL", "celery -A scopelens.tasks.app inspect ping -d celery@$$HOSTNAME || exit 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 12
+      start_period: 20s
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  evidence:
+  identity_credentials:
+  proxy_ca:
+    name: scopelens_proxy_ca

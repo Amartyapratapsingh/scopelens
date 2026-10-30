@@ -1,0 +1,72 @@
+id: SL-C05-SOURCEMAP-01
+title: Source map private material
+canonical_control: exposure.source_map_private_material
+root_cause: exposure.source_map_private_material
+category: C05
+standards:
+  wstg_v42: []
+  cwe: []
+  owasp_top10_2025: []
+  asvs_500: []
+  api_top10_2023: []
+  mapping_review: pending
+availability:
+  profiles:
+  - external-discovery-v2
+  - external-active-v2
+  - authenticated-api-v1
+  - staging-stateful-v1
+  phase: B3
+  stance: FLAG
+  family: null
+applicability:
+  description: Selected by observed technology or discovered same-origin source-map
+    URL; explicit per-probe allowlist supported.
+  evidence_required: Trusted captured structure/hash observations for probe and independent
+    fallback control.
+  not_applicable_when: No absence inference from failed discovery; unselected controls
+    remain unassessed.
+prerequisites:
+  credentials: none
+  fixtures: labs-bad (vulnerable) and labs-good (fixed)
+  notes: ''
+allowed_action:
+  destinations: scope origin only
+  methods:
+  - GET
+  - HEAD
+  max_requests: 24
+  max_response_bytes: 65536
+  timeout_seconds: 10.0
+side_effects:
+  expectation: Bounded GET probes plus same-directory random absent controls. No credential
+    use, redirects or state change.
+  cleanup: none required
+  stop_conditions:
+  - the scope origin is unreachable
+  - the authorization for this scope has expired
+detection:
+  signal: Complete HTTP 200 content with family-specific private configuration, diagnostics,
+    key or source-map structure.
+  negative_controls:
+  - Same-directory absent path retaining extension
+  - Fixed fixture and login/HTML/error look-alike
+  - Masked secrets and public source-map content
+  confirmation_criteria: Full bounded body; independently fetched fallback does not
+    reproduce content/signature; exact structure classified by checks/packs/exposure.py;
+    trusted evidence attached. Source-map and malformed private-key shapes remain
+    candidates. Credential validity and exploitability are not established.
+  false_positive_considerations:
+  - Soft 404 and generic rewrites
+  - Public source maps and masked management settings are not findings
+  - Published example values cannot establish live credentials
+fixtures:
+  vulnerable: labs/expansion_tools/app.py:create_app(True)
+  fixed: labs/expansion_tools/app.py:create_app(False)
+  verified: false
+tool_version: "not applicable \u2014 implemented directly in Python"
+mandatory: false
+coverage_weight: 1
+review_state: experimental
+owner: Aditya Pratap Singh
+last_reviewed: null

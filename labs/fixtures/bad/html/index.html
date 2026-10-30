@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ScopeLens lab fixture — BAD</title>
+  </head>
+  <body>
+    <h1>ScopeLens lab fixture: <code>labs-bad</code></h1>
+    <p>
+      This is a <strong>deliberately misconfigured</strong> nginx fixture. It serves
+      synthetic content only and is reachable only from the isolated lab network and
+      from loopback. It exists so that configuration controls have a vulnerable
+      counterpart to detect.
+    </p>
+    <h2>Deliberate misconfigurations</h2>
+    <ul>
+      <li>No <code>Strict-Transport-Security</code> header (C01)</li>
+      <li>Session cookie with no <code>Secure</code>, <code>HttpOnly</code> or <code>SameSite</code> (C02)</li>
+      <li>No <code>X-Content-Type-Options</code> (C04)</li>
+      <li>No <code>Content-Security-Policy</code> or <code>X-Frame-Options</code> (C04)</li>
+      <li>No <code>Referrer-Policy</code> (C05)</li>
+      <li>Directory listing enabled at <a href="/files/">/files/</a> (C05)</li>
+      <li>Sensitive-looking files served as-is at <a href="/.env">/.env</a> and
+        <a href="/backup.sql">/backup.sql</a> (C05)</li>
+      <li>Verbose server tokens (C05)</li>
+    </ul>
+    <p>Its fixed counterpart is <code>labs-good</code>.</p>
+  <a href="/browser-demo.html">View interactive fixture</a>
+</body>
+</html>

@@ -1,0 +1,67 @@
+allowed_action:
+  destinations: scope origin only
+  max_requests: 9
+  max_response_bytes: 1048576
+  methods:
+  - GET
+  - POST
+  timeout_seconds: 10.0
+applicability:
+  description: Discovered input with complete ordinary baseline and an admitted plan
+    task; POST requires exact operator classification
+  evidence_required: Trusted reviewed controller capture of paired probes
+  not_applicable_when: Absence of a reviewed endpoint is not tested, not N/A
+availability:
+  family: F01
+  phase: B2
+  profiles:
+  - external-active-v2
+  - authenticated-api-v1
+  - staging-stateful-v1
+  stance: ACTIVE
+canonical_control: input.dom_xss
+category: C03
+coverage_weight: 1
+detection:
+  signal: DOM input executes a harmless marker without server reflection
+  negative_controls:
+  - Fixed parameterized/escaped fixture
+  - Plain marker baseline; two distinct marker nonces or paired predicates
+  confirmation_criteria: checks.expanded_active.evaluate_expanded validates repeated
+    independent markers, ordinary baseline and successful captures; trusted evidence
+    required
+  false_positive_considerations:
+  - Only the named condition and reviewed endpoint are assessed; CORS does not establish
+    protected-data exposure
+fixtures:
+  vulnerable: tests/browser/test_expanded_browser.py::test_real_browser_dom_only_execution
+    vulnerable local fixture
+  fixed: tests/browser/test_expanded_browser.py::test_real_browser_dom_only_execution
+    fixed local fixture
+  verified: true
+id: SL-C03-DOMXSS-01
+last_reviewed: 2026-09-26
+mandatory: true
+owner: Aditya Pratap Singh
+prerequisites:
+  credentials: none
+  fixtures: Owned paired input fixtures
+  notes: ''
+review_state: experimental
+root_cause: input.dom_xss
+side_effects:
+  expectation: Ephemeral markers and read-only paired inputs only; no persistent data
+    changes
+  cleanup: Browser context discarded; no server-side writes
+  stop_conditions:
+  - Any denied admission, timeout, cancellation or response cap
+standards:
+  api_top10_2023: []
+  asvs_500: []
+  cwe:
+  - CWE-79
+  mapping_review: reviewed
+  owasp_top10_2025: []
+  wstg_v42: []
+title: DOM input executes a harmless marker without server reflection
+tool_version: "not applicable \u2014 implemented directly in Python"

@@ -1,0 +1,32 @@
+# Add to labs/docker-compose.yml. These services have no published ports or egress.
+# Exact .22/.23 bindings must be registered in deploy/lab_services.yaml.
+x-academic-common: &academic-common
+  image: python:3.12-slim@sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9
+  user: "65534:65534"
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: ["no-new-privileges:true"]
+  volumes:
+    - ./academic_workflows:/fixture:ro
+  tmpfs: [/tmp]
+  healthcheck:
+    test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/healthz')"]
+    interval: 3s
+    timeout: 3s
+    retries: 20
+
+services:
+  labs-academic-a:
+    <<: *academic-common
+    container_name: scopelens-labs-academic-a
+    command: ["python", "/fixture/app.py", "--host", "0.0.0.0", "--variant", "bad", "--fix-flag", "/tmp/academic-fixed"]
+    networks:
+      labs_net:
+        ipv4_address: 172.28.0.22
+  labs-academic-b:
+    <<: *academic-common
+    container_name: scopelens-labs-academic-b
+    command: ["python", "/fixture/app.py", "--host", "0.0.0.0", "--variant", "fixed"]
+    networks:
+      labs_net:
+        ipv4_address: 172.28.0.23

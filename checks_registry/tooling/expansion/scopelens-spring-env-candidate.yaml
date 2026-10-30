@@ -1,0 +1,24 @@
+id: scopelens-spring-env-candidate
+info:
+  name: spring env candidate
+  author: scopelens
+  severity: info
+  description: Candidate only. Requires independent negative control and trusted exposure-pack
+    verifier.
+http:
+- method: GET
+  path:
+  - '{{RootURL}}/actuator/env'
+  redirects: false
+  max-redirects: 0
+  matchers-condition: and
+  matchers:
+  - type: status
+    status:
+    - 200
+  - type: regex
+    part: body
+    regex:
+    - '"propertySources"'
+    - '"properties"'
+    condition: and

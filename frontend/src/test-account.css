@@ -1,0 +1,22 @@
+.test-account-dialog { width: min(520px, calc(100vw - 24px)); }
+.test-account-dialog h2 { display: flex; align-items: center; gap: 8px; }
+.test-account-dialog fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.test-account-dialog label { display: block; margin: 12px 0 6px; color: var(--ops-dim); font-size: 12px; }
+.test-account-dialog input {
+  width: 100%;
+  min-height: 34px;
+  padding: 6px 8px;
+  border: 1px solid var(--ops-border-strong);
+  border-radius: 4px;
+  background: var(--ops-bg);
+  color: var(--ops-text);
+  font: 12px var(--ops-mono);
+}
+.test-account-dialog input:focus-visible { outline: 1px solid var(--ops-blue); outline-offset: 1px; }
+.test-account-dialog p { margin-top: 8px; color: var(--ops-dim); font-size: 12px; line-height: 1.5; }
+.test-account-dialog .test-account-note { color: var(--ops-faint); font-size: 11px; }
+.test-account-saved { display: grid; gap: 8px; padding-top: 12px; }
+.test-account-saved > svg { color: var(--ops-green); }
+.test-account-saved h3, .test-account-saved p { margin: 0; }
+.test-account-saved .ops-btn { justify-content: center; }
+.test-account-dialog button:disabled { opacity: .5; cursor: wait; }

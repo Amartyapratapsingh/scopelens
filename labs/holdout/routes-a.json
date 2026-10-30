@@ -1,0 +1,57 @@
+{
+  "/r/dead0717d9421093": {
+    "upstream_path": "/VulnerableApp/XSSWithHtmlTagInjection/LEVEL_4",
+    "parameter": "value",
+    "baseline": "hello"
+  },
+  "/r/b18500c24622fe9c": {
+    "upstream_path": "/VulnerableApp/XSSWithHtmlTagInjection/LEVEL_5",
+    "parameter": "value",
+    "baseline": "hello"
+  },
+  "/r/3b5f4757e263687f": {
+    "upstream_path": "/VulnerableApp/BlindSQLInjectionVulnerability/LEVEL_1",
+    "parameter": "id",
+    "baseline": "1"
+  },
+  "/r/9293a986a20bfbec": {
+    "upstream_path": "/VulnerableApp/BlindSQLInjectionVulnerability/LEVEL_2",
+    "parameter": "id",
+    "baseline": "1"
+  },
+  "/r/ea1eacb4367db00e": {
+    "upstream_path": "/VulnerableApp/BlindSQLInjectionVulnerability/LEVEL_3",
+    "parameter": "id",
+    "baseline": "1"
+  },
+  "/r/11e0fb45ea75769e": {
+    "upstream_path": "/VulnerableApp/BlindSQLInjectionVulnerability/LEVEL_4",
+    "parameter": "id",
+    "baseline": "1"
+  },
+  "/r/d4bc5612c9d136e6": {
+    "upstream_path": "/VulnerableApp/BlindSQLInjectionVulnerability/LEVEL_5",
+    "parameter": "id",
+    "baseline": "1"
+  },
+  "/r/51c659aa3452f5e3": {
+    "upstream_path": "/VulnerableApp/Http3xxStatusCodeBasedInjection/LEVEL_1",
+    "parameter": "returnTo",
+    "baseline": "/"
+  },
+  "/r/d73cacb337941c82": {
+    "upstream_path": "/VulnerableApp/Http3xxStatusCodeBasedInjection/LEVEL_8",
+    "parameter": "returnTo",
+    "baseline": "/"
+  },
+  "/r/3a1b4a87deb8e45c": {
+    "upstream_path": "/VulnerableApp/Http3xxStatusCodeBasedInjection/LEVEL_11",
+    "parameter": "returnTo",
+    "baseline": "/"
+  },
+  "/r/c7ab84d7ab8e6ee4": {
+    "upstream_path": "/VulnerableApp/Http3xxStatusCodeBasedInjection/LEVEL_12",
+    "parameter": "returnTo",
+    "baseline": "/"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "/r/bb873907f2ccf67a": {
+    "upstream_path": "/wavsep/active/Reflected-XSS/RXSS-Detection-Evaluation-GET/Case01-Tag2HtmlPageScope.jsp",
+    "parameter": "userinput",
+    "baseline": "hello"
+  },
+  "/r/7f76d33fa8f3add4": {
+    "upstream_path": "/wavsep/active/Reflected-XSS/RXSS-FalsePositives-GET/Case07-AngleBracketsEncodingInBody.jsp",
+    "parameter": "userinput",
+    "baseline": "hello"
+  },
+  "/r/56bb3edeb82f95a7": {
+    "upstream_path": "/wavsep/active/SQL-Injection/SInjection-Detection-Evaluation-GET-200Valid/Case03-InjectionInCalc-String-BooleanExploit-WithDifferent200Responses.jsp",
+    "parameter": "username",
+    "baseline": "user1",
+    "fixed_parameters": {
+      "password": "password"
+    }
+  },
+  "/r/7c2b7033df2ad868": {
+    "upstream_path": "/wavsep/active/SQL-Injection/SInjection-FalsePositives-GET/Case05-FalsePositiveInjectionInLogin-PsAndIv-Different200ValidOnIvFailure.jsp",
+    "parameter": "username",
+    "baseline": "user1",
+    "fixed_parameters": {
+      "password": "password"
+    }
+  },
+  "/r/9b73407372f1aba1": {
+    "upstream_path": "/wavsep/active/Unvalidated-Redirect/Redirect-Detection-Evaluation-GET-302Redirect/Case01-Redirect-RedirectMethod-FilenameContext-Unrestricted-HttpURL-DefaultFullInput-AnyPathReq-Read.jsp",
+    "parameter": "target",
+    "baseline": "/"
+  },
+  "/r/c94b178bb5fd667e": {
+    "upstream_path": "/wavsep/active/Unvalidated-Redirect/Redirect-FalsePositives-GET/Case08-Redirect-FalsePositive-RedirectMethod-FilenameContext-WhiteList-HttpURL-DefaultFullInput-AnyPathReq-Read.jsp",
+    "parameter": "target",
+    "baseline": "/"
+  }
+}

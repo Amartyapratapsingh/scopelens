@@ -1,0 +1,66 @@
+id: SL-C10-UPLOAD-01
+title: Benign upload serving policy
+canonical_control: browser.upload_serving
+root_cause: browser.upload_serving
+category: C10
+standards:
+  mapping_review: pending
+availability:
+  profiles:
+  - staging-stateful-v1
+  phase: B5
+  stance: FIXTURE
+applicability:
+  description: Operator-reviewed recipe bound to synthetic seeded disposable records
+    and exact endpoint/input grants
+  evidence_required: Trusted fixed collector ordered baseline, negative-control, mutation/read-back
+    and cleanup records
+  not_applicable_when: Missing grant, identity, canary or cleanup is blocked, never
+    N/A
+prerequisites:
+  credentials: Encrypted operator credential references
+  fixtures: tests/browser/test_browser_workflows.py::workflow_app
+allowed_action:
+  destinations: Explicit target-origin/action grant only
+  methods:
+  - GET
+  - POST
+  - PUT
+  - PATCH
+  - DELETE
+  max_requests: 40
+  max_response_bytes: 1048576
+  timeout_seconds: 10
+side_effects:
+  expectation: Only declared staging disposable-record changes; no system files, arbitrary
+    commands or normal user records
+  cleanup: Durable intent before mutation; verified reset before same resource can
+    be mutated again
+  stop_conditions:
+  - Cancellation
+  - Expired identity
+  - Broker denial
+  - Missing seed
+  - Unresolved cleanup
+detection:
+  signal: upload_serving
+  negative_controls:
+  - Paired fixed local browser fixture
+  - Declared seeded baseline
+  - Repeated independent marker and verified identity
+  confirmation_criteria: Fixed browser collector captures are bound to one recipe
+    and run. Deterministic evaluate_browser_workflow rechecks repeated observations;
+    identity probes must be present. Coverage requires both durable clean state and
+    independent cleanup readback. Worker summary and model claims cannot confirm.
+  false_positive_considerations:
+  - Missing baseline and inconsistent negative controls abstain
+  - HTTP 200 alone not proof
+  - No timing or data-extraction inference
+fixtures:
+  vulnerable: tests/browser/test_browser_workflows.py::workflow_app bad
+  fixed: tests/browser/test_browser_workflows.py::workflow_app fixed
+  verified: false
+mandatory: false
+coverage_weight: 1
+review_state: experimental
+owner: Aditya Pratap Singh

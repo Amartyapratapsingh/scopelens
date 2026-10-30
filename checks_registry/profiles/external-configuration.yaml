@@ -1,0 +1,75 @@
+# Assessment profile definition (Project Specification §9.5, §10.3).
+#
+# Weights and eligibility gates are frozen in score-v1.0. Changing any weight creates a
+# new score version — an existing score must never be silently recomputed under a
+# different rubric (Project Specification §9.10).
+#
+# Nothing in M0 reads this file at runtime: scoring and coverage are M2. It is defined
+# now so the registry entries can reference a profile that actually exists, and so the
+# weights have one authoritative home rather than being duplicated in code later.
+schema_version: profile-v1
+id: external-configuration
+score_version: score-v1.0
+
+display_name: "External configuration assessment"
+# The conditional active pack (reflected XSS, SQLi, HTML injection, open redirect,
+# CORS behaviour) is NOT part of this profile. Injection (C03) is therefore always
+# shown as "Not assessed in this profile" and can never inherit a numeric score here.
+includes_active_pack: false
+
+overall_label: >
+  External configuration assessment pilot score — uncalibrated.
+  Not a whole-website security rating.
+
+# Fixed weights for the categories this profile scores. Must sum to 100.
+category_weights:
+  C01: 15
+  C02: 15
+  C03: 20
+  C04: 15
+  C05: 15
+  C06: 10
+  C07: 10
+
+# Categories outside this profile. Shown as "Not assessed in this profile" and never
+# omitted in a way that could improve an average (Project Specification §9.7).
+excluded_categories:
+  - C08
+  - C09
+  - C10
+  - C11
+  - C12
+
+# Category scores become eligible only when every one of these hold
+# (Project Specification §9.7). An overall score additionally requires every
+# applicable category to be eligible; if none are applicable the result is
+# "Not scored".
+eligibility:
+  min_control_coverage_percent: 80
+  require_all_mandatory_controls_assessed: true
+  block_on_unresolved_potential_high_or_critical: true
+
+# Root-cause deduction per confirmed severity, and the non-compensating caps
+# (Project Specification §9.6). Full precision; rounded only for display.
+deductions:
+  critical: 65
+  high: 35
+  medium: 15
+  low: 3
+  informational: 0
+
+caps:
+  any_unresolved_confirmed_critical: 39
+  any_unresolved_confirmed_high: 69
+
+# Starting execution budgets (Project Specification §12). Tunable per scope through
+# ScopeVersion.budgets_override; increasing them is audited and bounded.
+budgets:
+  requests_per_second: 2
+  max_in_flight: 2
+  max_pages: 300
+  max_crawl_depth: 4
+  max_total_requests: 5000
+  wall_clock_seconds: 2700
+  request_timeout_seconds: 10
+  max_body_bytes: 1048576

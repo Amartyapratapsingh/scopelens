@@ -1,0 +1,212 @@
+/* Ops console design system (Grafana/Datadog-like). Shared by the dashboard and assessment views. */
+:root {
+  --ops-bg: #0b0c0f;
+  --ops-panel: #111217;
+  --ops-panel-head: #15161c;
+  --ops-border: #23252d;
+  --ops-border-strong: #31343e;
+  --ops-text: #d8d9df;
+  --ops-dim: #8b8e9a;
+  --ops-faint: #5b5e6a;
+  --ops-green: #73bf69;
+  --ops-yellow: #fade2a;
+  --ops-orange: #ff9830;
+  --ops-red: #f2495c;
+  --ops-blue: #5794f2;
+  --ops-purple: #b877d9;
+  --ops-cyan: #4ec7c1;
+  --ops-gray: #8e9099;
+  --ops-mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+  --ops-radius: 6px;
+}
+
+.ops-panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--ops-panel);
+  border: 1px solid var(--ops-border);
+  border-radius: var(--ops-radius);
+}
+.ops-panel-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 34px;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--ops-border);
+  background: var(--ops-panel-head);
+  border-radius: var(--ops-radius) var(--ops-radius) 0 0;
+}
+.ops-panel-head h3 {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ops-text);
+  white-space: nowrap;
+}
+.ops-panel-meta {
+  font-size: 11.5px;
+  color: var(--ops-faint);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ops-panel-actions { margin-left: auto; display: flex; gap: 6px; align-items: center; }
+.ops-panel-body { padding: 12px; min-width: 0; flex: 1; }
+.ops-panel.is-flush .ops-panel-body { padding: 0; }
+
+.ops-stat { display: grid; gap: 4px; min-width: 0; }
+.ops-stat-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ops-dim);
+}
+.ops-stat-value {
+  font-family: var(--ops-mono);
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  font-variant-numeric: tabular-nums;
+}
+.ops-stat-value small { font-size: 14px; margin-left: 2px; opacity: .75; }
+.ops-stat-sub { font-size: 12px; color: var(--ops-dim); }
+.ops-spark { width: 100%; height: 28px; display: block; margin-top: 4px; }
+
+.ops-chart { display: grid; gap: 6px; min-width: 0; }
+.ops-chart-plot { position: relative; display: grid; grid-template-columns: 34px minmax(0, 1fr); }
+.ops-yaxis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--ops-mono);
+  font-size: 10.5px;
+  color: var(--ops-faint);
+  text-align: right;
+  padding-right: 6px;
+}
+.ops-grid {
+  position: absolute;
+  inset: 0 0 0 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.ops-grid i { border-top: 1px dashed #1f2128; }
+.ops-cols {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 100%;
+}
+.ops-col {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  min-width: 2px;
+}
+.ops-col span { display: block; width: 100%; opacity: .85; }
+.ops-col span:last-child { border-radius: 2px 2px 0 0; }
+.ops-col:hover span { opacity: 1; }
+.ops-xaxis {
+  display: flex;
+  gap: 2px;
+  margin-left: 34px;
+  font-family: var(--ops-mono);
+  font-size: 10px;
+  color: var(--ops-faint);
+}
+.ops-xaxis { overflow: hidden; }
+.ops-xaxis span { flex: 1; min-width: 0; white-space: nowrap; overflow: visible; }
+
+.ops-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 11.5px;
+  color: var(--ops-dim);
+}
+.ops-legend li { display: inline-flex; align-items: center; gap: 6px; }
+.ops-legend i { width: 10px; height: 3px; border-radius: 2px; }
+.ops-legend b { font-family: var(--ops-mono); font-weight: 500; color: var(--ops-text); }
+
+.ops-barlist { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.ops-barlist li {
+  display: grid;
+  grid-template-columns: minmax(0, 38%) minmax(0, 1fr) 64px;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+}
+.ops-barlist-label { color: var(--ops-text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ops-barlist-track { height: 8px; background: #1a1c22; border-radius: 2px; overflow: hidden; }
+.ops-barlist-track span { display: block; height: 100%; border-radius: 2px; }
+.ops-barlist-value {
+  font-family: var(--ops-mono);
+  font-size: 12px;
+  text-align: right;
+  color: var(--ops-text);
+  font-variant-numeric: tabular-nums;
+}
+.ops-barlist-value small { display: block; font-size: 10.5px; color: var(--ops-faint); }
+
+.ops-gauge { position: relative; display: grid; justify-items: center; }
+.ops-gauge svg { width: 100%; max-width: 180px; }
+.ops-gauge strong {
+  margin-top: -34px;
+  font-family: var(--ops-mono);
+  font-size: 26px;
+  font-weight: 500;
+}
+.ops-gauge strong small { font-size: 13px; }
+.ops-gauge span { font-size: 11.5px; color: var(--ops-dim); margin-top: 2px; }
+
+/* Flat ops buttons — replace glowing pills inside the app. */
+.ops-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 4px;
+  border: 1px solid var(--ops-border-strong);
+  background: #1a1c22;
+  color: var(--ops-text);
+  font-size: 12.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background .12s, border-color .12s;
+}
+.ops-btn:hover:not(:disabled) { background: #22252d; border-color: #3d414d; }
+.ops-btn:disabled { opacity: .5; cursor: not-allowed; }
+.ops-btn.is-primary { background: #3d71d9; border-color: #4a7fe6; color: #fff; }
+.ops-btn.is-primary:hover:not(:disabled) { background: #4a7fe6; }
+.ops-btn.is-danger { color: var(--ops-red); }
+
+.ops-grid-12 { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 8px; }
+.ops-span-2 { grid-column: span 2; }
+.ops-span-3 { grid-column: span 3; }
+.ops-span-4 { grid-column: span 4; }
+.ops-span-5 { grid-column: span 5; }
+.ops-span-6 { grid-column: span 6; }
+.ops-span-7 { grid-column: span 7; }
+.ops-span-8 { grid-column: span 8; }
+.ops-span-12 { grid-column: span 12; }
+@media (max-width: 1100px) {
+  .ops-span-2, .ops-span-3 { grid-column: span 6; }
+  .ops-span-4, .ops-span-5, .ops-span-6, .ops-span-7, .ops-span-8 { grid-column: span 12; }
+}
+@media (max-width: 560px) {
+  .ops-span-2, .ops-span-3 { grid-column: span 12; }
+}

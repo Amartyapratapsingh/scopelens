@@ -1,0 +1,324 @@
+{
+  "SL-C02-COOKIE-01": {
+    "title": "The login cookie is missing security protections",
+    "what": "A cookie used to keep a visitor signed in is missing one or more browser protections. The evidence shows which settings are missing.",
+    "why": "Depending on the missing setting, a malicious page script or an insecure connection could expose the cookie. A stolen, still-valid cookie could let someone use that session.",
+    "fix": "Add Secure, HttpOnly, and an appropriate SameSite setting to session cookies.",
+    "limit": "We checked cookie settings. We did not demonstrate stealing a cookie, guessing passwords, or bypassing the login."
+  },
+  "SL-C04-CSP-01": {
+    "title": "The browser is missing a guard against harmful scripts",
+    "what": "The checked pages do not have an effective Content-Security-Policy. This is a browser rule that restricts which scripts may run.",
+    "why": "If someone finds a separate script-injection flaw, this missing protection can make it easier for their script to run on your pages.",
+    "fix": "Configure and enforce a Content-Security-Policy that allows only required scripts and sources.",
+    "limit": "A missing policy is not proof of script injection or account takeover."
+  },
+  "SL-C04-FRAME-01": {
+    "title": "Another website may be able to put your page inside its own page",
+    "what": "The responses are missing effective rules that restrict which websites can embed these pages.",
+    "why": "Someone could disguise an embedded page and trick a signed-in visitor into clicking a real button. The impact depends on what actions that page allows.",
+    "fix": "Add CSP frame-ancestors or X-Frame-Options to restrict embedding.",
+    "limit": "We checked embedding protections. We did not demonstrate a harmful click or a change to an account."
+  },
+  "SL-C04-REFERRER-01": {
+    "title": "Your pages do not set a rule for sharing the visitor\u2019s previous address",
+    "what": "The checked responses do not set Referrer-Policy, which tells the browser how much of the previous page address to send.",
+    "why": "If a page address contains sensitive details, those details might be shared with another website. Modern browser defaults can reduce this risk.",
+    "fix": "Set Referrer-Policy to strict-origin-when-cross-origin, or a stricter policy appropriate for the site.",
+    "limit": "We did not demonstrate a password, token, or private record being leaked."
+  },
+  "SL-C06-COMPONENT-01": {
+    "title": "A library version may have a known security issue",
+    "what": "A library version seen in the page matches a published security advisory in the scanner\u2019s saved advisory list.",
+    "why": "If the detected version is correct, the fix is absent, and the vulnerable feature is used, someone may be able to exploit the issue described in that advisory.",
+    "fix": "Verify the actual installed build and advisory conditions, then update or apply the vendor fix.",
+    "limit": "A version match is a lead, not proof of exploitation. We did not demonstrate a login bypass or access to private records."
+  },
+  "SL-C01-TLS-01": {
+    "title": "The secure connection has a certificate or encryption problem",
+    "what": "The connection check found an issue with the certificate, its expiry, or the supported encryption settings. The evidence identifies the specific issue.",
+    "why": "Visitors may see security warnings. Certain weak connection settings can also make interception easier, depending on the issue.",
+    "fix": "Install and renew a trusted certificate for this hostname and remove obsolete TLS versions.",
+    "limit": "The finding does not prove that traffic was intercepted."
+  },
+  "SL-C01-REDIR-01": {
+    "title": "The website can serve a page without encryption",
+    "what": "The HTTP address returned an application page instead of sending the visitor to HTTPS.",
+    "why": "Anyone able to observe or alter that unencrypted connection may read or change data sent over it.",
+    "fix": "Redirect HTTP requests to HTTPS and use HTTPS in links.",
+    "limit": "The check did not capture anyone\u2019s password or private traffic."
+  },
+  "SL-C01-HSTS-01": {
+    "title": "The browser is not told to always use a secure connection",
+    "what": "The HTTPS response is missing an effective Strict-Transport-Security rule.",
+    "why": "Someone who can interfere with a visitor\u2019s first insecure connection may try to keep them on HTTP.",
+    "fix": "Set a suitable Strict-Transport-Security policy after confirming HTTPS works on the covered hosts.",
+    "limit": "This is a missing safeguard. No network interception was demonstrated."
+  },
+  "SL-C01-MIXED-01": {
+    "title": "A secure page references an insecure resource",
+    "what": "An HTTPS page references active content over HTTP.",
+    "why": "If the browser loads that resource, someone controlling its insecure connection could change it. Browsers may block the resource instead.",
+    "fix": "Serve all scripts and styles over HTTPS.",
+    "limit": "A reference alone does not prove the browser loaded or executed the insecure resource."
+  },
+  "SL-C02-COOKIE-02": {
+    "title": "The login cookie is shared with more hosts than necessary",
+    "what": "The cookie\u2019s domain setting makes it available beyond the application that set it.",
+    "why": "A compromised related host may gain access to a shared cookie, depending on the cookie\u2019s scope and protections.",
+    "fix": "Use a host-only cookie unless sharing is required and all covered hosts are trusted.",
+    "limit": "No compromise of a related host was demonstrated."
+  },
+  "SL-C04-XCTO-01": {
+    "title": "The browser is missing a rule for handling file types",
+    "what": "The response does not set X-Content-Type-Options: nosniff.",
+    "why": "In certain content-serving situations, a browser might interpret a file as a more dangerous type than intended.",
+    "fix": "Set X-Content-Type-Options: nosniff and send correct Content-Type values.",
+    "limit": "A missing setting does not prove uploaded files can run as code."
+  },
+  "SL-C05-ERRORS-01": {
+    "title": "An error page reveals internal application details",
+    "what": "A response includes a stack trace or detailed internal error information.",
+    "why": "Someone could use names, paths, and technology details to plan further attacks.",
+    "fix": "Show a generic error page to visitors and keep detailed errors in private logs.",
+    "limit": "An informative error does not prove access to the server."
+  },
+  "SL-C05-LISTING-01": {
+    "title": "Visitors can browse a folder\u2019s file list",
+    "what": "The server returned a list of files in a directory.",
+    "why": "Someone could locate files that were not intended to be easy to find. Whether private data is exposed depends on the files.",
+    "fix": "Disable directory listing and remove private files from public folders.",
+    "limit": "A file list does not prove every listed file contains sensitive data."
+  },
+  "SL-C05-FILES-01": {
+    "title": "A file that should be private is publicly accessible",
+    "what": "A bounded request returned content matching a sensitive file check.",
+    "why": "An unauthenticated visitor could read the exposed content. The impact depends on what the saved evidence contains.",
+    "fix": "Remove the file from public access and rotate any confirmed exposed secrets.",
+    "limit": "The check does not establish that any exposed credentials are valid or were used."
+  },
+  "SL-C05-SECRETS-01": {
+    "title": "Page content contains a possible private credential",
+    "what": "Content delivered to the browser includes a value matching a private-credential pattern.",
+    "why": "If it is a real, active private credential, someone who sees the page may be able to use the access it grants.",
+    "fix": "Identify the value, revoke it if private and active, and keep private credentials on the server.",
+    "limit": "Public identifiers can resemble secrets. The scanner did not use the value to sign in."
+  },
+  "SL-C07-METHODS-01": {
+    "title": "The server advertises additional request methods",
+    "what": "The server lists methods beyond ordinary page reads.",
+    "why": "This is a clue for a permissions review. A listed method is not automatically unsafe.",
+    "fix": "Check whether these methods are intended and enforce authorization where needed.",
+    "limit": "No unauthorized write or server access was demonstrated."
+  },
+  "SL-C07-INVENTORY-01": {
+    "title": "Public API routes were discovered",
+    "what": "The scan recorded API routes observed on the same website.",
+    "why": "This helps identify where permissions and input handling need assessment. Discovery alone is not a vulnerability.",
+    "fix": "Review which routes should be public and assess private routes with authorized test accounts.",
+    "limit": "A discovered route has not necessarily been tested for access-control flaws."
+  },
+  "SL-C03-SQL-01": {
+    "title": "Test inputs indicate a possible database query flaw",
+    "what": "Repeated controlled input comparisons showed behavior consistent with input changing a database query.",
+    "why": "If confirmed for this query and permissions, someone may be able to change which database results the application returns. Further access depends on the query and account permissions.",
+    "fix": "Use parameterized queries and avoid building SQL by joining user input into query text.",
+    "limit": "The controlled check did not extract a database, bypass a login, or change records."
+  },
+  "SL-C03-XSS-01": {
+    "title": "Input can run a script on the page",
+    "what": "A controlled, harmless script marker ran in the scanner\u2019s browser after input was reflected by the site.",
+    "why": "A malicious script could act inside the affected page and access data available to that page. The impact depends on the visitor\u2019s permissions and browser protections.",
+    "fix": "Encode output for its HTML context, use safe DOM APIs, and sanitize content that must contain HTML.",
+    "limit": "Only the recorded harmless marker and approved test context were checked. No customer account takeover was demonstrated."
+  },
+  "SL-C03-DOMXSS-01": {
+    "title": "Page code can turn input into a running script",
+    "what": "A harmless marker ran through the page\u2019s own browser-side handling of input.",
+    "why": "A malicious script could act inside the affected page and access data available to that page. The impact depends on the visitor\u2019s permissions and browser protections.",
+    "fix": "Encode output for its HTML context, use safe DOM APIs, and sanitize content that must contain HTML.",
+    "limit": "Only the recorded harmless marker and approved test context were checked. No customer account takeover was demonstrated."
+  },
+  "SL-C03-STOREDXSS-01": {
+    "title": "Saved input can run a script when another user views it",
+    "what": "A controlled marker was stored in a disposable test record and later ran in the designated viewer\u2019s browser.",
+    "why": "A malicious script could act inside the affected page and access data available to that page. The impact depends on the visitor\u2019s permissions and browser protections.",
+    "fix": "Encode output for its HTML context, use safe DOM APIs, and sanitize content that must contain HTML.",
+    "limit": "Only the recorded harmless marker and approved test context were checked. No customer account takeover was demonstrated."
+  },
+  "SL-C03-HTML-01": {
+    "title": "Input can change the page\u2019s HTML",
+    "what": "A harmless input marker became an HTML element rather than plain text.",
+    "why": "Someone could alter the appearance of the affected page or place misleading content there.",
+    "fix": "Encode untrusted text before inserting it into HTML.",
+    "limit": "HTML insertion does not by itself prove script execution."
+  },
+  "SL-C04-REDIRECT-01": {
+    "title": "Input can send a visitor to another website",
+    "what": "A controlled input changed the response\u2019s redirect destination.",
+    "why": "Someone could use a trusted-looking link to send visitors to a deceptive destination.",
+    "fix": "Allow only intended redirect destinations, preferably fixed internal paths.",
+    "limit": "The scanner inspected the redirect and did not follow it to an unapproved website."
+  },
+  "SL-C04-CORS-01": {
+    "title": "The response allows unexpected websites to request it",
+    "what": "The cross-origin response settings accepted a foreign origin with credentials allowed.",
+    "why": "This can expose private responses if the browser sends credentials and the response actually contains protected data.",
+    "fix": "Allow only intended origins and avoid credentialed access from arbitrary websites.",
+    "limit": "Header settings alone do not prove private data is readable by another website."
+  },
+  "SL-C04-CORSDATA-01": {
+    "title": "Another website can read a protected test response",
+    "what": "The approved foreign-page browser check read the protected test marker with credentials.",
+    "why": "A malicious website could read the affected response when a visitor\u2019s browser supplies the required credentials.",
+    "fix": "Restrict credentialed cross-origin access to trusted origins.",
+    "limit": "The evidence covers the declared test response, not all private records on the site."
+  },
+  "SL-C04-HDRINJECT-01": {
+    "title": "Input can add an unexpected response header",
+    "what": "A harmless input marker created a controlled response header.",
+    "why": "Someone might influence how the browser or an intermediary handles that response, depending on which headers can be changed.",
+    "fix": "Reject line breaks in header values and use safe response APIs.",
+    "limit": "No shared-cache poisoning or harmful browser action was demonstrated."
+  },
+  "SL-C08-SESSION-01": {
+    "title": "A login-session protection did not hold",
+    "what": "A declared session check found a problem with session replacement, revocation, or expiry. The evidence identifies which test failed.",
+    "why": "A still-valid old session may continue to access the account after an event that should invalidate it.",
+    "fix": "Replace session identifiers on login and enforce server-side logout and expiry.",
+    "limit": "This does not mean passwords were guessed or a login was bypassed. Only the declared session transition was assessed."
+  },
+  "SL-C09-OBJECT-01": {
+    "title": "A test account can access another account\u2019s record",
+    "what": "The approved test identity obtained the protected marker for a record it should not access.",
+    "why": "Someone with the tested permissions could access the affected data or operation outside the intended access rules.",
+    "fix": "Check the signed-in user\u2019s permission for every record, field, and operation on the server.",
+    "limit": "The evidence covers the exact declared records and identities. It does not prove access to every account or academic record."
+  },
+  "SL-C09-TENANT-01": {
+    "title": "A test account can cross an organization boundary",
+    "what": "The approved test identity obtained a protected marker from another declared organization.",
+    "why": "Someone with the tested permissions could access the affected data or operation outside the intended access rules.",
+    "fix": "Check the signed-in user\u2019s permission for every record, field, and operation on the server.",
+    "limit": "The evidence covers the exact declared records and identities. It does not prove access to every account or academic record."
+  },
+  "SL-C09-FUNCTION-01": {
+    "title": "A test account can use a restricted operation",
+    "what": "A lower-permission test identity obtained the protected result of an operation intended for a different role.",
+    "why": "Someone with the tested permissions could access the affected data or operation outside the intended access rules.",
+    "fix": "Check the signed-in user\u2019s permission for every record, field, and operation on the server.",
+    "limit": "The evidence covers the exact declared records and identities. It does not prove access to every account or academic record."
+  },
+  "SL-C09-PROPERTY-01": {
+    "title": "A test account can access a restricted record field",
+    "what": "The approved test identity accessed or changed a field that the declared policy forbids.",
+    "why": "Someone with the tested permissions could access the affected data or operation outside the intended access rules.",
+    "fix": "Check the signed-in user\u2019s permission for every record, field, and operation on the server.",
+    "limit": "The evidence covers the exact declared records and identities. It does not prove access to every account or academic record."
+  },
+  "SL-C09-GRAPHQL-01": {
+    "title": "A GraphQL request bypasses a declared access rule",
+    "what": "The approved GraphQL test returned a protected marker to a test identity that should not receive it.",
+    "why": "Someone with the tested permissions could access the affected data or operation outside the intended access rules.",
+    "fix": "Check the signed-in user\u2019s permission for every record, field, and operation on the server.",
+    "limit": "The evidence covers the exact declared records and identities. It does not prove access to every account or academic record."
+  },
+  "SL-C09-MASS-01": {
+    "title": "An extra input field can change a restricted value",
+    "what": "A controlled request changed a restricted field on a disposable test record.",
+    "why": "Someone meeting the tested conditions could cause the affected unauthorized change. The exact changed field or workflow is recorded in the evidence.",
+    "fix": "Enforce permissions and required workflow steps on the server. For cross-site changes, require anti-CSRF protection and appropriate cookie settings.",
+    "limit": "Only the declared disposable record and permitted operation were tested. Do not assume marks or attendance were changed unless those exact fields appear in the evidence."
+  },
+  "SL-C11-WORKFLOW-01": {
+    "title": "A restricted workflow step can be completed incorrectly",
+    "what": "A declared test reached a protected workflow result without satisfying its required role or step.",
+    "why": "Someone meeting the tested conditions could cause the affected unauthorized change. The exact changed field or workflow is recorded in the evidence.",
+    "fix": "Enforce permissions and required workflow steps on the server. For cross-site changes, require anti-CSRF protection and appropriate cookie settings.",
+    "limit": "Only the declared disposable record and permitted operation were tested. Do not assume marks or attendance were changed unless those exact fields appear in the evidence."
+  },
+  "SL-C04-CSRF-01": {
+    "title": "Another website can trigger a change in a signed-in session",
+    "what": "The approved foreign-page test changed a disposable record using the test session.",
+    "why": "Someone meeting the tested conditions could cause the affected unauthorized change. The exact changed field or workflow is recorded in the evidence.",
+    "fix": "Enforce permissions and required workflow steps on the server. For cross-site changes, require anti-CSRF protection and appropriate cookie settings.",
+    "limit": "Only the declared disposable record and permitted operation were tested. Do not assume marks or attendance were changed unless those exact fields appear in the evidence."
+  },
+  "SL-C03-TEMPLATE-01": {
+    "title": "Input may be evaluated as server template code",
+    "what": "Controlled comparisons indicated that input was evaluated by the server\u2019s template engine.",
+    "why": "Unsafe template evaluation can expose server data or operations, depending on the engine and configuration.",
+    "fix": "Keep user input out of template source and pass it only as data.",
+    "limit": "The check did not execute operating-system commands."
+  },
+  "SL-C10-TRAVERSAL-01": {
+    "title": "A file path can reach outside its intended folder",
+    "what": "The controlled test retrieved an approved canary outside the intended file boundary.",
+    "why": "Someone might read files outside the allowed folder if the same path handling applies to them.",
+    "fix": "Restrict access to a fixed allowed directory and validate resolved paths.",
+    "limit": "Only an approved canary was read. No real private file was retrieved."
+  },
+  "SL-C10-UPLOAD-01": {
+    "title": "An uploaded test file was served with an unsafe policy",
+    "what": "The harmless uploaded test file was served in a way that failed the declared file-serving policy.",
+    "why": "Certain uploaded content could be interpreted in an unsafe browser context, depending on its type and serving headers.",
+    "fix": "Validate file types and serve untrusted uploads from an isolated origin with safe headers.",
+    "limit": "No executable malware or server-code execution was tested."
+  },
+  "SL-C05-CACHE-01": {
+    "title": "A protected response crossed a test-session boundary",
+    "what": "A controlled cache check returned a private test marker in a context where it should not be shared.",
+    "why": "Someone in the tested context could receive data belonging to a different session.",
+    "fix": "Keep private responses out of shared caches and include the necessary identity-sensitive cache rules.",
+    "limit": "Only the declared private marker and cache scenario were checked."
+  },
+  "SL-C07-SSRF-02": {
+    "title": "The server fetched an address supplied in test input",
+    "what": "The controlled callback receiver recorded the server\u2019s request to the approved canary.",
+    "why": "Someone may be able to make the server contact destinations it should not. Further reach depends on input restrictions and server networking.",
+    "fix": "Restrict outbound destinations. Disable external XML entities where applicable.",
+    "limit": "The check used an approved canary. It did not retrieve internal services, cloud credentials, or private files."
+  },
+  "SL-C03-XXE-02": {
+    "title": "An XML input caused an unexpected external request",
+    "what": "The controlled XML check caused a request to the approved external canary.",
+    "why": "Someone may be able to make the server contact destinations it should not. Further reach depends on input restrictions and server networking.",
+    "fix": "Restrict outbound destinations. Disable external XML entities where applicable.",
+    "limit": "The check used an approved canary. It did not retrieve internal services, cloud credentials, or private files."
+  },
+  "SL-C05-DEBUG-02": {
+    "title": "A public diagnostics page reveals internal details",
+    "what": "The checked diagnostic response included internal information.",
+    "why": "A visitor could read the exposed content without the intended access restriction. What that enables depends on the contents and whether any secrets are still valid.",
+    "fix": "Disable public diagnostics and keep them behind staff-only access.",
+    "limit": "The scanner did not use exposed secrets to log in or compromise another service."
+  },
+  "SL-C05-CONFIG-02": {
+    "title": "A configuration backup is publicly readable",
+    "what": "The bounded response matched private configuration content.",
+    "why": "A visitor could read the exposed content without the intended access restriction. What that enables depends on the contents and whether any secrets are still valid.",
+    "fix": "Remove configuration backups from public folders and rotate confirmed exposed secrets.",
+    "limit": "The scanner did not use exposed secrets to log in or compromise another service."
+  },
+  "SL-C05-MANAGEMENT-01": {
+    "title": "A management response is publicly readable",
+    "what": "The checked management response exposed data intended for restricted use.",
+    "why": "A visitor could read the exposed content without the intended access restriction. What that enables depends on the contents and whether any secrets are still valid.",
+    "fix": "Restrict management routes to authorized staff and trusted networks.",
+    "limit": "The scanner did not use exposed secrets to log in or compromise another service."
+  },
+  "SL-C05-PRIVATE-02": {
+    "title": "A public response contains private key material",
+    "what": "The bounded response matched private-key material.",
+    "why": "A visitor could read the exposed content without the intended access restriction. What that enables depends on the contents and whether any secrets are still valid.",
+    "fix": "Remove public key material immediately and replace the affected key and certificate if exposure is confirmed.",
+    "limit": "The scanner did not use exposed secrets to log in or compromise another service."
+  },
+  "SL-C05-SOURCEMAP-01": {
+    "title": "A public source map contains private material",
+    "what": "The checked source map included material matching a private-content check.",
+    "why": "A visitor could read the exposed content without the intended access restriction. What that enables depends on the contents and whether any secrets are still valid.",
+    "fix": "Remove private data from client builds and rotate any confirmed exposed secrets.",
+    "limit": "The scanner did not use exposed secrets to log in or compromise another service."
+  }
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ScopeLens lab fixture — GOOD</title>
+  </head>
+  <body>
+    <h1>ScopeLens lab fixture: <code>labs-good</code></h1>
+    <p>
+      The fixed counterpart of <code>labs-bad</code>. Same application content, every
+      deliberate misconfiguration corrected. Used as the negative control for the same
+      registered controls: a check that reports a finding here is producing a false
+      positive.
+    </p>
+    <h2>Corrections applied</h2>
+    <ul>
+      <li><code>Strict-Transport-Security: max-age=63072000; includeSubDomains</code> (C01)</li>
+      <li>Session cookie flagged <code>Secure; HttpOnly; SameSite=Strict</code> (C02)</li>
+      <li><code>X-Content-Type-Options: nosniff</code> (C04)</li>
+      <li><code>Content-Security-Policy</code> with <code>frame-ancestors 'none'</code> (C04)</li>
+      <li><code>Referrer-Policy: no-referrer</code> (C05)</li>
+      <li>Directory listing disabled (C05)</li>
+      <li>Sensitive-looking paths return 404 (C05)</li>
+      <li>Server version not disclosed (C05)</li>
+      <li>Cleartext HTTP redirects to HTTPS rather than serving content (C01)</li>
+    </ul>
+  <a href="/browser-demo.html">View interactive fixture</a>
+</body>
+</html>

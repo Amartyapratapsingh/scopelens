@@ -1,0 +1,24 @@
+id: scopelens-config-backup-candidate
+info:
+  name: config backup candidate
+  author: scopelens
+  severity: info
+  description: Candidate only. Requires independent negative control and trusted exposure-pack
+    verifier.
+http:
+- method: GET
+  path:
+  - '{{RootURL}}/.env'
+  redirects: false
+  max-redirects: 0
+  matchers-condition: and
+  matchers:
+  - type: status
+    status:
+    - 200
+  - type: regex
+    part: body
+    regex:
+    - (?m)^APP_[A-Z_]+\s*=
+    - (?m)^(?:DB_PASSWORD|API_SECRET|SESSION_SECRET)\s*=.+
+    condition: and

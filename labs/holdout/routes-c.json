@@ -1,0 +1,42 @@
+{
+  "/r/a0a35d9afdc1e29d": {
+    "upstream_path": "/render-raw",
+    "parameter": "value",
+    "baseline": "hello"
+  },
+  "/r/238329a822447f8d": {
+    "upstream_path": "/render-text",
+    "parameter": "value",
+    "baseline": "hello"
+  },
+  "/r/e3bc73ef237cd2e6": {
+    "upstream_path": "/find-sql",
+    "parameter": "value",
+    "baseline": "pear"
+  },
+  "/r/1109cabc2c9dab65": {
+    "upstream_path": "/find-param",
+    "parameter": "value",
+    "baseline": "pear"
+  },
+  "/r/e6144b3972f5a2a4": {
+    "upstream_path": "/next-free",
+    "parameter": "value",
+    "baseline": "/"
+  },
+  "/r/f1aaf1b3938ac147": {
+    "upstream_path": "/next-local",
+    "parameter": "value",
+    "baseline": "/"
+  },
+  "/r/6f1ed88571f2df38": {
+    "upstream_path": "/cors-echo",
+    "parameter": "value",
+    "baseline": "hello"
+  },
+  "/r/d7668bcf92549857": {
+    "upstream_path": "/cors-constant",
+    "parameter": "value",
+    "baseline": "hello"
+  }
+}

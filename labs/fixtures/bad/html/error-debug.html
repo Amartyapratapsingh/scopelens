@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ScopeLens lab fixture — BAD — debug error page</title>
+    <!-- FIXTURE (C05): a cleartext subresource inside an HTTPS page, which is mixed content. -->
+    <script src="http://172.28.0.11:80/fixture-files/app-secrets.js"></script>
+  </head>
+  <body>
+    <h1>Debug error page</h1>
+    <p>
+      This page is served by the <strong>labs-bad</strong> fixture. It exposes a fabricated
+      diagnostic payload so the verbose-error control has a vulnerable counterpart. The
+      fixed fixture returns a plain error page instead.
+    </p>
+    <pre id="diagnostic">
+{
+  "level": "error",
+  "exception": "psycopg.OperationalError",
+  "detail": "connection to server at 10.0.0.7, port 5432 failed: Connection refused",
+  "traceback": "Traceback (most recent call last):\n  File \"/srv/app/orders/views.py\", line 118, in list_orders\n    rows = db.execute(statement)\n  File \"/srv/app/db/session.py\", line 41, in execute\n    return self._conn.execute(sql)\npsycopg.OperationalError: connection to server at 10.0.0.7, port 5432 failed"
+}
+    </pre>
+    <p>The traceback above is fabricated. The path and address are invented.</p>
+  </body>
+</html>

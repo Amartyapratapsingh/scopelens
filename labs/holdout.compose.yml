@@ -1,0 +1,123 @@
+# Opt-in stack. No worker mounts contain the evaluator package or its answer key.
+name: scopelens-holdout
+
+networks:
+  labs:
+    external: true
+    name: scopelens_labs_net
+  private:
+    internal: true
+
+x-gateway: &gateway
+  image: python:3.12-slim@sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9
+  command: [python, /gateway.py]
+  user: "65534:65534"
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: ["no-new-privileges:true"]
+  profiles: [holdout]
+
+services:
+  labs-holdout-a:
+    <<: *gateway
+    environment:
+      UPSTREAM: http://vulnerableapp:9090
+      ROUTES_FILE: /routes.json
+    volumes:
+      - ./holdout/gateway.py:/gateway.py:ro
+      - ./holdout/routes-a.json:/routes.json:ro
+    ports: ["127.0.0.1:8088:8080"]
+    networks:
+      labs: {ipv4_address: 172.28.0.30}
+      private:
+  labs-holdout-b:
+    <<: *gateway
+    environment:
+      UPSTREAM: http://wavsep:8080
+      ROUTES_FILE: /routes.json
+    volumes:
+      - ./holdout/gateway.py:/gateway.py:ro
+      - ./holdout/routes-b.json:/routes.json:ro
+    ports: ["127.0.0.1:8089:8080"]
+    networks:
+      labs: {ipv4_address: 172.28.0.31}
+      private:
+  labs-holdout-c:
+    <<: *gateway
+    environment:
+      UPSTREAM: http://private-fixture:8080
+      ROUTES_FILE: /routes.json
+    volumes:
+      - ./holdout/gateway.py:/gateway.py:ro
+      - ./holdout/routes-c.json:/routes.json:ro
+    ports: ["127.0.0.1:8093:8080"]
+    networks:
+      labs: {ipv4_address: 172.28.0.32}
+      private:
+  labs-holdout-d:
+    <<: *gateway
+    environment:
+      UPSTREAM: http://benchmarkjava:8080
+      ROUTES_FILE: /routes.json
+    volumes:
+      - ./holdout/gateway.py:/gateway.py:ro
+      - ./holdout/routes-d.json:/routes.json:ro
+    ports: ["127.0.0.1:8092:8080"]
+    networks:
+      labs: {ipv4_address: 172.28.0.33}
+      private:
+  benchmarkjava:
+    profiles: [holdout]
+    image: tomcat:9.0.117-jdk17-temurin-noble@sha256:fb9aab3c690fb5553afcd71f5a32683051aab18fbb9b90e02cb650182d0970ed
+    command: [sh, /benchmark-start.sh]
+    environment:
+      CATALINA_OPTS: -Xmx512m
+    volumes:
+      - ../runs/holdout-benchmark/sources/benchmarkjava/target/benchmark.war:/benchmark.war:ro
+      - ./holdout/benchmark-start.sh:/benchmark-start.sh:ro
+      - ./holdout/benchmark-server.xml:/usr/local/tomcat/conf/server.xml:ro
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    networks: [private]
+  vulnerableapp:
+    profiles: [holdout]
+    image: eclipse-temurin:17-jre@sha256:207ecae0b2b104dfc6dfa763d1e9cd2041cb344800a180e24cb1a28ed533ff90
+    command: [java, -Xmx384m, -jar, /target.jar]
+    user: "65534:65534"
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    volumes:
+      - ../runs/holdout-benchmark/sources/vulnerableapp/build/libs/VulnerableApp-1.0.0.jar:/target.jar:ro
+    networks: [private]
+  wavsep:
+    profiles: [holdout]
+    image: tomcat:9.0.117-jdk17-temurin-noble@sha256:fb9aab3c690fb5553afcd71f5a32683051aab18fbb9b90e02cb650182d0970ed
+    volumes:
+      - ../runs/holdout-benchmark/sources/wavsep/target/wavsep.war:/usr/local/tomcat/webapps/wavsep.war:ro
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    networks: [private]
+  database:
+    profiles: [holdout]
+    image: mariadb:11.4@sha256:1292844148b311e4ed4300022a996d39083f415a963e970cf47cad1b3b18e3a6
+    environment:
+      MARIADB_ROOT_PASSWORD: holdout-synthetic-local
+    tmpfs: [/var/lib/mysql]
+    networks: [private]
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 3s
+      timeout: 3s
+      retries: 40
+  private-fixture:
+    profiles: [holdout]
+    image: python:3.12-slim@sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9
+    command: [python, /private.py]
+    user: "65534:65534"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    volumes: ["./holdout/private.py:/private.py:ro"]
+    networks: [private]

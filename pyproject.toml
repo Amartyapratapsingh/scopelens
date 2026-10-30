@@ -1,0 +1,96 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "scopelens"
+version = "0.1.0"
+description = "ScopeLens — operator-only external configuration assessment (Phase 1, M0)"
+readme = "README.md"
+requires-python = "==3.12.*"
+license = { text = "Proprietary" }
+
+# NOTE: every dependency is pinned to an exact version (Build Plan §0.6, §3).
+# Regenerate with `make pin` after changing the ranges in [dependency-groups].
+dependencies = [
+    "fastapi==0.141.1",
+    "uvicorn[standard]==0.53.0",
+    "sqlalchemy==2.0.54",
+    "alembic==1.20.0",
+    "psycopg[binary]==3.3.6",
+    "pydantic==2.13.5",
+    "pydantic-settings==2.15.0",
+    "bcrypt==5.0.0",
+    "itsdangerous==2.2.0",
+    "pyyaml==6.0.3",
+    "httpx==0.28.1",
+    # Crawler HTML parsing (Build Plan §3). Pulled in for M2, where the crawler
+    # extracts links, forms and parameters from responses.
+    "beautifulsoup4==4.15.0",
+    "soupsieve==2.10",
+    # Report rendering (Build Plan §3, §5.16). Autoescape on, and the template uses no
+    # `|safe`, so target-derived text renders as text.
+    "jinja2==3.1.6",
+    "markupsafe==3.0.3",
+    # TLS certificate parsing in the measurement lane. Needed because
+    # `SSLSocket.getpeercert()` returns an EMPTY dict when verification is off, and the
+    # lane exists precisely to describe certificates that would fail verification.
+    "cryptography==50.0.1",
+    "cffi==2.1.1",
+    "pycparser==3.0",
+    # Dispatch (Build Plan §3). Redis/Celery deliver notifications only; PostgreSQL
+    # owns scan truth (§5.2). `redis` is also used directly for the liveness probe the
+    # dispatcher performs before it enqueues anything.
+    "celery[redis]==5.6.3",
+    "redis==6.4.0",
+    # Worker lifecycle (Build Plan §5.4). Used only by the trusted supervisor, never by
+    # a worker. See docs/OPEN_QUESTIONS.md Q-10 for the privilege this implies.
+    "docker==7.2.0",
+    "playwright==1.63.0",
+    "openai==3.19.2",
+    "langgraph==1.2.12",
+]
+
+[project.scripts]
+scopelens = "scopelens.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest==9.1.1",
+    "pytest-timeout==2.4.0",
+    "ruff==0.16.8",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["backend/scopelens"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# "backend" makes `scopelens` importable; "." makes `tests.conftest` importable as a
+# package path from the test modules.
+pythonpath = ["backend", "."]
+# A timeout is not decoration: these tests hold row locks and drive a worker lifecycle,
+# and the failure mode of getting that wrong is a hang rather than a red test.
+addopts = "-ra --strict-markers --timeout=60 --timeout-method=thread"
+markers = [
+    "db: requires a reachable PostgreSQL (skipped when unavailable)",
+]
+filterwarnings = [
+    "error::DeprecationWarning",
+    # Starlette's own test-client shim emits this at import. It is not our code and
+    # there is no migration available yet, so it is silenced by message rather than by
+    # relaxing the rule above.
+    "ignore:Using `httpx` with `starlette.testclient` is deprecated",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["backend", "tests", "evaluation"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF", "BLE"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]

@@ -1,0 +1,100 @@
+[
+  {
+    "id": "16224009232",
+    "tbs_sha256": "80fb42b50dc4952bbc85a678af67b59ce67712337607f343d17c4892d38b5ab1",
+    "cert_sha256": "b860c07a87a54339d8bf2a9eb1da8a8609ce2bceef3f9a28db8023c36a93c2cb",
+    "dns_names": [
+      "games.arkyon.dev"
+    ],
+    "pubkey_sha256": "83ffd195ef12951f3aadefa2a7f4bebf36c305c1115d2074290eb73a8e4269f1",
+    "not_before": "2026-08-01T21:48:33Z",
+    "not_after": "2026-10-30T21:48:32Z",
+    "revoked": false
+  },
+  {
+    "id": "16233333230",
+    "tbs_sha256": "328c71b95ee94785ba28c15ea8a19e3dcf1ca3109002824ff6626ee64ebed148",
+    "cert_sha256": "5e35544dd6a6c127a184954ef2f9da7cb31b491da8cd053685fabe2d370e0e89",
+    "dns_names": [
+      "arkyon.dev",
+      "www.arkyon.dev"
+    ],
+    "pubkey_sha256": "9e9d10a0578461cf83ce4ff40259583c0c1271fd7ec79243660315fcb5394e7a",
+    "not_before": "2026-08-02T09:57:59Z",
+    "not_after": "2026-10-31T09:57:58Z",
+    "revoked": false
+  },
+  {
+    "id": "16280550152",
+    "tbs_sha256": "33c46237e847db54faa10bbd37cd856d46c24965b71a4635ed0eacc6e19a3272",
+    "cert_sha256": "0f0c789af33cf76ca9c42fe5d7d5b56170b46e717b3ecc06b9139a6655f54444",
+    "dns_names": [
+      "pointsolver.arkyon.dev"
+    ],
+    "pubkey_sha256": "27d7880771437ff86621e2ed11b55abfd5a75448a576d219b6a196af7e1d9724",
+    "not_before": "2026-08-04T10:53:55Z",
+    "not_after": "2026-11-02T10:53:54Z",
+    "revoked": false
+  },
+  {
+    "id": "17518248769",
+    "tbs_sha256": "eb90c69e99e12ebe383bfd38110acac5cddc1eca884248c74002b5f2883308f3",
+    "cert_sha256": "99edeb4f3373535c351181a7dbe150e90d572d0a6c6831dbd7cc6e5ed5c1e16b",
+    "dns_names": [
+      "arkyon.dev",
+      "www.arkyon.dev"
+    ],
+    "pubkey_sha256": "b211bc6a571f9aeef3249bbaabf3547cd6ffc1084bf269c77f3d7e2895089ade",
+    "not_before": "2026-10-01T09:09:49Z",
+    "not_after": "2026-12-30T09:09:48Z",
+    "revoked": false
+  },
+  {
+    "id": "17533201300",
+    "tbs_sha256": "c867ad2eaf7f375c39dc989e6d93d1ae3e769852ef10882ed4291a933704f915",
+    "cert_sha256": "e3bcf3c01fa92cbb4721c482220dece34faaff22e528a356b5676e172c94649f",
+    "dns_names": [
+      "games.arkyon.dev"
+    ],
+    "pubkey_sha256": "f20d24551a3786098911c27910ca25bae8dfff6c61d74f7cf5198fd22824cb3d",
+    "not_before": "2026-10-02T01:49:09Z",
+    "not_after": "2026-12-31T01:49:08Z",
+    "revoked": false
+  },
+  {
+    "id": "17597913322",
+    "tbs_sha256": "4356b4ca4d806bd984d7c27d54a196cafcab01bad886576cf6b0ec3e62bbe949",
+    "cert_sha256": "24afe06f900b619d1dfdfb4b9abb6e4576082cb4a5e4695eb84c22cad63d0e74",
+    "dns_names": [
+      "pointsolver.arkyon.dev"
+    ],
+    "pubkey_sha256": "20471b4daf70e6d8ac1d2a242902f3035668e8941277331b014c151b30549d14",
+    "not_before": "2026-10-05T10:14:46Z",
+    "not_after": "2027-01-03T10:14:45Z",
+    "revoked": false
+  },
+  {
+    "id": "17655992904",
+    "tbs_sha256": "fe1d106c5afd73029f25323b477c5ee6212cbe0079c096a8f310e9c54db167c1",
+    "cert_sha256": "455ca967b345a856683c6aca3a177966455d13b1442c5bd71262f2497f829a9e",
+    "dns_names": [
+      "arkyon.dev"
+    ],
+    "pubkey_sha256": "b7eaca6fab046f2c07347ee26d1e3a0eeefffe9f43e4096a4dca6bb89d55c10a",
+    "not_before": "2026-10-08T05:39:39Z",
+    "not_after": "2027-01-06T05:39:38Z",
+    "revoked": false
+  },
+  {
+    "id": "17656000756",
+    "tbs_sha256": "16fea202ae49547c08bc8afcd8be69a9c2410bbfbe6acb4be0d4ba35c1fd41c1",
+    "cert_sha256": "1ba0cb2d170b42634475d75a36a73310df1986cc6a9844c8b0244516132dbcf8",
+    "dns_names": [
+      "www.arkyon.dev"
+    ],
+    "pubkey_sha256": "92e583ecc5f232e3d841c9e32ce4146f7713b20dff1564ac0eac35cddfcaccb6",
+    "not_before": "2026-10-08T05:39:45Z",
+    "not_after": "2027-01-06T05:39:44Z",
+    "revoked": false
+  }
+]

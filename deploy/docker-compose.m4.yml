@@ -1,0 +1,20 @@
+services:
+  api:
+    environment:
+      SCOPELENS_ADVISORY_BUNDLE_FILE: /app/checks_registry/advisories/osv.json
+  policy:
+    environment:
+      SCOPELENS_BROWSER_MAX_ACTIONS: "40"
+  proxy:
+    ports:
+      - "127.0.0.1:8098:8080"
+  supervisor:
+    environment:
+      SCOPELENS_ADVISORY_BUNDLE_FILE: /app/checks_registry/advisories/osv.json
+      SCOPELENS_ADAPTIVE_ENABLED: "true"
+      SCOPELENS_BROWSER_ENABLED: "true"
+      SCOPELENS_SCANNER_TOOLS_ENABLED: "true"
+      SCOPELENS_BROWSER_MAX_ACTIONS: "40"
+      SCOPELENS_KALI_WORKER_IMAGE: ${SCOPELENS_KALI_WORKER_IMAGE:-scopelens/kali-tool:dev}
+      SCOPELENS_BROWSER_WORKER_IMAGE: ${SCOPELENS_BROWSER_WORKER_IMAGE:-scopelens/browser-worker:dev}
+      SCOPELENS_TOOL_WORKER_IMAGE: ${SCOPELENS_TOOL_WORKER_IMAGE:-scopelens/tool-worker:dev}

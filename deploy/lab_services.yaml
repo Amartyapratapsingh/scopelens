@@ -1,0 +1,141 @@
+# Operator-owned exact service bindings, not a private-network allowlist.
+# Production scopes cannot inherit these addresses. No labels or solutions live here.
+schema_version: lab-services-v1
+services:
+- id: labs-session-expiry-a
+  description: Operator-owned synthetic timed session expiry service, exact binding only.
+  environment: docker-compose-labs
+  addresses: [172.28.0.25]
+  ports: [8080]
+  schemes: [http]
+- id: labs-session-expiry-b
+  description: Paired synthetic timed session expiry service, exact binding only.
+  environment: docker-compose-labs
+  addresses: [172.28.0.26]
+  ports: [8080]
+  schemes: [http]
+- id: labs-academic-faults
+  description: Operator-owned synthetic academic recovery fault fixture, exact binding only.
+  environment: docker-compose-labs
+  addresses: [172.28.0.24]
+  ports: [8080]
+  schemes: [http]
+- id: labs-academic-a
+  description: Operator-owned synthetic academic workflow service, exact binding only.
+  environment: docker-compose-labs
+  addresses: [172.28.0.22]
+  ports: [8080]
+  schemes: [http]
+- id: labs-academic-b
+  description: Paired synthetic academic workflow service, exact binding only.
+  environment: docker-compose-labs
+  addresses: [172.28.0.23]
+  ports: [8080]
+  schemes: [http]
+- id: labs-discovery-a
+  description: Synthetic development discovery application, exact service binding only.
+  environment: docker-compose-labs
+  addresses: [172.28.0.19]
+  ports: [8080]
+  schemes: [http]
+- id: labs-discovery-b
+  description: Paired synthetic development discovery application, exact service binding only.
+  environment: docker-compose-labs
+  addresses: [172.28.0.21]
+  ports: [8080]
+  schemes: [http]
+- id: labs-callbacks
+  description: Synthetic development callback fixture; exact owned collector only, no independent qualification claim.
+  environment: docker-compose-labs
+  addresses:
+  - 172.28.0.18
+  ports:
+  - 8080
+  schemes:
+  - http
+- id: labs-browser-workflows
+  description: Synthetic disposable browser workflow fixture with a controlled foreign port.
+  environment: docker-compose-labs
+  addresses:
+  - 172.28.0.16
+  ports:
+  - 8080
+  - 8081
+  schemes:
+  - http
+- id: juice-shop
+  description: Pinned isolated OWASP Juice Shop development fixture; no accuracy claim.
+  environment: docker-compose-labs
+  addresses:
+  - 172.28.0.20
+  ports:
+  - 3000
+  schemes:
+  - http
+- id: labs-bad
+  description: 'Deliberately misconfigured nginx fixture. Missing HSTS, missing X-Content-Type-Options,
+    cookies without Secure/HttpOnly/SameSite, directory listing enabled, exposed sensitive
+    files, verbose error and server tokens.
+
+    '
+  environment: docker-compose-labs
+  addresses:
+  - 172.28.0.11
+  ports:
+  - 80
+  - 8443
+  schemes:
+  - http
+  - https
+- id: labs-good
+  description: 'The fixed counterpart of labs-bad. Same application content, every
+    one of the above misconfigurations corrected. Used as the negative control for
+    the same controls.
+
+    '
+  environment: docker-compose-labs
+  addresses:
+  - 172.28.0.12
+  ports:
+  - 80
+  - 8443
+  schemes:
+  - http
+  - https
+- id: labs-validation
+  description: Separate synthetic validation application; exact service binding only.
+  environment: docker-compose-labs
+  addresses:
+  - 172.28.0.15
+  ports:
+  - 8080
+  schemes:
+  - http
+
+- id: labs-holdout-a
+  description: Opt-in benchmark exact-route ingress. No evaluator endpoints are admitted.
+  environment: docker-compose-labs
+  addresses: [172.28.0.30]
+  ports: [8080]
+  schemes: [http]
+
+- id: labs-holdout-b
+  description: Opt-in benchmark exact-route ingress. No evaluator endpoints are admitted.
+  environment: docker-compose-labs
+  addresses: [172.28.0.31]
+  ports: [8080]
+  schemes: [http]
+
+- id: labs-holdout-c
+  description: Opt-in benchmark exact-route ingress. No evaluator endpoints are admitted.
+  environment: docker-compose-labs
+  addresses: [172.28.0.32]
+  ports: [8080]
+  schemes: [http]
+
+- id: labs-holdout-d
+  description: Opt-in benchmark exact-route ingress. No evaluator endpoints are admitted.
+  environment: docker-compose-labs
+  addresses: [172.28.0.33]
+  ports: [8080]
+  schemes: [http]

@@ -1,0 +1,97 @@
+.smap {
+  border: 1px solid var(--line-soft);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 1px 1px, rgb(255 255 255 / .045) 1px, transparent 0) 0 0 / 18px 18px,
+    #07080c;
+  overflow: hidden;
+}
+.smap.is-running { border-color: #3a4c7a; }
+.smap-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line-soft);
+  background: rgb(7 8 12 / .85);
+}
+.smap-head > div { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.smap-head strong { font-size: 13px; font-weight: 600; }
+.smap-head span { font-size: 12px; color: var(--text-dim); }
+.smap-legend {
+  display: flex;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 11.5px;
+  color: var(--text-dim);
+}
+.smap-legend li { display: inline-flex; align-items: center; gap: 6px; }
+.smap-legend li::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #2f3240; }
+.smap-legend .active::before { background: #7fb2ff; box-shadow: 0 0 8px #7fb2ff; }
+.smap-legend .done::before { background: #45d07a; }
+.smap-legend .warn::before { background: #ff8f84; }
+.smap-canvas { padding: 16px; overflow-x: auto; }
+.smap svg { display: block; width: 100%; min-width: 760px; height: auto; }
+
+.smap-col {
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  fill: #4f5262;
+}
+.smap-edge {
+  fill: none;
+  stroke: #23252f;
+  stroke-width: 1.4;
+}
+.smap-edge.is-done { stroke: #2c4a3a; }
+.smap-edge.is-on {
+  stroke: url(#smap-flow);
+  stroke-width: 2;
+  stroke-dasharray: 6 8;
+  animation: smap-flow .7s linear infinite;
+}
+
+.smap-node rect {
+  fill: #0d0e14;
+  stroke: #262833;
+  stroke-width: 1;
+  transition: stroke .3s, fill .3s;
+}
+.smap-title { font-size: 14px; font-weight: 600; fill: #e8e9ef; font-family: var(--font-sans); }
+.smap-sub { font-size: 11.5px; fill: #6b6f80; font-family: var(--font-sans); }
+.smap-count {
+  font-size: 11px;
+  fill: #6b6f80;
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+}
+.smap-dot { fill: #2f3240; }
+.smap-node.is-idle .smap-title { fill: #8a8d9c; }
+.smap-node.is-done rect { stroke: #2c4a3a; }
+.smap-node.is-done .smap-dot { fill: #45d07a; }
+.smap-node.is-done .smap-count { fill: #8be3a8; }
+.smap-node.has-warn .smap-count { fill: #ff8f84; }
+.smap-node.is-warn rect { stroke: #5a2a2a; }
+.smap-node.is-warn .smap-dot { fill: #ff8f84; }
+.smap-node.is-active rect {
+  fill: #0f1830;
+  stroke: #7fb2ff;
+  filter: drop-shadow(0 0 10px rgb(127 178 255 / .45));
+}
+.smap-node.is-active .smap-dot { fill: #9fd0ff; animation: smap-blink .7s ease-in-out infinite alternate; }
+.smap-node.is-active .smap-count { fill: #bfdcff; }
+
+@keyframes smap-flow { to { stroke-dashoffset: -14; } }
+@keyframes smap-blink { to { opacity: .3; } }
+@media (prefers-reduced-motion: reduce) {
+  .smap-edge.is-on, .smap-node.is-active .smap-dot { animation: none; }
+}
+
+.smap-node.is-clickable { cursor: pointer; }
+.smap-node.is-clickable:hover rect { stroke: #4b5a7c; }
+.smap-node.is-clickable:focus { outline: none; }
+.smap-node.is-clickable:focus-visible rect, .smap-node.is-selected rect { stroke: #c4e9ff; stroke-width: 1.6; }

@@ -1,0 +1,18 @@
+# Evaluation manifest — VALIDATION split
+#
+# SCHEMA EXAMPLE ONLY. Empty of cases on purpose.
+#
+# The validation split selects models, thresholds and budgets, and is kept separate
+# from development cases (Implementation Plan §13.3 step 1). M0 has no candidate cases
+# to put here: the only fixtures that exist are the owned nginx pair, and they are in
+# the development split.
+#
+# Populating this with placeholder cases would make the split look established when it
+# is not.
+manifest_version: evaluation-manifest-v1
+split_version: split-v0.1-unpopulated
+status: schema_only
+created: 2026-09-24
+cases: []
+runs: []
+evaluations: []

@@ -1,0 +1,30 @@
+minimumLimaVersion: 2.2.0
+vmType: vz
+arch: aarch64
+cpus: 2
+memory: 2GiB
+disk: 12GiB
+images:
+- location: https://cloud-images.ubuntu.com/releases/resolute/release-20260720/ubuntu-26.04-server-cloudimg-arm64.img
+  arch: aarch64
+  digest: sha256:7bcf159e29ad0000bfed9c57875908c39268f5ed1257f4958fa6a9f5f60edd54
+mounts: []
+containerd:
+  system: false
+  user: false
+ssh:
+  forwardAgent: false
+  loadDotSSHPubKeys: false
+portForwards:
+- guestPortRange: [1, 65535]
+  guestIP: 0.0.0.0
+  guestIPMustBeZero: false
+  proto: any
+  ignore: true
+provision:
+- mode: system
+  script: |
+    #!/bin/sh
+    set -eu
+    apt-get update
+    apt-get install -y --no-install-recommends python3 curl nftables

@@ -1,0 +1,2766 @@
+{
+  "version": "conditional-m4.1",
+  "review_owner": "ScopeLens implementation",
+  "lab_services": {
+    "labs-good": [
+      {
+        "kind": "cors",
+        "path": "/cors-config"
+      },
+      {
+        "kind": "redirect",
+        "path": "/redirect-config",
+        "parameter": "next"
+      },
+      {
+        "kind": "xss",
+        "path": "/active/xss",
+        "parameter": "q"
+      },
+      {
+        "kind": "html",
+        "path": "/active/html",
+        "parameter": "q"
+      },
+      {
+        "kind": "sql",
+        "path": "/active/sql",
+        "parameter": "q"
+      }
+    ],
+    "labs-bad": [
+      {
+        "kind": "cors",
+        "path": "/cors-config"
+      },
+      {
+        "kind": "redirect",
+        "path": "/redirect-config",
+        "parameter": "next"
+      },
+      {
+        "kind": "xss",
+        "path": "/active/xss",
+        "parameter": "q"
+      },
+      {
+        "kind": "html",
+        "path": "/active/html",
+        "parameter": "q"
+      },
+      {
+        "kind": "sql",
+        "path": "/active/sql",
+        "parameter": "q"
+      }
+    ],
+    "labs-validation": [
+      {
+        "kind": "xss",
+        "path": "/xss/markup",
+        "parameter": "q"
+      },
+      {
+        "kind": "xss",
+        "path": "/xss/template",
+        "parameter": "q"
+      },
+      {
+        "kind": "xss",
+        "path": "/xss/escaped",
+        "parameter": "q"
+      },
+      {
+        "kind": "xss",
+        "path": "/xss/plaintext",
+        "parameter": "q"
+      },
+      {
+        "kind": "html",
+        "path": "/html/markup",
+        "parameter": "q"
+      },
+      {
+        "kind": "html",
+        "path": "/html/template",
+        "parameter": "q"
+      },
+      {
+        "kind": "html",
+        "path": "/html/escaped",
+        "parameter": "q"
+      },
+      {
+        "kind": "html",
+        "path": "/html/plaintext",
+        "parameter": "q"
+      },
+      {
+        "kind": "sql",
+        "path": "/sql/single",
+        "parameter": "q"
+      },
+      {
+        "kind": "sql",
+        "path": "/sql/double",
+        "parameter": "q"
+      },
+      {
+        "kind": "sql",
+        "path": "/sql/numeric",
+        "parameter": "q"
+      },
+      {
+        "kind": "sql",
+        "path": "/sql/bound",
+        "parameter": "q"
+      },
+      {
+        "kind": "sql",
+        "path": "/sql/integer",
+        "parameter": "q"
+      },
+      {
+        "kind": "sql",
+        "path": "/sql/empty",
+        "parameter": "q"
+      },
+      {
+        "kind": "redirect",
+        "path": "/redirect/301",
+        "parameter": "next"
+      },
+      {
+        "kind": "redirect",
+        "path": "/redirect/303",
+        "parameter": "next"
+      },
+      {
+        "kind": "redirect",
+        "path": "/redirect/307",
+        "parameter": "next"
+      },
+      {
+        "kind": "redirect",
+        "path": "/redirect/308",
+        "parameter": "next"
+      },
+      {
+        "kind": "redirect",
+        "path": "/redirect/local",
+        "parameter": "next"
+      },
+      {
+        "kind": "redirect",
+        "path": "/redirect/echo",
+        "parameter": "next"
+      },
+      {
+        "kind": "cors",
+        "path": "/cors/reflect"
+      },
+      {
+        "kind": "cors",
+        "path": "/cors/empty"
+      },
+      {
+        "kind": "cors",
+        "path": "/cors/wildcard"
+      },
+      {
+        "kind": "cors",
+        "path": "/cors/allowlist"
+      },
+      {
+        "kind": "cors",
+        "path": "/cors/no-credentials"
+      },
+      {
+        "kind": "cors",
+        "path": "/cors/invalid-credentials"
+      }
+    ],
+    "juice-shop": [
+      {
+        "kind": "sql",
+        "path": "/rest/products/search",
+        "parameter": "q",
+        "baseline_value": "apple",
+        "sql_context": "like"
+      },
+      {
+        "kind": "cors",
+        "path": "/rest/products/search"
+      }
+    ],
+    "labs-holdout-a": [
+      {
+        "kind": "xss",
+        "path": "/r/dead0717d9421093",
+        "parameter": "value"
+      },
+      {
+        "kind": "html",
+        "path": "/r/dead0717d9421093",
+        "parameter": "value"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/b18500c24622fe9c",
+        "parameter": "value"
+      },
+      {
+        "kind": "html",
+        "path": "/r/b18500c24622fe9c",
+        "parameter": "value"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/3b5f4757e263687f",
+        "parameter": "id",
+        "baseline_value": "1"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/9293a986a20bfbec",
+        "parameter": "id",
+        "baseline_value": "1"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/ea1eacb4367db00e",
+        "parameter": "id",
+        "baseline_value": "1"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/11e0fb45ea75769e",
+        "parameter": "id",
+        "baseline_value": "1"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/d4bc5612c9d136e6",
+        "parameter": "id",
+        "baseline_value": "1"
+      },
+      {
+        "kind": "redirect",
+        "path": "/r/51c659aa3452f5e3",
+        "parameter": "returnTo"
+      },
+      {
+        "kind": "redirect",
+        "path": "/r/d73cacb337941c82",
+        "parameter": "returnTo"
+      },
+      {
+        "kind": "redirect",
+        "path": "/r/3a1b4a87deb8e45c",
+        "parameter": "returnTo"
+      },
+      {
+        "kind": "redirect",
+        "path": "/r/c7ab84d7ab8e6ee4",
+        "parameter": "returnTo"
+      }
+    ],
+    "labs-holdout-b": [
+      {
+        "kind": "xss",
+        "path": "/r/bb873907f2ccf67a",
+        "parameter": "userinput"
+      },
+      {
+        "kind": "html",
+        "path": "/r/bb873907f2ccf67a",
+        "parameter": "userinput"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/7f76d33fa8f3add4",
+        "parameter": "userinput"
+      },
+      {
+        "kind": "html",
+        "path": "/r/7f76d33fa8f3add4",
+        "parameter": "userinput"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/56bb3edeb82f95a7",
+        "parameter": "username",
+        "baseline_value": "user1"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/7c2b7033df2ad868",
+        "parameter": "username",
+        "baseline_value": "user1"
+      },
+      {
+        "kind": "redirect",
+        "path": "/r/9b73407372f1aba1",
+        "parameter": "target"
+      },
+      {
+        "kind": "redirect",
+        "path": "/r/c94b178bb5fd667e",
+        "parameter": "target"
+      }
+    ],
+    "labs-holdout-c": [
+      {
+        "kind": "xss",
+        "path": "/r/a0a35d9afdc1e29d",
+        "parameter": "value"
+      },
+      {
+        "kind": "html",
+        "path": "/r/a0a35d9afdc1e29d",
+        "parameter": "value"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/238329a822447f8d",
+        "parameter": "value"
+      },
+      {
+        "kind": "html",
+        "path": "/r/238329a822447f8d",
+        "parameter": "value"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/e3bc73ef237cd2e6",
+        "parameter": "value",
+        "baseline_value": "pear"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/1109cabc2c9dab65",
+        "parameter": "value",
+        "baseline_value": "pear"
+      },
+      {
+        "kind": "redirect",
+        "path": "/r/e6144b3972f5a2a4",
+        "parameter": "value"
+      },
+      {
+        "kind": "redirect",
+        "path": "/r/f1aaf1b3938ac147",
+        "parameter": "value"
+      },
+      {
+        "kind": "cors",
+        "path": "/r/6f1ed88571f2df38",
+        "parameter": "value"
+      },
+      {
+        "kind": "cors",
+        "path": "/r/d7668bcf92549857",
+        "parameter": "value"
+      }
+    ],
+    "labs-holdout-d": [
+      {
+        "kind": "sql",
+        "path": "/r/c66a69005b3a5a72",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/2a070bb58bf80331",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/5f0266edf47e09b3",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/15e66ba7fbf8aa80",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/15e66ba7fbf8aa80",
+        "parameter": "input"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/726b454b3ea40394",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/1e706ebdf2dcf88d",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/c6d853ed048613df",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/773b8d5fadd17567",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/773b8d5fadd17567",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/f0f0798501a9ecd8",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/f0f0798501a9ecd8",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/37e16e976308f705",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/37e16e976308f705",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/97ded9a985a010e5",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/97ded9a985a010e5",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/1fcee9a193f1ed27",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/1fcee9a193f1ed27",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/5c2eefce2b478eec",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/5c2eefce2b478eec",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/73fcac423e5f5776",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/73fcac423e5f5776",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/50840514894c159b",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/da426b124aad8833",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/da426b124aad8833",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/0aa5039439ceb2f3",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/04e0103236d71452",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/04e0103236d71452",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/e0b44154d7629fdc",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/e0b44154d7629fdc",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/740a0fb403170f80",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/740a0fb403170f80",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/9d67252a3d36b8a3",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/9d67252a3d36b8a3",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/99e5403b82bda7cc",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/99e5403b82bda7cc",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/065775797ff5d797",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/065775797ff5d797",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/4fc4c13dbb2cd2af",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/9446d40e6aba15c3",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/9446d40e6aba15c3",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/0c8fec4cfe6c2692",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/0c8fec4cfe6c2692",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/5086e95e7d54da6a",
+        "parameter": "input"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/f90869e88283619a",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/643555e2bf0e189c",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/8ff37271a7265cfb",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/9712eb418b1be27a",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/b60583567920a527",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/ad24fae684c39280",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/15577625ccbf525d",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/a243bd24c5500d38",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/c64ffada10714299",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/f8094b0b664eb838",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/54d6b1aef4cd56c1",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/54d6b1aef4cd56c1",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/3d17ec0ad1e4ddc0",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/3d17ec0ad1e4ddc0",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/d3b5356d979884ec",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/d3b5356d979884ec",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/8114dd4bf25126e3",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/8114dd4bf25126e3",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/d6a07a952cfa5735",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/d6a07a952cfa5735",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/ee495cecbfc7fe0a",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/ee495cecbfc7fe0a",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/4bc058dfb3133357",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/4bc058dfb3133357",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/10f7eade04c20f02",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/10f7eade04c20f02",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/4755779609064e0c",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/4755779609064e0c",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/6b3f4a203ff79e65",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/6b3f4a203ff79e65",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/bbf6a17b2e909d14",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/bbf6a17b2e909d14",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/c2a28881965f358a",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/c2a28881965f358a",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/28d1fc0d4430b4aa",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/28d1fc0d4430b4aa",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/0560d7cf28a72820",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/0560d7cf28a72820",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/644de8169655125c",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/644de8169655125c",
+        "parameter": "input"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/0e106dd9b7851d5d",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/e0ec8d62d727d476",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/f45d0bb40f46185e",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/b29451c7704f8fb4",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/ac561ea4d17464b4",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/d7822875d8438c42",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/c6007a40be0980ae",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/c6007a40be0980ae",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/97a29d0c2761b8a2",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/97a29d0c2761b8a2",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/98a4fe0087c5065d",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/98a4fe0087c5065d",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/a0b145eaac6b07f7",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/a0b145eaac6b07f7",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/14221f6003769bbc",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/14221f6003769bbc",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/fa687fadf01231f7",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/fa687fadf01231f7",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/2c5a18be2868234d",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/2c5a18be2868234d",
+        "parameter": "input"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/3511497a240a2daf",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/772fd7bde957595c",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/d71bbee659f509c3",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/f44034573ed09a66",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/f44034573ed09a66",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/e9fdcef293b1f019",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/e9fdcef293b1f019",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/f419fa95f1f31f57",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/f419fa95f1f31f57",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/6e802207206bdf1d",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/6e802207206bdf1d",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/28cc54cae98d3790",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/eb942ae0adb7f238",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/eb942ae0adb7f238",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/aa940a9767ca500c",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/aa940a9767ca500c",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/f8ab9e04713b5d0c",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/f8ab9e04713b5d0c",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/aae2720bdab8eaf7",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/aae2720bdab8eaf7",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/0f5652447a57e803",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/0f5652447a57e803",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/d21f3a248c6a75dd",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/d21f3a248c6a75dd",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/f694c82b53c2a4ca",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/f694c82b53c2a4ca",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/fecc5ccd86544a17",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/fecc5ccd86544a17",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/01aab1afc316ff7a",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/01aab1afc316ff7a",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/64cc5da7aaf84ead",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/6b18d357c714a70c",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/6b18d357c714a70c",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/4e17420cddd3eecb",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/230dbde29226f529",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/230dbde29226f529",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/7a4d15a33330e2ec",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/7a4d15a33330e2ec",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/e837860a1f3bf764",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/e837860a1f3bf764",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/b0df0c7c108b31d9",
+        "parameter": "input"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/1f9332b846a2ac02",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/664d0746d64a0681",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/bee333fbc55cd1b6",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/1265abe01edbc84d",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/e5430b199a7c83f1",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/176fe99a0c9ac723",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/3904fd74424c1ae3",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/f631f8e94f7d4c52",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/a6588bf0d3062134",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/a6588bf0d3062134",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/0661bececbaed990",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/0661bececbaed990",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/082256977a327591",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/082256977a327591",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/7d6bc300218f3fe6",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/d6c30e7e348f1ec6",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/d6c30e7e348f1ec6",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/45f037c2939062d1",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/45f037c2939062d1",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/25caed409a288063",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/25caed409a288063",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/417f8ee06ea7371a",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/417f8ee06ea7371a",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/85841513bc1143ce",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/85841513bc1143ce",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/3477eadae4be6d76",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/a75dba298afbc0d7",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/1a6476e6ad9ebf05",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/929f53a11883ac2e",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/929f53a11883ac2e",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/8dd137079606f636",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/8dd137079606f636",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/97fe7d582f2f1151",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/97fe7d582f2f1151",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/844c22dba520ec10",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/57e4d06ecf6e7b00",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/57e4d06ecf6e7b00",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/1ab2ef4c98e83860",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/f28aebe8f7c1d2b4",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/f28aebe8f7c1d2b4",
+        "parameter": "input"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/ede093020c67f0ea",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/babe5e07588b4d07",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/1e5f9279f174ef30",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/f7e9b30f4c03d2fe",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/399ef1d83560e251",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/2e7b307c8eb087d4",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/2b241877d6796239",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/9b362a8c57f3eb54",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/899eb9369b939ee0",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/a7f8a738f38f6dac",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/fdf7ac1b7f27812d",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/fdf7ac1b7f27812d",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/574d82da1ebabdc0",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/574d82da1ebabdc0",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/a24fb1b751db7274",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/a24fb1b751db7274",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/856858e0d0cbe0fe",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/856858e0d0cbe0fe",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/bdf9035297ee9cc4",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/bdf9035297ee9cc4",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/967bba3a52042f16",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/967bba3a52042f16",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/08723e4529435100",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/08723e4529435100",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/259e1c4b1bd55ccd",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/259e1c4b1bd55ccd",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/c000e0d91b302af2",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/c000e0d91b302af2",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/72c716408edd17c4",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/72c716408edd17c4",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/1432925414ba8ae1",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/1432925414ba8ae1",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/3a8508392de6989b",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/3a8508392de6989b",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/78c7f209476fa260",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/777c2b7da3806ded",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/777c2b7da3806ded",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/4edbe395cfd7cd13",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/4edbe395cfd7cd13",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/82b2e42534138f81",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/82b2e42534138f81",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/5056427940355447",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/5056427940355447",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/c22b8219590e24bc",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/c22b8219590e24bc",
+        "parameter": "input"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/24cd6872cd193b8c",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/aa0ec36001ff6da9",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/2a252bb5116a5682",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/a4c4cce594a0484a",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/41da95553c42a22b",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/2cc46ab53f75d657",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/6f66503937a725fa",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/4d98fa5de28967c5",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/38cfb3ae4affc004",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/2c2222dd899f61f6",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/f4dbd521fd4b67e8",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/5c13fa39add2d013",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/93e44878a98c31da",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/93e44878a98c31da",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/1bf44626e0fca4a7",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/1bf44626e0fca4a7",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/9449c4a879834f5a",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/9449c4a879834f5a",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/ae03ae2f89900b28",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/ae03ae2f89900b28",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/a2b862da28cb9df5",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/a2b862da28cb9df5",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/ea7f814974dfb994",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/ea7f814974dfb994",
+        "parameter": "input"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/d5caf1e239fafa9a",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/ceca512a99dd916d",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/35b7f728d6bc0075",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/89ea0a25523b45ab",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/e299755f8d8be494",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/e299755f8d8be494",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/f4053a7ca1d9072d",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/f4053a7ca1d9072d",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/f65b760f0e5dc439",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/f65b760f0e5dc439",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/2462bb0e51656ecd",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/2462bb0e51656ecd",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/b589cceafe5512bb",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/b589cceafe5512bb",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/1a96c79f03778e99",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/1a96c79f03778e99",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/3bddef4b2099f481",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/3bddef4b2099f481",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/670e07a9a7c4ebf9",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/670e07a9a7c4ebf9",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/60e74463fe76b3e8",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/60e74463fe76b3e8",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/75f24f688efee769",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/75f24f688efee769",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/9ac40d96d454c39b",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/9ac40d96d454c39b",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/b0ab7d262c98bf2f",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/b0ab7d262c98bf2f",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/e37978efc1c0e8c5",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/e37978efc1c0e8c5",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/d0f951f467d1a5e6",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/502ccdb4e3326c2f",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/502ccdb4e3326c2f",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/ab1b56a5293e549b",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/c4dec714f91d017a",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/c4dec714f91d017a",
+        "parameter": "input"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/89d4b124debc8a40",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/260ad852a54fa994",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/6b4f4d5657bd47fd",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/26aead8a3a7b4f0f",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/26aead8a3a7b4f0f",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/57c2270e4d2a36fd",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/57c2270e4d2a36fd",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/030416661671f26b",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/b100b02dc869c75f",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/b100b02dc869c75f",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/5df7d1570d46a587",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/78668db438c007b1",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/78668db438c007b1",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/c8a9c1e77b7ec3ae",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/64d748638ff4c258",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/6ecb26596c742bd8",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/6ecb26596c742bd8",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/f75c962282a491d1",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/f44df3942184831a",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/525d0af2a98f835a",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/525d0af2a98f835a",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/8befee87e0f3004c",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/d0f8abd4b30da1e6",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/d0f8abd4b30da1e6",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/98c57771ebaaf172",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/98c57771ebaaf172",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/427f6cb91564083b",
+        "parameter": "input"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/58855e06fec0bd26",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/0eb9cc0a24fe4849",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/1707cd823cef32a4",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/50dba1ea5355b28e",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/ebc33fdb36e8e3f4",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/277bd446127657ad",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/668f273ceedfabcf",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/bbce0ac546a3498e",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/16dccaf61355cf6d",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/a22e48ce1de2fa86",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/54b58490af07d94b",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/ebf43c83e3d44d40",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/7cf2868282b6b3b3",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/c4b90947686a23f1",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/26a9e327483f6e2f",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/cdf491f2a2457038",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/651602a825dd85e9",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "html",
+        "path": "/r/f81ad22d0fef16dd",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/359deba037786e1f",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/359deba037786e1f",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/325b8cfc01e43592",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/325b8cfc01e43592",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/d49cd0fde1b834ac",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/d49cd0fde1b834ac",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/fe6510a969aa2ad6",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/fe6510a969aa2ad6",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/3b2e3554c6a80983",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/3b2e3554c6a80983",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/694028bfbdd80a13",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/694028bfbdd80a13",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/bf77041a67c70910",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/bf77041a67c70910",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/da828ff4a59d4a25",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/da828ff4a59d4a25",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/78b97d2b2154f05f",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/5d5b5d6caeed1596",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/5d5b5d6caeed1596",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/a8e2f60898057708",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/a8e2f60898057708",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/1458320e422cebf8",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/1458320e422cebf8",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/3a3c1b568e96d632",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/3a3c1b568e96d632",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/5cf57dc41be97946",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/5cf57dc41be97946",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/b684b38eff706d64",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/b684b38eff706d64",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/8f841260abcd0719",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/8f841260abcd0719",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/38a3bfe22558e087",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/38a3bfe22558e087",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/bcd82f942476af20",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/bcd82f942476af20",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/e94fd5916b6a186c",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/e94fd5916b6a186c",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/48002424d6542537",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/48002424d6542537",
+        "parameter": "input"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/77b453623bf9f773",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/dfbc973e4fffeec9",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/a679a8f946a60139",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/9a305f6ef57fd053",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/5c54dc44f35c7528",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/b18991883ca2e202",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/bca8d1cd58ea5786",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/cc3007ce5b8baafe",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/3d1e64d69b8f7968",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/7fd297bb92374b12",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/2f24979db55fc63b",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/1d639ad5d2d184f4",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/17c68cfa0d328da6",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/0403d567c049ac4b",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/06003ea69ccfd1b7",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/9bec0de8fe3ada34",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/be824ab99317ef6d",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/be824ab99317ef6d",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/4693189b4cd94601",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/4693189b4cd94601",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/00439f51ee81f910",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/00439f51ee81f910",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/d3e4b0ef61a75ce4",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/d3e4b0ef61a75ce4",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/c0b0e9822e5c5d1d",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/c0b0e9822e5c5d1d",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/be82a61c3559e45f",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/be82a61c3559e45f",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/aeea65b3d58aa558",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/aeea65b3d58aa558",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/67e98fc68cd7a4f1",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/67e98fc68cd7a4f1",
+        "parameter": "input"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/2cf945310fe9ed16",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/cdf13d97f6b551b3",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/ff65b5c1c01bec97",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/5e7eefed0f84ec44",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/72fbfa8b3c8b7237",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/672741167daca579",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/672741167daca579",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/2693e0c615866b2c",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/2693e0c615866b2c",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/c1748d2e93ecc200",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/c1748d2e93ecc200",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/a83a65bffd69ce40",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/a83a65bffd69ce40",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/6d43973d24b62124",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/6d43973d24b62124",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/d45289e512b888e1",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/d45289e512b888e1",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/3b2b0ea90a786212",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/492d5de422b4b430",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/492d5de422b4b430",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/9f5ad34a54cab18a",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/9f5ad34a54cab18a",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/59650ea82bd97e93",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/59650ea82bd97e93",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/f41cb947afa666e0",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/f41cb947afa666e0",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/519aecac8d22bb71",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/519aecac8d22bb71",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/c869b973df768f23",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/c869b973df768f23",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/500cd1c2aa68850f",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/500cd1c2aa68850f",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/106a7d62fba5b4c9",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/c0c3cb100ded9b80",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/c0c3cb100ded9b80",
+        "parameter": "input"
+      },
+      {
+        "kind": "xss",
+        "path": "/r/7525cd850900718b",
+        "parameter": "input"
+      },
+      {
+        "kind": "html",
+        "path": "/r/7525cd850900718b",
+        "parameter": "input"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/6120027588d5f246",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/a57c8e87349b53c7",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/503161713d612019",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/1436ab3afb83c961",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/4780ee4436ceef60",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/8a9b2986dcbfbfe9",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/7f4ffb8831d45bc4",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/2ea28015080720c0",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/0ca10ea13fcf9a3b",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/2b6a4891ec4e9b5c",
+        "parameter": "input",
+        "baseline_value": "bar"
+      },
+      {
+        "kind": "sql",
+        "path": "/r/e0eb5adeffde8d13",
+        "parameter": "input",
+        "baseline_value": "bar"
+      }
+    ]
+  },
+  "production_origins": {},
+  "default_read_only_cors": {
+    "version": "cors-approved-seed-v1",
+    "reviewed_at": "2026-10-11",
+    "owner": "ScopeLens implementation",
+    "profile": "external-dast",
+    "method": "GET",
+    "endpoint": "canonical approved crawl seed only",
+    "max_requests": 4,
+    "headers": [
+      "Origin: https://scopelens-a.invalid",
+      "Origin: https://scopelens-b.invalid"
+    ],
+    "redirects": "never followed",
+    "stance": "Read-only paired CORS configuration observation. Frozen before dispatch. No credentials, new query inputs, form submissions, discovered-host authority or protected-data exposure claim. Missing scope GET/path authority and transport/tool errors remain unassessed. External configuration profile omits this active pack."
+  },
+  "stance": "Reviewed paired active probes on explicitly listed endpoints. CORS is configuration only, redirects are never followed, and generated code cannot confirm findings. Active controls remain experimental pending independent held-out evaluation."
+}

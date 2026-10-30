@@ -1,0 +1,333 @@
+{# ScopeLens HTML report (Build Plan §5.16).
+
+   Functional, not polished: Spec §3 puts UI design out of scope for v1.
+
+   SAFETY: autoescape is on (writer/report.py) and this template uses no `|safe` filter, so
+   every value below is escaped by the environment. Target-derived text — a page title, a
+   header value, an error body — reaches this template as data and renders as text. #}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ScopeLens report — {{ report.scan.target_origin }}</title>
+    <style>
+      :root { color-scheme: light; }
+      body { font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+             margin: 0; padding: 32px 24px 80px; max-width: 1000px; color: #1c1c1e; }
+      h1 { font-size: 22px; margin: 0 0 4px; }
+      h2 { font-size: 17px; margin: 32px 0 8px; border-bottom: 1px solid #d8d8dd; padding-bottom: 4px; }
+      h3 { font-size: 15px; margin: 20px 0 4px; }
+      .muted { color: #6b6b70; }
+      .small { font-size: 13px; }
+      .banner { border: 1px solid #e6c34a; background: #fff8e1; border-radius: 6px; padding: 12px 16px; }
+      .banner.notice { border-color: #9bb8e0; background: #eaf1fb; }
+      table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+      th, td { text-align: left; padding: 7px 9px; border-bottom: 1px solid #e4e4e8; vertical-align: top; }
+      th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: #6b6b70; }
+      td.num, th.num { text-align: right; }
+      .sev { display: inline-block; padding: 1px 7px; border-radius: 999px; font-size: 12px; border: 1px solid #d8d8dd; }
+      .sev-critical { background: #fdecea; border-color: #e0a49b; }
+      .sev-high { background: #fdf0e6; border-color: #e0bd9b; }
+      .sev-medium { background: #fff8e1; border-color: #e6c34a; }
+      .sev-low { background: #f2f6ec; border-color: #b6cc9b; }
+      .sev-informational { background: #f4f4f6; }
+      .finding { border: 1px solid #e4e4e8; border-radius: 6px; padding: 14px 16px; margin: 14px 0; }
+      .finding h3 { margin-top: 0; }
+      code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
+      dl { margin: 8px 0 0; }
+      dt { font-weight: 600; margin-top: 8px; }
+      dd { margin: 2px 0 0 0; }
+      ul { margin: 4px 0; padding-left: 20px; }
+    </style>
+  </head>
+  <body>
+    <h1>ScopeLens assessment report</h1>
+    <p class="muted">
+      Target <code>{{ report.scan.target_origin }}</code> ·
+      profile <strong>{{ report.profile }}</strong> ·
+      scan <code>{{ report.scan.id }}</code>
+    </p>
+    <p class="muted small">
+      Generated {{ report.generated_at }} · scoring {{ report.score_version }} ·
+      {{ report.overall_label }}
+    </p>
+
+    <h2>Result</h2>
+    <p>
+      <strong>{{ report.score.verdict }}</strong>
+      {% if report.score.score is not none %}
+        — <strong>{{ report.score.score }}</strong>/100
+      {% endif %}
+      · coverage {{ report.score.coverage_percent }}%
+    </p>
+    {% if report.score.reason %}
+      <p class="muted">{{ report.score.reason }}</p>
+    {% endif %}
+    {% for cap in report.score.caps_applied %}
+      <p class="muted small">Cap applied: {{ cap }}</p>
+    {% endfor %}
+
+    {% if report.empty_state.applies %}
+      <div class="banner notice">
+        <strong>{{ report.empty_state.sentence }}</strong>
+        <p class="small">
+          Coverage across the completed checks: {{ report.empty_state.coverage_percent }}%.
+        </p>
+        <p class="small">{{ report.empty_state.qualifier }}</p>
+      </div>
+    {% else %}
+      <div class="banner">
+        <strong>{{ report.findings | length }} finding(s)</strong>
+        <p class="small">
+          Severity counts:
+          {% for name, count in report.severity_counts.items() %}
+            {% if count %}{{ name }} {{ count }}{% if not loop.last %} · {% endif %}{% endif %}
+          {% endfor %}
+        </p>
+      </div>
+    {% endif %}
+
+    <h2>Coverage by category</h2>
+    <p class="muted small">
+      A category shows a number only when it meets the {{ report.score.minimum_coverage_percent }}%
+      coverage gate, every mandatory control in it was assessed, and it holds no unresolved
+      serious candidate. Otherwise the reason is shown instead.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th class="num">Weight</th>
+          <th class="num">Score</th>
+          <th class="num">Coverage</th>
+          <th>Why there is no number</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for category in report.score.categories %}
+          <tr>
+            <td>
+              <strong>{{ category.category }}</strong> {{ category.title }}
+            </td>
+            <td class="num">{{ category.weight }}</td>
+            <td class="num">
+              {% if category.score is not none %}{{ category.score }}{% else %}—{% endif %}
+            </td>
+            <td class="num">{{ category.coverage_percent | round(1) }}%</td>
+            <td class="small">
+              {% if category.score is none %}{{ category.reason }}{% endif %}
+              {% for cap in category.caps_applied %}<div>{{ cap }}</div>{% endfor %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    {% if report.capabilities %}
+      <h2>Capability evidence</h2>
+      <table>
+        <thead><tr><th>Measure</th><th>Count</th><th>Names</th><th>Evidence</th></tr></thead>
+        <tbody>
+          {% for key in ['installed_tools', 'executable_checks', 'independently_qualified_families', 'experimental_controls', 'observed_tools'] %}
+            {% set measure = report.capabilities[key] %}
+            <tr><td>{{ key | replace('_', ' ') }}</td>
+              <td>{% if measure.count is none %}Unknown{% else %}{{ measure.count }}{% endif %}</td>
+              <td>{{ measure.names | join(', ') }}</td><td>{{ measure.evidence_state }}: {{ measure.reason }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% for limitation in report.capabilities.limitations %}<p class="small muted">{{ limitation }}</p>{% endfor %}
+    {% endif %}
+    {% if report.reach %}
+      <h2>Recorded endpoint, input and role reach</h2>
+      <p>Discovered: {{ report.reach.discovered.routes }} routes,
+        {{ report.reach.discovered.templates }} request templates,
+        {{ report.reach.discovered.inputs }} inputs, {{ report.reach.discovered.roles }} roles.</p>
+      <p>Planned: {{ report.reach.planned }} · fully assessed: {{ report.reach.fully_assessed }} ·
+        blocked: {{ report.reach.blocked }} · error: {{ report.reach.error }} ·
+        unassessed: {{ report.reach.unassessed }} · not applicable: {{ report.reach.not_applicable }}</p>
+      <table>
+        <thead><tr><th>Role</th><th>Route</th><th>Planned</th><th>Assessed</th><th>Blocked</th><th>Error</th><th>Unassessed</th><th>N/A</th></tr></thead>
+        <tbody>{% for group in report.reach.groups %}
+          <tr><td>{{ group.role_id or 'Unknown' }}</td><td>{{ group.route or 'Unbound control' }}</td>
+            <td>{{ group.planned }}</td><td>{{ group.fully_assessed }}</td><td>{{ group.blocked }}</td>
+            <td>{{ group.error }}</td><td>{{ group.unassessed }}</td><td>{{ group.not_applicable }}</td></tr>
+        {% endfor %}</tbody>
+      </table>
+      <ul>{% for gap in report.reach.gaps %}<li>{{ gap.kind }}: {{ gap.reason_code }}
+        {% if gap.role_id %} · {{ gap.role_id }}{% endif %}{% if gap.route %} · {{ gap.route }}{% endif %}</li>{% endfor %}</ul>
+      <p>Outside this profile: {{ report.reach.out_of_profile_categories | join(', ') }}</p>
+      {% for limitation in report.reach.limitations %}<p class="small muted">{{ limitation }}</p>{% endfor %}
+    {% endif %}
+
+    {% if report.assessment_summary %}
+      <h2>Assessment reach and cleanup</h2>
+      <p class="muted small">{{ report.assessment_summary.scope_note }}</p>
+      <p>
+        Planned instances: {{ report.assessment_summary.required }} ·
+        completed: {{ report.assessment_summary.completed }} ·
+        missing: {{ report.assessment_summary.missing }}
+      </p>
+      <h3>Declared identities</h3>
+      <ul>
+        {% for identity in report.assessment_summary.identities %}
+          <li><code>{{ identity.id }}</code> · role {{ identity.role }}</li>
+        {% else %}
+          <li>No identities declared.</li>
+        {% endfor %}
+      </ul>
+      <table>
+        <thead><tr><th>Check</th><th>Status</th><th>Required</th><th>Completed</th><th>Missing</th><th>Gaps</th></tr></thead>
+        <tbody>
+          {% for check in report.assessment_summary.checks %}
+            <tr>
+              <td><code>{{ check.check_id }}</code></td><td>{{ check.status }}</td>
+              <td>{{ check.required }}</td><td>{{ check.completed }}</td><td>{{ check.missing }}</td>
+              <td>{% for reason in check.incomplete_reasons %}<div>{{ reason }}</div>{% endfor %}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <h3>Recorded cleanup state</h3>
+      <ul>
+        {% for cleanup in report.assessment_summary.cleanup %}
+          <li><code>{{ cleanup.recipe_id }}</code>: {{ cleanup.state }}</li>
+        {% else %}
+          <li>No cleanup records were captured; this does not establish that cleanup ran.</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <h2>Findings</h2>
+    {% if report.empty_state.applies %}
+      <p class="muted">{{ report.empty_state.sentence }}.</p>
+    {% endif %}
+    {% for finding in report.findings %}
+      <div class="finding">
+        <h3>
+          <span class="sev sev-{{ finding.severity }}">{{ finding.severity }}</span>
+          {{ finding.title }}
+        </h3>
+        <p class="muted small">
+          {{ finding.category }} {{ finding.category_title }} ·
+          evidence {{ finding.evidence_status }} · confidence {{ finding.confidence }} ·
+          control <code>{{ finding.canonical_control }}</code> ({{ finding.check_id }})
+        </p>
+        <dl>
+          <dt>What the check found</dt>
+          <dd>{{ finding.what }}</dd>
+          <dt>What someone could do</dt>
+          <dd>{{ finding.why }}</dd>
+          <dt>What we checked</dt>
+          <dd>
+            <ul>
+              {% for location in finding.locations %}
+                <li>
+                  <code>{{ location.route }}</code>
+                  {% if location.parameter %} · field <code>{{ location.parameter }}</code>{% endif %}
+                  {% if location.header %} · header <code>{{ location.header }}</code>{% endif %}
+                  {% if location.detail %}<div class="small muted">{{ location.detail }}</div>{% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </dd>
+          <dt>How to fix it</dt>
+          <dd>{{ finding.fix }}</dd>
+          {% if finding.confidence_reasons %}
+            <dt>Why this confidence</dt>
+            <dd>
+              <ul>
+                {% for reason in finding.confidence_reasons %}<li>{{ reason }}</li>{% endfor %}
+              </ul>
+            </dd>
+          {% endif %}
+          {% if finding.references %}
+            <dt>References</dt>
+            <dd>
+              <ul>
+                {% for reference in finding.references %}
+                  <li><code>{{ reference }}</code></li>
+                {% endfor %}
+              </ul>
+            </dd>
+          {% endif %}
+        </dl>
+      </div>
+    {% endfor %}
+
+    <h2>Hosts</h2>
+    <p class="muted small">
+      Only the primary origin is actively tested in this profile. Discovered hosts are listed
+      as inventory and are not assessed (Spec §7.2).
+    </p>
+    {% if report.get('host_discovery') %}
+      <p class="muted small">
+        Passive host discovery: {{ report.host_discovery.state }}.
+        {% for note in report.host_discovery.coverage_notes %}{{ note }}{% if not loop.last %}; {% endif %}{% endfor %}
+        Certificate names and DNS resolution do not establish a live web service, ownership, or vulnerability.
+      </p>
+    {% endif %}
+    <table>
+      <thead>
+        <tr><th>Host</th><th>Role</th><th>Sources / DNS</th><th>Evidence</th></tr>
+      </thead>
+      <tbody>
+        {% for host in report.host_inventory %}
+          <tr>
+            <td><code>{{ host.host }}</code></td>
+            <td>{{ host.role }}</td>
+            <td class="small muted">{{ host.get('sources', []) | join(', ') }} / {{ host.get('dns_status', 'not_checked') }}</td>
+            <td class="small muted">{{ host.evidence }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h2>Checks</h2>
+    <p class="muted small">
+      Every planned control, including the ones that did not run. A control that was blocked,
+      errored or was not reached is reported as unassessed and never as a pass.
+    </p>
+    <table>
+      <thead>
+        <tr><th>Control</th><th>Category</th><th>Outcome</th><th>Detail</th></tr>
+      </thead>
+      <tbody>
+        {% for outcome in report.check_outcomes %}
+          <tr>
+            <td><code>{{ outcome.check_id }}</code></td>
+            <td>{{ outcome.category }}</td>
+            <td>{{ outcome.status }}</td>
+            <td class="small muted">{{ outcome.summary }}</td>
+          </tr>
+        {% endfor %}
+        {% for omitted in report.get('out_of_profile_controls', []) %}
+          <tr>
+            <td><code>{{ omitted.check_id }}</code></td>
+            <td>{{ omitted.check_id.split('-')[1] }}</td>
+            <td>{{ omitted.reason }}</td>
+            <td class="small muted">Outside this assessment profile.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h2>Limitations</h2>
+    <ul class="small muted">
+      <li>{{ report.score.reason or "All applicable categories met their gates." }}</li>
+      <li>
+        Categories outside this profile:
+        {% for entry in report.score.out_of_profile_categories %}{{ entry.category }} {% endfor %}
+      </li>
+      <li>
+        This is an uncalibrated pilot rubric applied to a bounded external assessment. It is
+        not a penetration test and not a whole-website security rating.
+      </li>
+    </ul>
+  <section><h2>Scanner observations</h2>
+{% for tool in report.scanner_results %}<h3>{{ tool.tool }} {{ tool.version }} — {{ 'Not in profile' if tool.get('not_in_profile_controls') else tool.state }}</h3>
+{% for error in tool.errors %}<p>{{ error }}</p>{% endfor %}
+{% for item in tool.observations %}<p>{{ item.title }} · reported {{ item.reported_severity }} · {{ item.status }}<br>{{ item.evidence }}</p>{% endfor %}{% endfor %}</section>
+</body>
+</html>

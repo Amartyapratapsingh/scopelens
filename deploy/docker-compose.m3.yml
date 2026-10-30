@@ -1,0 +1,7 @@
+services:
+  supervisor:
+    environment:
+      SCOPELENS_BROWSER_ENABLED: "true"
+      SCOPELENS_SCANNER_TOOLS_ENABLED: "true"
+      SCOPELENS_KALI_WORKER_IMAGE: ${SCOPELENS_KALI_WORKER_IMAGE:-scopelens/kali-tool:dev}
+      SCOPELENS_BROWSER_WORKER_IMAGE: ${SCOPELENS_BROWSER_WORKER_IMAGE:-scopelens/browser-worker:dev}

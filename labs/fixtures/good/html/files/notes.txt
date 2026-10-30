@@ -1,0 +1,5 @@
+SYNTHETIC FIXTURE FILE — not a real credential.
+
+The same file exists on the `labs-bad` fixture inside a listable directory. Here the
+directory is not listable, which is the difference the directory-listing control
+observes.

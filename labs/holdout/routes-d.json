@@ -1,0 +1,1784 @@
+{
+  "/r/c66a69005b3a5a72": {
+    "upstream_path": "/benchmark/sqli-00/BenchmarkTest00024",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00024"
+  },
+  "/r/2a070bb58bf80331": {
+    "upstream_path": "/benchmark/sqli-00/BenchmarkTest00025",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00025"
+  },
+  "/r/5f0266edf47e09b3": {
+    "upstream_path": "/benchmark/sqli-00/BenchmarkTest00026",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00026"
+  },
+  "/r/15e66ba7fbf8aa80": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00030",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00030"
+  },
+  "/r/726b454b3ea40394": {
+    "upstream_path": "/benchmark/sqli-00/BenchmarkTest00033",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00033"
+  },
+  "/r/1e706ebdf2dcf88d": {
+    "upstream_path": "/benchmark/sqli-00/BenchmarkTest00034",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00034"
+  },
+  "/r/c6d853ed048613df": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00375",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00375"
+  },
+  "/r/773b8d5fadd17567": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00376",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00376"
+  },
+  "/r/f0f0798501a9ecd8": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00377",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00377"
+  },
+  "/r/37e16e976308f705": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00378",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00378"
+  },
+  "/r/97ded9a985a010e5": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00379",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00379"
+  },
+  "/r/1fcee9a193f1ed27": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00380",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00380"
+  },
+  "/r/5c2eefce2b478eec": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00381",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00381"
+  },
+  "/r/73fcac423e5f5776": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00382",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00382"
+  },
+  "/r/50840514894c159b": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00383",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00383"
+  },
+  "/r/da426b124aad8833": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00384",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00384"
+  },
+  "/r/0aa5039439ceb2f3": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00385",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00385"
+  },
+  "/r/04e0103236d71452": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00386",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00386"
+  },
+  "/r/e0b44154d7629fdc": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00387",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00387"
+  },
+  "/r/740a0fb403170f80": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00388",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00388"
+  },
+  "/r/9d67252a3d36b8a3": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00389",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00389"
+  },
+  "/r/99e5403b82bda7cc": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00390",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00390"
+  },
+  "/r/065775797ff5d797": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00391",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00391"
+  },
+  "/r/4fc4c13dbb2cd2af": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00392",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00392"
+  },
+  "/r/9446d40e6aba15c3": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00393",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00393"
+  },
+  "/r/0c8fec4cfe6c2692": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00394",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00394"
+  },
+  "/r/5086e95e7d54da6a": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00395",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00395"
+  },
+  "/r/f90869e88283619a": {
+    "upstream_path": "/benchmark/sqli-00/BenchmarkTest00428",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00428"
+  },
+  "/r/643555e2bf0e189c": {
+    "upstream_path": "/benchmark/sqli-00/BenchmarkTest00429",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00429"
+  },
+  "/r/8ff37271a7265cfb": {
+    "upstream_path": "/benchmark/sqli-00/BenchmarkTest00430",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00430"
+  },
+  "/r/9712eb418b1be27a": {
+    "upstream_path": "/benchmark/sqli-00/BenchmarkTest00431",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00431"
+  },
+  "/r/b60583567920a527": {
+    "upstream_path": "/benchmark/sqli-00/BenchmarkTest00432",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00432"
+  },
+  "/r/ad24fae684c39280": {
+    "upstream_path": "/benchmark/sqli-00/BenchmarkTest00433",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00433"
+  },
+  "/r/15577625ccbf525d": {
+    "upstream_path": "/benchmark/sqli-00/BenchmarkTest00436",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00436"
+  },
+  "/r/a243bd24c5500d38": {
+    "upstream_path": "/benchmark/sqli-00/BenchmarkTest00437",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00437"
+  },
+  "/r/c64ffada10714299": {
+    "upstream_path": "/benchmark/sqli-00/BenchmarkTest00438",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00438"
+  },
+  "/r/f8094b0b664eb838": {
+    "upstream_path": "/benchmark/sqli-00/BenchmarkTest00439",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00439"
+  },
+  "/r/54d6b1aef4cd56c1": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00467",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00467"
+  },
+  "/r/3d17ec0ad1e4ddc0": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00468",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00468"
+  },
+  "/r/d3b5356d979884ec": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00469",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00469"
+  },
+  "/r/8114dd4bf25126e3": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00470",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00470"
+  },
+  "/r/d6a07a952cfa5735": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00471",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00471"
+  },
+  "/r/ee495cecbfc7fe0a": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00472",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00472"
+  },
+  "/r/4bc058dfb3133357": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00473",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00473"
+  },
+  "/r/10f7eade04c20f02": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00474",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00474"
+  },
+  "/r/4755779609064e0c": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00475",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00475"
+  },
+  "/r/6b3f4a203ff79e65": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00476",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00476"
+  },
+  "/r/bbf6a17b2e909d14": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00477",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00477"
+  },
+  "/r/c2a28881965f358a": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00478",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00478"
+  },
+  "/r/28d1fc0d4430b4aa": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00479",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00479"
+  },
+  "/r/0560d7cf28a72820": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00492",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00492"
+  },
+  "/r/644de8169655125c": {
+    "upstream_path": "/benchmark/xss-00/BenchmarkTest00493",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00493"
+  },
+  "/r/0e106dd9b7851d5d": {
+    "upstream_path": "/benchmark/sqli-01/BenchmarkTest00512",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00512"
+  },
+  "/r/e0ec8d62d727d476": {
+    "upstream_path": "/benchmark/sqli-01/BenchmarkTest00513",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00513"
+  },
+  "/r/f45d0bb40f46185e": {
+    "upstream_path": "/benchmark/sqli-01/BenchmarkTest00514",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00514"
+  },
+  "/r/b29451c7704f8fb4": {
+    "upstream_path": "/benchmark/sqli-01/BenchmarkTest00515",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00515"
+  },
+  "/r/ac561ea4d17464b4": {
+    "upstream_path": "/benchmark/sqli-01/BenchmarkTest00516",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00516"
+  },
+  "/r/d7822875d8438c42": {
+    "upstream_path": "/benchmark/sqli-01/BenchmarkTest00517",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00517"
+  },
+  "/r/c6007a40be0980ae": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00544",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00544"
+  },
+  "/r/97a29d0c2761b8a2": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00545",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00545"
+  },
+  "/r/98a4fe0087c5065d": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00546",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00546"
+  },
+  "/r/a0b145eaac6b07f7": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00548",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00548"
+  },
+  "/r/14221f6003769bbc": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00550",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00550"
+  },
+  "/r/fa687fadf01231f7": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00553",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00553"
+  },
+  "/r/2c5a18be2868234d": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00556",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00556"
+  },
+  "/r/3511497a240a2daf": {
+    "upstream_path": "/benchmark/sqli-01/BenchmarkTest00592",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00592"
+  },
+  "/r/772fd7bde957595c": {
+    "upstream_path": "/benchmark/sqli-01/BenchmarkTest00601",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00601"
+  },
+  "/r/d71bbee659f509c3": {
+    "upstream_path": "/benchmark/sqli-01/BenchmarkTest00602",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00602"
+  },
+  "/r/f44034573ed09a66": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00711",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00711"
+  },
+  "/r/e9fdcef293b1f019": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00712",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00712"
+  },
+  "/r/f419fa95f1f31f57": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00713",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00713"
+  },
+  "/r/6e802207206bdf1d": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00714",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00714"
+  },
+  "/r/28cc54cae98d3790": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00715",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00715"
+  },
+  "/r/eb942ae0adb7f238": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00716",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00716"
+  },
+  "/r/aa940a9767ca500c": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00717",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00717"
+  },
+  "/r/f8ab9e04713b5d0c": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00718",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00718"
+  },
+  "/r/aae2720bdab8eaf7": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00719",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00719"
+  },
+  "/r/0f5652447a57e803": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00720",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00720"
+  },
+  "/r/d21f3a248c6a75dd": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00721",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00721"
+  },
+  "/r/f694c82b53c2a4ca": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00722",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00722"
+  },
+  "/r/fecc5ccd86544a17": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00723",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00723"
+  },
+  "/r/01aab1afc316ff7a": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00724",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00724"
+  },
+  "/r/64cc5da7aaf84ead": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00725",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00725"
+  },
+  "/r/6b18d357c714a70c": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00726",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00726"
+  },
+  "/r/4e17420cddd3eecb": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00727",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00727"
+  },
+  "/r/230dbde29226f529": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00728",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00728"
+  },
+  "/r/7a4d15a33330e2ec": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00729",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00729"
+  },
+  "/r/e837860a1f3bf764": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00730",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00730"
+  },
+  "/r/b0df0c7c108b31d9": {
+    "upstream_path": "/benchmark/xss-01/BenchmarkTest00737",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest00737"
+  },
+  "/r/1f9332b846a2ac02": {
+    "upstream_path": "/benchmark/sqli-01/BenchmarkTest00763",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00763"
+  },
+  "/r/664d0746d64a0681": {
+    "upstream_path": "/benchmark/sqli-01/BenchmarkTest00764",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00764"
+  },
+  "/r/bee333fbc55cd1b6": {
+    "upstream_path": "/benchmark/sqli-01/BenchmarkTest00765",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00765"
+  },
+  "/r/1265abe01edbc84d": {
+    "upstream_path": "/benchmark/sqli-01/BenchmarkTest00766",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00766"
+  },
+  "/r/e5430b199a7c83f1": {
+    "upstream_path": "/benchmark/sqli-01/BenchmarkTest00767",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00767"
+  },
+  "/r/176fe99a0c9ac723": {
+    "upstream_path": "/benchmark/sqli-01/BenchmarkTest00768",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00768"
+  },
+  "/r/3904fd74424c1ae3": {
+    "upstream_path": "/benchmark/sqli-01/BenchmarkTest00771",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00771"
+  },
+  "/r/f631f8e94f7d4c52": {
+    "upstream_path": "/benchmark/sqli-01/BenchmarkTest00772",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest00772"
+  },
+  "/r/a6588bf0d3062134": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01251",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01251"
+  },
+  "/r/0661bececbaed990": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01252",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01252"
+  },
+  "/r/082256977a327591": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01253",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01253"
+  },
+  "/r/7d6bc300218f3fe6": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01254",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01254"
+  },
+  "/r/d6c30e7e348f1ec6": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01255",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01255"
+  },
+  "/r/45f037c2939062d1": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01256",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01256"
+  },
+  "/r/25caed409a288063": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01257",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01257"
+  },
+  "/r/417f8ee06ea7371a": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01258",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01258"
+  },
+  "/r/85841513bc1143ce": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01259",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01259"
+  },
+  "/r/3477eadae4be6d76": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01260",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01260"
+  },
+  "/r/a75dba298afbc0d7": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01261",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01261"
+  },
+  "/r/1a6476e6ad9ebf05": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01262",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01262"
+  },
+  "/r/929f53a11883ac2e": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01263",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01263"
+  },
+  "/r/8dd137079606f636": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01264",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01264"
+  },
+  "/r/97fe7d582f2f1151": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01265",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01265"
+  },
+  "/r/844c22dba520ec10": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01266",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01266"
+  },
+  "/r/57e4d06ecf6e7b00": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01267",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01267"
+  },
+  "/r/1ab2ef4c98e83860": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01268",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01268"
+  },
+  "/r/f28aebe8f7c1d2b4": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01284",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01284"
+  },
+  "/r/ede093020c67f0ea": {
+    "upstream_path": "/benchmark/sqli-02/BenchmarkTest01303",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01303"
+  },
+  "/r/babe5e07588b4d07": {
+    "upstream_path": "/benchmark/sqli-02/BenchmarkTest01304",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01304"
+  },
+  "/r/1e5f9279f174ef30": {
+    "upstream_path": "/benchmark/sqli-02/BenchmarkTest01305",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01305"
+  },
+  "/r/f7e9b30f4c03d2fe": {
+    "upstream_path": "/benchmark/sqli-02/BenchmarkTest01306",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01306"
+  },
+  "/r/399ef1d83560e251": {
+    "upstream_path": "/benchmark/sqli-02/BenchmarkTest01307",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01307"
+  },
+  "/r/2e7b307c8eb087d4": {
+    "upstream_path": "/benchmark/sqli-02/BenchmarkTest01308",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01308"
+  },
+  "/r/2b241877d6796239": {
+    "upstream_path": "/benchmark/sqli-02/BenchmarkTest01309",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01309"
+  },
+  "/r/9b362a8c57f3eb54": {
+    "upstream_path": "/benchmark/sqli-02/BenchmarkTest01310",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01310"
+  },
+  "/r/899eb9369b939ee0": {
+    "upstream_path": "/benchmark/sqli-02/BenchmarkTest01311",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01311"
+  },
+  "/r/a7f8a738f38f6dac": {
+    "upstream_path": "/benchmark/sqli-02/BenchmarkTest01312",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01312"
+  },
+  "/r/fdf7ac1b7f27812d": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01335",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01335"
+  },
+  "/r/574d82da1ebabdc0": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01336",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01336"
+  },
+  "/r/a24fb1b751db7274": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01337",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01337"
+  },
+  "/r/856858e0d0cbe0fe": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01338",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01338"
+  },
+  "/r/bdf9035297ee9cc4": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01339",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01339"
+  },
+  "/r/967bba3a52042f16": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01340",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01340"
+  },
+  "/r/08723e4529435100": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01341",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01341"
+  },
+  "/r/259e1c4b1bd55ccd": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01342",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01342"
+  },
+  "/r/c000e0d91b302af2": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01343",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01343"
+  },
+  "/r/72c716408edd17c4": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01344",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01344"
+  },
+  "/r/1432925414ba8ae1": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01345",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01345"
+  },
+  "/r/3a8508392de6989b": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01346",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01346"
+  },
+  "/r/78c7f209476fa260": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01347",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01347"
+  },
+  "/r/777c2b7da3806ded": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01348",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01348"
+  },
+  "/r/4edbe395cfd7cd13": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01349",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01349"
+  },
+  "/r/82b2e42534138f81": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01350",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01350"
+  },
+  "/r/5056427940355447": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01351",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01351"
+  },
+  "/r/c22b8219590e24bc": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01352",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01352"
+  },
+  "/r/24cd6872cd193b8c": {
+    "upstream_path": "/benchmark/sqli-02/BenchmarkTest01381",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01381"
+  },
+  "/r/aa0ec36001ff6da9": {
+    "upstream_path": "/benchmark/sqli-02/BenchmarkTest01382",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01382"
+  },
+  "/r/2a252bb5116a5682": {
+    "upstream_path": "/benchmark/sqli-02/BenchmarkTest01383",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01383"
+  },
+  "/r/a4c4cce594a0484a": {
+    "upstream_path": "/benchmark/sqli-02/BenchmarkTest01384",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01384"
+  },
+  "/r/41da95553c42a22b": {
+    "upstream_path": "/benchmark/sqli-02/BenchmarkTest01385",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01385"
+  },
+  "/r/2cc46ab53f75d657": {
+    "upstream_path": "/benchmark/sqli-02/BenchmarkTest01386",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01386"
+  },
+  "/r/6f66503937a725fa": {
+    "upstream_path": "/benchmark/sqli-02/BenchmarkTest01387",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01387"
+  },
+  "/r/4d98fa5de28967c5": {
+    "upstream_path": "/benchmark/sqli-02/BenchmarkTest01388",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01388"
+  },
+  "/r/38cfb3ae4affc004": {
+    "upstream_path": "/benchmark/sqli-02/BenchmarkTest01389",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01389"
+  },
+  "/r/2c2222dd899f61f6": {
+    "upstream_path": "/benchmark/sqli-03/BenchmarkTest01390",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01390"
+  },
+  "/r/f4dbd521fd4b67e8": {
+    "upstream_path": "/benchmark/sqli-03/BenchmarkTest01391",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01391"
+  },
+  "/r/5c13fa39add2d013": {
+    "upstream_path": "/benchmark/sqli-03/BenchmarkTest01392",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01392"
+  },
+  "/r/93e44878a98c31da": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01419",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01419"
+  },
+  "/r/1bf44626e0fca4a7": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01420",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01420"
+  },
+  "/r/9449c4a879834f5a": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01421",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01421"
+  },
+  "/r/ae03ae2f89900b28": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01422",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01422"
+  },
+  "/r/a2b862da28cb9df5": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01425",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01425"
+  },
+  "/r/ea7f814974dfb994": {
+    "upstream_path": "/benchmark/xss-02/BenchmarkTest01439",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01439"
+  },
+  "/r/d5caf1e239fafa9a": {
+    "upstream_path": "/benchmark/sqli-03/BenchmarkTest01467",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01467"
+  },
+  "/r/ceca512a99dd916d": {
+    "upstream_path": "/benchmark/sqli-03/BenchmarkTest01468",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01468"
+  },
+  "/r/35b7f728d6bc0075": {
+    "upstream_path": "/benchmark/sqli-03/BenchmarkTest01469",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01469"
+  },
+  "/r/89ea0a25523b45ab": {
+    "upstream_path": "/benchmark/sqli-03/BenchmarkTest01472",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01472"
+  },
+  "/r/e299755f8d8be494": {
+    "upstream_path": "/benchmark/xss-03/BenchmarkTest01583",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01583"
+  },
+  "/r/f4053a7ca1d9072d": {
+    "upstream_path": "/benchmark/xss-03/BenchmarkTest01584",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01584"
+  },
+  "/r/f65b760f0e5dc439": {
+    "upstream_path": "/benchmark/xss-03/BenchmarkTest01585",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01585"
+  },
+  "/r/2462bb0e51656ecd": {
+    "upstream_path": "/benchmark/xss-03/BenchmarkTest01586",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01586"
+  },
+  "/r/b589cceafe5512bb": {
+    "upstream_path": "/benchmark/xss-03/BenchmarkTest01587",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01587"
+  },
+  "/r/1a96c79f03778e99": {
+    "upstream_path": "/benchmark/xss-03/BenchmarkTest01588",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01588"
+  },
+  "/r/3bddef4b2099f481": {
+    "upstream_path": "/benchmark/xss-03/BenchmarkTest01589",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01589"
+  },
+  "/r/670e07a9a7c4ebf9": {
+    "upstream_path": "/benchmark/xss-03/BenchmarkTest01590",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01590"
+  },
+  "/r/60e74463fe76b3e8": {
+    "upstream_path": "/benchmark/xss-03/BenchmarkTest01591",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01591"
+  },
+  "/r/75f24f688efee769": {
+    "upstream_path": "/benchmark/xss-03/BenchmarkTest01592",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01592"
+  },
+  "/r/9ac40d96d454c39b": {
+    "upstream_path": "/benchmark/xss-03/BenchmarkTest01593",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01593"
+  },
+  "/r/b0ab7d262c98bf2f": {
+    "upstream_path": "/benchmark/xss-03/BenchmarkTest01594",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01594"
+  },
+  "/r/e37978efc1c0e8c5": {
+    "upstream_path": "/benchmark/xss-03/BenchmarkTest01595",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01595"
+  },
+  "/r/d0f951f467d1a5e6": {
+    "upstream_path": "/benchmark/xss-03/BenchmarkTest01596",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01596"
+  },
+  "/r/502ccdb4e3326c2f": {
+    "upstream_path": "/benchmark/xss-03/BenchmarkTest01597",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01597"
+  },
+  "/r/ab1b56a5293e549b": {
+    "upstream_path": "/benchmark/xss-03/BenchmarkTest01598",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01598"
+  },
+  "/r/c4dec714f91d017a": {
+    "upstream_path": "/benchmark/xss-03/BenchmarkTest01599",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest01599"
+  },
+  "/r/89d4b124debc8a40": {
+    "upstream_path": "/benchmark/sqli-03/BenchmarkTest01625",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01625"
+  },
+  "/r/260ad852a54fa994": {
+    "upstream_path": "/benchmark/sqli-03/BenchmarkTest01627",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01627"
+  },
+  "/r/6b4f4d5657bd47fd": {
+    "upstream_path": "/benchmark/sqli-03/BenchmarkTest01628",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest01628"
+  },
+  "/r/26aead8a3a7b4f0f": {
+    "upstream_path": "/benchmark/xss-03/BenchmarkTest02122",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02122"
+  },
+  "/r/57c2270e4d2a36fd": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02123",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02123"
+  },
+  "/r/030416661671f26b": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02124",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02124"
+  },
+  "/r/b100b02dc869c75f": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02125",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02125"
+  },
+  "/r/5df7d1570d46a587": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02126",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02126"
+  },
+  "/r/78668db438c007b1": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02127",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02127"
+  },
+  "/r/c8a9c1e77b7ec3ae": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02128",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02128"
+  },
+  "/r/64d748638ff4c258": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02129",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02129"
+  },
+  "/r/6ecb26596c742bd8": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02130",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02130"
+  },
+  "/r/f75c962282a491d1": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02131",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02131"
+  },
+  "/r/f44df3942184831a": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02132",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02132"
+  },
+  "/r/525d0af2a98f835a": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02133",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02133"
+  },
+  "/r/8befee87e0f3004c": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02134",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02134"
+  },
+  "/r/d0f8abd4b30da1e6": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02135",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02135"
+  },
+  "/r/98c57771ebaaf172": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02136",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02136"
+  },
+  "/r/427f6cb91564083b": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02145",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02145"
+  },
+  "/r/58855e06fec0bd26": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02171",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02171"
+  },
+  "/r/0eb9cc0a24fe4849": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02172",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02172"
+  },
+  "/r/1707cd823cef32a4": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02173",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02173"
+  },
+  "/r/50dba1ea5355b28e": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02175",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02175"
+  },
+  "/r/ebc33fdb36e8e3f4": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02176",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02176"
+  },
+  "/r/277bd446127657ad": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02177",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02177"
+  },
+  "/r/668f273ceedfabcf": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02178",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02178"
+  },
+  "/r/bbce0ac546a3498e": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02179",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02179"
+  },
+  "/r/16dccaf61355cf6d": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02180",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02180"
+  },
+  "/r/a22e48ce1de2fa86": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02181",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02181"
+  },
+  "/r/54b58490af07d94b": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02182",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02182"
+  },
+  "/r/ebf43c83e3d44d40": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02183",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02183"
+  },
+  "/r/7cf2868282b6b3b3": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02184",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02184"
+  },
+  "/r/c4b90947686a23f1": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02185",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02185"
+  },
+  "/r/26a9e327483f6e2f": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02186",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02186"
+  },
+  "/r/cdf491f2a2457038": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02187",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02187"
+  },
+  "/r/651602a825dd85e9": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02188",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02188"
+  },
+  "/r/f81ad22d0fef16dd": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02221",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02221"
+  },
+  "/r/359deba037786e1f": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02222",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02222"
+  },
+  "/r/325b8cfc01e43592": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02223",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02223"
+  },
+  "/r/d49cd0fde1b834ac": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02224",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02224"
+  },
+  "/r/fe6510a969aa2ad6": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02225",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02225"
+  },
+  "/r/3b2e3554c6a80983": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02226",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02226"
+  },
+  "/r/694028bfbdd80a13": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02227",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02227"
+  },
+  "/r/bf77041a67c70910": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02228",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02228"
+  },
+  "/r/da828ff4a59d4a25": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02229",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02229"
+  },
+  "/r/78b97d2b2154f05f": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02230",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02230"
+  },
+  "/r/5d5b5d6caeed1596": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02231",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02231"
+  },
+  "/r/a8e2f60898057708": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02232",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02232"
+  },
+  "/r/1458320e422cebf8": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02233",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02233"
+  },
+  "/r/3a3c1b568e96d632": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02234",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02234"
+  },
+  "/r/5cf57dc41be97946": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02235",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02235"
+  },
+  "/r/b684b38eff706d64": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02236",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02236"
+  },
+  "/r/8f841260abcd0719": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02237",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02237"
+  },
+  "/r/38a3bfe22558e087": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02238",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02238"
+  },
+  "/r/bcd82f942476af20": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02239",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02239"
+  },
+  "/r/e94fd5916b6a186c": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02240",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02240"
+  },
+  "/r/48002424d6542537": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02241",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02241"
+  },
+  "/r/77b453623bf9f773": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02267",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02267"
+  },
+  "/r/dfbc973e4fffeec9": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02268",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02268"
+  },
+  "/r/a679a8f946a60139": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02269",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02269"
+  },
+  "/r/9a305f6ef57fd053": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02270",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02270"
+  },
+  "/r/5c54dc44f35c7528": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02271",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02271"
+  },
+  "/r/b18991883ca2e202": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02274",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02274"
+  },
+  "/r/bca8d1cd58ea5786": {
+    "upstream_path": "/benchmark/sqli-04/BenchmarkTest02275",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02275"
+  },
+  "/r/cc3007ce5b8baafe": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02276",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02276"
+  },
+  "/r/3d1e64d69b8f7968": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02277",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02277"
+  },
+  "/r/7fd297bb92374b12": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02278",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02278"
+  },
+  "/r/2f24979db55fc63b": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02279",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02279"
+  },
+  "/r/1d639ad5d2d184f4": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02280",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02280"
+  },
+  "/r/17c68cfa0d328da6": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02281",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02281"
+  },
+  "/r/0403d567c049ac4b": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02283",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02283"
+  },
+  "/r/06003ea69ccfd1b7": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02284",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02284"
+  },
+  "/r/9bec0de8fe3ada34": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02285",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02285"
+  },
+  "/r/be824ab99317ef6d": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02313",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02313"
+  },
+  "/r/4693189b4cd94601": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02318",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02318"
+  },
+  "/r/00439f51ee81f910": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02319",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02319"
+  },
+  "/r/d3e4b0ef61a75ce4": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02320",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02320"
+  },
+  "/r/c0b0e9822e5c5d1d": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02325",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02325"
+  },
+  "/r/be82a61c3559e45f": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02329",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02329"
+  },
+  "/r/aeea65b3d58aa558": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02330",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02330"
+  },
+  "/r/67e98fc68cd7a4f1": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02331",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02331"
+  },
+  "/r/2cf945310fe9ed16": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02353",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02353"
+  },
+  "/r/cdf13d97f6b551b3": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02361",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02361"
+  },
+  "/r/ff65b5c1c01bec97": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02365",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02365"
+  },
+  "/r/5e7eefed0f84ec44": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02366",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02366"
+  },
+  "/r/72fbfa8b3c8b7237": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02367",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02367"
+  },
+  "/r/672741167daca579": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02480",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02480"
+  },
+  "/r/2693e0c615866b2c": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02481",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02481"
+  },
+  "/r/c1748d2e93ecc200": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02482",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02482"
+  },
+  "/r/a83a65bffd69ce40": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02483",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02483"
+  },
+  "/r/6d43973d24b62124": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02484",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02484"
+  },
+  "/r/d45289e512b888e1": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02485",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02485"
+  },
+  "/r/3b2b0ea90a786212": {
+    "upstream_path": "/benchmark/xss-04/BenchmarkTest02486",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02486"
+  },
+  "/r/492d5de422b4b430": {
+    "upstream_path": "/benchmark/xss-05/BenchmarkTest02487",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02487"
+  },
+  "/r/9f5ad34a54cab18a": {
+    "upstream_path": "/benchmark/xss-05/BenchmarkTest02488",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02488"
+  },
+  "/r/59650ea82bd97e93": {
+    "upstream_path": "/benchmark/xss-05/BenchmarkTest02489",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02489"
+  },
+  "/r/f41cb947afa666e0": {
+    "upstream_path": "/benchmark/xss-05/BenchmarkTest02490",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02490"
+  },
+  "/r/519aecac8d22bb71": {
+    "upstream_path": "/benchmark/xss-05/BenchmarkTest02491",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02491"
+  },
+  "/r/c869b973df768f23": {
+    "upstream_path": "/benchmark/xss-05/BenchmarkTest02492",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02492"
+  },
+  "/r/500cd1c2aa68850f": {
+    "upstream_path": "/benchmark/xss-05/BenchmarkTest02493",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02493"
+  },
+  "/r/106a7d62fba5b4c9": {
+    "upstream_path": "/benchmark/xss-05/BenchmarkTest02494",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02494"
+  },
+  "/r/c0c3cb100ded9b80": {
+    "upstream_path": "/benchmark/xss-05/BenchmarkTest02495",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02495"
+  },
+  "/r/7525cd850900718b": {
+    "upstream_path": "/benchmark/xss-05/BenchmarkTest02509",
+    "parameter": "input",
+    "baseline": "hello",
+    "upstream_parameter": "BenchmarkTest02509"
+  },
+  "/r/6120027588d5f246": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02531",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02531"
+  },
+  "/r/a57c8e87349b53c7": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02532",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02532"
+  },
+  "/r/503161713d612019": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02533",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02533"
+  },
+  "/r/1436ab3afb83c961": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02534",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02534"
+  },
+  "/r/4780ee4436ceef60": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02535",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02535"
+  },
+  "/r/8a9b2986dcbfbfe9": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02538",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02538"
+  },
+  "/r/7f4ffb8831d45bc4": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02539",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02539"
+  },
+  "/r/2ea28015080720c0": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02541",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02541"
+  },
+  "/r/0ca10ea13fcf9a3b": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02542",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02542"
+  },
+  "/r/2b6a4891ec4e9b5c": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02543",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02543"
+  },
+  "/r/e0eb5adeffde8d13": {
+    "upstream_path": "/benchmark/sqli-05/BenchmarkTest02544",
+    "parameter": "input",
+    "baseline": "bar",
+    "upstream_parameter": "BenchmarkTest02544"
+  }
+}

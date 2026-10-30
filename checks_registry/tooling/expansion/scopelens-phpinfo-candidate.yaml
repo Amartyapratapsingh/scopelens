@@ -1,0 +1,26 @@
+id: scopelens-phpinfo-candidate
+info:
+  name: phpinfo candidate
+  author: scopelens
+  severity: info
+  description: Candidate only. Requires independent negative control and trusted exposure-pack
+    verifier.
+http:
+- method: GET
+  path:
+  - '{{RootURL}}/phpinfo.php'
+  redirects: false
+  max-redirects: 0
+  matchers-condition: and
+  matchers:
+  - type: status
+    status:
+    - 200
+  - type: regex
+    part: body
+    regex:
+    - <title>phpinfo\(\)</title>
+    - PHP Version
+    - DOCUMENT_ROOT
+    - SERVER_SOFTWARE
+    condition: and

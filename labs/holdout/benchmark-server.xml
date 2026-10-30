@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Server port="-1">
+  <Listener className="org.apache.catalina.startup.VersionLoggerListener" />
+  <GlobalNamingResources>
+    <Resource name="jdbc/ApplicationContext_BenchmarkDB" auth="Container"
+      type="javax.sql.DataSource" username="sa" password=""
+      driverClassName="org.hsqldb.jdbc.JDBCDriver"
+      url="jdbc:hsqldb:hsql://localhost/benchmarkDataBase;sql.enforce_size=false;shutdown=false;"
+      maxTotal="12" maxIdle="2" maxWaitMillis="5000" />
+  </GlobalNamingResources>
+  <Service name="Catalina">
+    <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" />
+    <Engine name="Catalina" defaultHost="localhost">
+      <Host name="localhost" appBase="webapps" unpackWARs="true" autoDeploy="true" />
+    </Engine>
+  </Service>
+</Server>

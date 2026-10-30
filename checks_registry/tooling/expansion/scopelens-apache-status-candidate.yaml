@@ -1,0 +1,25 @@
+id: scopelens-apache-status-candidate
+info:
+  name: apache status candidate
+  author: scopelens
+  severity: info
+  description: Candidate only. Requires independent negative control and trusted exposure-pack
+    verifier.
+http:
+- method: GET
+  path:
+  - '{{RootURL}}/server-status?auto'
+  redirects: false
+  max-redirects: 0
+  matchers-condition: and
+  matchers:
+  - type: status
+    status:
+    - 200
+  - type: regex
+    part: body
+    regex:
+    - (?m)^Total Accesses:\s*\d+
+    - (?m)^BusyWorkers:\s*\d+
+    - (?m)^IdleWorkers:\s*\d+
+    condition: and

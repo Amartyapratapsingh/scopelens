@@ -1,0 +1,35 @@
+# Apply after dev + m4. Same operator-only topology; immutable images and no source binds.
+# Docker Compose 2.24.4+ supports !override. All IDs come from freeze_release.py.
+services:
+  api:
+    image: ${SCOPELENS_RELEASE_API_IMAGE:?freeze release first}
+    volumes: !override
+      - evidence:/app/runs/evidence
+      - identity_credentials:/var/lib/scopelens/identity-secrets
+  policy:
+    image: ${SCOPELENS_RELEASE_API_IMAGE:?freeze release first}
+    volumes: !override
+      - identity_credentials:/var/lib/scopelens/identity-secrets:ro
+  dispatcher:
+    image: ${SCOPELENS_RELEASE_API_IMAGE:?freeze release first}
+    volumes: !override []
+  supervisor:
+    image: ${SCOPELENS_RELEASE_API_IMAGE:?freeze release first}
+    volumes: !override
+      - evidence:/app/runs/evidence
+      - /var/run/docker.sock:/var/run/docker.sock
+      - proxy_ca:/var/lib/mitmproxy:ro
+  model-gateway:
+    image: ${SCOPELENS_RELEASE_API_IMAGE:?freeze release first}
+    volumes: !override []
+  tls-lane:
+    image: ${SCOPELENS_KALI_WORKER_IMAGE:?freeze release first}
+    volumes: !override
+      - ../labs/fixtures/certs/ca.crt:/lab-ca/ca.crt:ro
+  proxy:
+    image: ${SCOPELENS_RELEASE_PROXY_IMAGE:?freeze release first}
+    volumes: !override
+      - proxy_ca:/var/lib/mitmproxy
+  callback-receiver:
+    image: ${SCOPELENS_RELEASE_API_IMAGE:?freeze release first}
+    volumes: !override []

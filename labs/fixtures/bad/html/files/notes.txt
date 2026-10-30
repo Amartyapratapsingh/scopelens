@@ -1,0 +1,4 @@
+SYNTHETIC FIXTURE FILE — not a real credential.
+
+This file sits inside a directory that nginx is configured to list. Its presence is
+what makes the directory-listing control detectable on the `labs-bad` fixture.

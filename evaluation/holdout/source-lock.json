@@ -1,0 +1,31 @@
+{
+  "version": "holdout-source-lock-v1",
+  "vulnerableapp": {
+    "url": "https://github.com/SasanLabs/VulnerableApp.git",
+    "revision": "c49b26270e0b7e5543288b61fc3726ebaca3d9a0",
+    "license": "Apache-2.0"
+  },
+  "wavsep": {
+    "url": "https://github.com/zaproxy/wavsep.git",
+    "revision": "f9cfbe8c6edfc7f8c631b800cd57a18992e2c24e",
+    "license": "GPL-3.0-or-later"
+  },
+  "benchmarkjava": {
+    "url": "https://github.com/OWASP-Benchmark/BenchmarkJava.git",
+    "revision": "8b67a88d73b2594570fc21150705283de884620b",
+    "release": "Benchmark 1.2, maintained source",
+    "license": "GPL-2.0-only"
+  },
+  "private": {
+    "url": "local:labs/holdout/private.py",
+    "revision": "64ea3045a0ba31de075d2b0c2ead856078283029",
+    "license": "Private repository fixture; redistribution license not declared"
+  },
+  "images": {
+    "builder": "gradle:8.5-jdk17@sha256:7704366590930c03de7e514008ba3d7b7031b92591bd5a74fae79c16f3a17726",
+    "java": "eclipse-temurin:17-jre@sha256:207ecae0b2b104dfc6dfa763d1e9cd2041cb344800a180e24cb1a28ed533ff90",
+    "tomcat": "tomcat:9.0.117-jdk17-temurin-noble@sha256:fb9aab3c690fb5553afcd71f5a32683051aab18fbb9b90e02cb650182d0970ed",
+    "database": "mariadb:11.4@sha256:1292844148b311e4ed4300022a996d39083f415a963e970cf47cad1b3b18e3a6",
+    "python": "python:3.12-slim@sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9"
+  }
+}

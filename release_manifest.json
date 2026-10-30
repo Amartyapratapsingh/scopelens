@@ -1,0 +1,848 @@
+{
+  "manifest_version": "release-manifest-v1",
+  "generated_at": "2026-09-28T17:32:16.357064+00:00",
+  "milestone": "M4/M5 backend candidate",
+  "application": {
+    "commit": null,
+    "dirty": null,
+    "status": "unavailable",
+    "name": "scopelens",
+    "python_requires": "==3.12.*"
+  },
+  "database": {
+    "engine": "postgresql",
+    "schema_revision": "0009"
+  },
+  "profiles": {
+    "default": "external-configuration",
+    "score_version": "score-v1.0",
+    "check_registry_schema_version": "check-registry-v1"
+  },
+  "checks_registry": {
+    "status": "ok",
+    "schema_version": "check-registry-v1",
+    "control_count": 46,
+    "supported_control_ids": [
+      "SL-C01-HSTS-01",
+      "SL-C01-MIXED-01",
+      "SL-C01-REDIR-01",
+      "SL-C01-TLS-01",
+      "SL-C02-COOKIE-01",
+      "SL-C02-COOKIE-02",
+      "SL-C04-CSP-01",
+      "SL-C04-FRAME-01",
+      "SL-C04-REFERRER-01",
+      "SL-C04-XCTO-01",
+      "SL-C05-ERRORS-01",
+      "SL-C05-FILES-01",
+      "SL-C05-LISTING-01",
+      "SL-C05-SECRETS-01",
+      "SL-C06-COMPONENT-01",
+      "SL-C07-INVENTORY-01",
+      "SL-C07-METHODS-01"
+    ],
+    "experimental_control_ids": [
+      "SL-C03-HTML-01",
+      "SL-C03-SQL-01",
+      "SL-C03-XSS-01",
+      "SL-C04-CORS-01",
+      "SL-C04-REDIRECT-01",
+      "SL-C03-DOMXSS-01",
+      "SL-C04-HDRINJECT-01",
+      "SL-C03-XXE-02",
+      "SL-C05-CONFIG-02",
+      "SL-C05-DEBUG-02",
+      "SL-C05-MANAGEMENT-01",
+      "SL-C05-PRIVATE-02",
+      "SL-C05-SOURCEMAP-01",
+      "SL-C07-SSRF-02",
+      "SL-C04-CORSDATA-01",
+      "SL-C08-SESSION-01",
+      "SL-C09-FUNCTION-01",
+      "SL-C09-OBJECT-01",
+      "SL-C09-PROPERTY-01",
+      "SL-C09-TENANT-01",
+      "SL-C03-STOREDXSS-01",
+      "SL-C03-TEMPLATE-01",
+      "SL-C04-CSRF-01",
+      "SL-C05-CACHE-01",
+      "SL-C09-GRAPHQL-01",
+      "SL-C09-MASS-01",
+      "SL-C10-TRAVERSAL-01",
+      "SL-C10-UPLOAD-01",
+      "SL-C11-WORKFLOW-01"
+    ],
+    "controls": [
+      {
+        "id": "SL-C01-HSTS-01",
+        "category": "C01",
+        "review_state": "enabled",
+        "phase": "M2",
+        "stance": "OBSERVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C01-MIXED-01",
+        "category": "C01",
+        "review_state": "enabled",
+        "phase": "M2",
+        "stance": "OBSERVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C01-REDIR-01",
+        "category": "C01",
+        "review_state": "enabled",
+        "phase": "M2",
+        "stance": "OBSERVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C01-TLS-01",
+        "category": "C01",
+        "review_state": "enabled",
+        "phase": "M2",
+        "stance": "OBSERVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C02-COOKIE-01",
+        "category": "C02",
+        "review_state": "enabled",
+        "phase": "M2",
+        "stance": "OBSERVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C02-COOKIE-02",
+        "category": "C02",
+        "review_state": "enabled",
+        "phase": "M2",
+        "stance": "OBSERVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C03-HTML-01",
+        "category": "C03",
+        "review_state": "experimental",
+        "phase": "M4",
+        "stance": "ACTIVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C03-SQL-01",
+        "category": "C03",
+        "review_state": "experimental",
+        "phase": "M4",
+        "stance": "ACTIVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C03-XSS-01",
+        "category": "C03",
+        "review_state": "experimental",
+        "phase": "M4",
+        "stance": "ACTIVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C04-CORS-01",
+        "category": "C04",
+        "review_state": "experimental",
+        "phase": "M4",
+        "stance": "ACTIVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C04-CSP-01",
+        "category": "C04",
+        "review_state": "enabled",
+        "phase": "M2",
+        "stance": "OBSERVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C04-FRAME-01",
+        "category": "C04",
+        "review_state": "enabled",
+        "phase": "M2",
+        "stance": "OBSERVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C04-REDIRECT-01",
+        "category": "C04",
+        "review_state": "experimental",
+        "phase": "M4",
+        "stance": "ACTIVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C04-REFERRER-01",
+        "category": "C04",
+        "review_state": "enabled",
+        "phase": "M2",
+        "stance": "OBSERVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C04-XCTO-01",
+        "category": "C04",
+        "review_state": "enabled",
+        "phase": "M2",
+        "stance": "OBSERVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C05-ERRORS-01",
+        "category": "C05",
+        "review_state": "enabled",
+        "phase": "M2",
+        "stance": "OBSERVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C05-FILES-01",
+        "category": "C05",
+        "review_state": "enabled",
+        "phase": "M2",
+        "stance": "ACTIVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C05-LISTING-01",
+        "category": "C05",
+        "review_state": "enabled",
+        "phase": "M2",
+        "stance": "OBSERVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C05-SECRETS-01",
+        "category": "C05",
+        "review_state": "enabled",
+        "phase": "M2",
+        "stance": "FLAG",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C06-COMPONENT-01",
+        "category": "C06",
+        "review_state": "enabled",
+        "phase": "M2",
+        "stance": "OBSERVE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C07-INVENTORY-01",
+        "category": "C07",
+        "review_state": "enabled",
+        "phase": "M2",
+        "stance": "OBSERVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C07-METHODS-01",
+        "category": "C07",
+        "review_state": "enabled",
+        "phase": "M2",
+        "stance": "OBSERVE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C03-DOMXSS-01",
+        "category": "C03",
+        "review_state": "experimental",
+        "phase": "B2",
+        "stance": "ACTIVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C04-HDRINJECT-01",
+        "category": "C04",
+        "review_state": "experimental",
+        "phase": "B2",
+        "stance": "ACTIVE",
+        "mandatory": true,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C03-XXE-02",
+        "category": "C03",
+        "review_state": "experimental",
+        "phase": "B5",
+        "stance": "ACTIVE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": false
+      },
+      {
+        "id": "SL-C05-CONFIG-02",
+        "category": "C05",
+        "review_state": "experimental",
+        "phase": "B3",
+        "stance": "OBSERVE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": false
+      },
+      {
+        "id": "SL-C05-DEBUG-02",
+        "category": "C05",
+        "review_state": "experimental",
+        "phase": "B3",
+        "stance": "OBSERVE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": false
+      },
+      {
+        "id": "SL-C05-MANAGEMENT-01",
+        "category": "C05",
+        "review_state": "experimental",
+        "phase": "B3",
+        "stance": "OBSERVE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": false
+      },
+      {
+        "id": "SL-C05-PRIVATE-02",
+        "category": "C05",
+        "review_state": "experimental",
+        "phase": "B3",
+        "stance": "OBSERVE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": false
+      },
+      {
+        "id": "SL-C05-SOURCEMAP-01",
+        "category": "C05",
+        "review_state": "experimental",
+        "phase": "B3",
+        "stance": "FLAG",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": false
+      },
+      {
+        "id": "SL-C07-SSRF-02",
+        "category": "C07",
+        "review_state": "experimental",
+        "phase": "B5",
+        "stance": "ACTIVE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": false
+      },
+      {
+        "id": "SL-C04-CORSDATA-01",
+        "category": "C04",
+        "review_state": "experimental",
+        "phase": "B4",
+        "stance": "FIXTURE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C08-SESSION-01",
+        "category": "C08",
+        "review_state": "experimental",
+        "phase": "B4",
+        "stance": "FIXTURE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C09-FUNCTION-01",
+        "category": "C09",
+        "review_state": "experimental",
+        "phase": "B4",
+        "stance": "FIXTURE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C09-OBJECT-01",
+        "category": "C09",
+        "review_state": "experimental",
+        "phase": "B4",
+        "stance": "FIXTURE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C09-PROPERTY-01",
+        "category": "C09",
+        "review_state": "experimental",
+        "phase": "B4",
+        "stance": "FIXTURE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C09-TENANT-01",
+        "category": "C09",
+        "review_state": "experimental",
+        "phase": "B4",
+        "stance": "FIXTURE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C03-STOREDXSS-01",
+        "category": "C03",
+        "review_state": "experimental",
+        "phase": "B5",
+        "stance": "FIXTURE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": false
+      },
+      {
+        "id": "SL-C03-TEMPLATE-01",
+        "category": "C03",
+        "review_state": "experimental",
+        "phase": "B5",
+        "stance": "FIXTURE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C04-CSRF-01",
+        "category": "C04",
+        "review_state": "experimental",
+        "phase": "B5",
+        "stance": "FIXTURE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": false
+      },
+      {
+        "id": "SL-C05-CACHE-01",
+        "category": "C05",
+        "review_state": "experimental",
+        "phase": "B5",
+        "stance": "FIXTURE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C09-GRAPHQL-01",
+        "category": "C09",
+        "review_state": "experimental",
+        "phase": "B5",
+        "stance": "FIXTURE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C09-MASS-01",
+        "category": "C09",
+        "review_state": "experimental",
+        "phase": "B5",
+        "stance": "FIXTURE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C10-TRAVERSAL-01",
+        "category": "C10",
+        "review_state": "experimental",
+        "phase": "B5",
+        "stance": "FIXTURE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      },
+      {
+        "id": "SL-C10-UPLOAD-01",
+        "category": "C10",
+        "review_state": "experimental",
+        "phase": "B5",
+        "stance": "FIXTURE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": false
+      },
+      {
+        "id": "SL-C11-WORKFLOW-01",
+        "category": "C11",
+        "review_state": "experimental",
+        "phase": "B5",
+        "stance": "FIXTURE",
+        "mandatory": false,
+        "coverage_weight": 1,
+        "fixtures_verified": true
+      }
+    ]
+  },
+  "execution": {
+    "task_types": [
+      "crawl",
+      "cleanup_recovery_verify"
+    ],
+    "m3_stages": [
+      "zap_passive_har",
+      "reviewed_nuclei",
+      "conditional_config",
+      "browser",
+      "testssl_protocols"
+    ],
+    "note": "Scoped HTTP crawl and separate TLS measurements, deterministic controls, evidence verification, coverage, scoring, retests and HTML/JSON reports. Component coverage requires an operator-configured advisory snapshot."
+  },
+  "tools": {
+    "celery": {
+      "status": "in_use",
+      "version": "5.6.3",
+      "milestone": "M2"
+    },
+    "redis": {
+      "status": "in_use",
+      "version": "6.4.0",
+      "milestone": "M2"
+    },
+    "mitmproxy": {
+      "status": "in_use_separate_image",
+      "version": "12.1.2",
+      "milestone": "M2",
+      "note": "pinned in deploy/proxy.Dockerfile; deliberately not a backend dependency"
+    },
+    "zap": {
+      "status": "in_use_isolated_runtime",
+      "version": "2.17.0",
+      "milestone": "M3"
+    },
+    "nuclei": {
+      "status": "in_use_isolated_runtime",
+      "version": "3.11.1",
+      "milestone": "M3"
+    },
+    "testssl.sh": {
+      "status": "in_use_isolated_runtime",
+      "version": "3.2.4",
+      "milestone": "M3"
+    },
+    "playwright": {
+      "status": "in_use_isolated_runtime",
+      "version": "1.63.0",
+      "milestone": "M3"
+    },
+    "chromium": {
+      "status": "in_use_isolated_runtime",
+      "version": "153.0.8010.12",
+      "milestone": "M3"
+    },
+    "langgraph": {
+      "status": "in_use",
+      "version": "1.2.12",
+      "milestone": "M4"
+    }
+  },
+  "images": {
+    "postgres": {
+      "reference": "postgres:16-alpine@sha256:721873c34ceb9f8d8fc265984940dc982404c105f19ad51be9fdc5970a6080ea",
+      "repository": "postgres:16-alpine",
+      "digest": "sha256:721873c34ceb9f8d8fc265984940dc982404c105f19ad51be9fdc5970a6080ea",
+      "source_file": "deploy/docker-compose.dev.yml"
+    },
+    "redis": {
+      "reference": "redis:7.4-alpine@sha256:858f009f9709ce576febc734aa78b8f6d624b82571f9ddb6bda4377c833b3499",
+      "repository": "redis:7.4-alpine",
+      "digest": "sha256:858f009f9709ce576febc734aa78b8f6d624b82571f9ddb6bda4377c833b3499",
+      "source_file": "deploy/docker-compose.dev.yml"
+    },
+    "labs-discovery-a": {
+      "reference": "python:3.12-slim@sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9",
+      "repository": "python:3.12-slim",
+      "digest": "sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9",
+      "source_file": "labs/docker-compose.yml"
+    },
+    "labs-discovery-b": {
+      "reference": "python:3.12-slim@sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9",
+      "repository": "python:3.12-slim",
+      "digest": "sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9",
+      "source_file": "labs/docker-compose.yml"
+    },
+    "labs-callbacks": {
+      "reference": "python:3.12-slim@sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9",
+      "repository": "python:3.12-slim",
+      "digest": "sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9",
+      "source_file": "labs/docker-compose.yml"
+    },
+    "labs-browser-workflows": {
+      "reference": "python:3.12-slim@sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9",
+      "repository": "python:3.12-slim",
+      "digest": "sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9",
+      "source_file": "labs/docker-compose.yml"
+    },
+    "labs-validation": {
+      "reference": "python:3.12-slim@sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9",
+      "repository": "python:3.12-slim",
+      "digest": "sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9",
+      "source_file": "labs/docker-compose.yml"
+    },
+    "labs-active": {
+      "reference": "python:3.12-slim@sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9",
+      "repository": "python:3.12-slim",
+      "digest": "sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9",
+      "source_file": "labs/docker-compose.yml"
+    },
+    "labs-edge": {
+      "reference": "nginx:1.27-alpine@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10",
+      "repository": "nginx:1.27-alpine",
+      "digest": "sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10",
+      "source_file": "labs/docker-compose.yml"
+    },
+    "labs-bad": {
+      "reference": "nginx:1.27-alpine@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10",
+      "repository": "nginx:1.27-alpine",
+      "digest": "sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10",
+      "source_file": "labs/docker-compose.yml"
+    },
+    "labs-good": {
+      "reference": "nginx:1.27-alpine@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10",
+      "repository": "nginx:1.27-alpine",
+      "digest": "sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10",
+      "source_file": "labs/docker-compose.yml"
+    },
+    "juice-shop": {
+      "reference": "bkimminich/juice-shop:v19.2.1@sha256:b3450d951d98b607805b21a4b9b4da7451b334c804ad93a79fcee490b3a7c5ad",
+      "repository": "bkimminich/juice-shop:v19.2.1",
+      "digest": "sha256:b3450d951d98b607805b21a4b9b4da7451b334c804ad93a79fcee490b3a7c5ad",
+      "source_file": "labs/docker-compose.yml"
+    }
+  },
+  "m3_runtime": {
+    "images": {
+      "scopelens/kali-tool:dev": {
+        "image_id": "sha256:f59315ca4e269118a0ea7466322ca8ac17ecb1a3874b23ba4e2542a049a223d3",
+        "architecture": "arm64",
+        "repo_digests": [
+          "scopelens/kali-tool@sha256:f59315ca4e269118a0ea7466322ca8ac17ecb1a3874b23ba4e2542a049a223d3"
+        ]
+      },
+      "scopelens/browser-worker:dev": {
+        "image_id": "sha256:3070d23cb872319f2e1365d531240ce10d6c130aecf07379360327530efa8243",
+        "architecture": "arm64",
+        "repo_digests": [
+          "scopelens/browser-worker@sha256:3070d23cb872319f2e1365d531240ce10d6c130aecf07379360327530efa8243"
+        ]
+      },
+      "scopelens/proxy:dev": {
+        "image_id": "sha256:96b61489a00ed3eaba0e043bd9d3b46dcbd00d546e97976b3c678a371484994f",
+        "architecture": "arm64",
+        "repo_digests": [
+          "scopelens/proxy@sha256:96b61489a00ed3eaba0e043bd9d3b46dcbd00d546e97976b3c678a371484994f"
+        ]
+      },
+      "scopelens-dev-tls-lane": {
+        "image_id": "sha256:627229a84187694d3d505cf167e82268ab62a2f6f176866538e54f84bf009ba6",
+        "architecture": "arm64",
+        "repo_digests": [
+          "scopelens-dev-tls-lane@sha256:627229a84187694d3d505cf167e82268ab62a2f6f176866538e54f84bf009ba6"
+        ]
+      },
+      "scopelens-dev-model-gateway": {
+        "image_id": "sha256:cca4d0898625a2b63d8e88f0a4035906c239ebf6b689aa6ccda0cf4211fbbf44",
+        "architecture": "arm64",
+        "repo_digests": [
+          "scopelens-dev-model-gateway@sha256:cca4d0898625a2b63d8e88f0a4035906c239ebf6b689aa6ccda0cf4211fbbf44"
+        ]
+      }
+    },
+    "files": {
+      "uv.lock": "30e83820e4f4f254186f14562dca2ef16b559627c0fdb4003768ee71bd08b225",
+      "checks_registry/tooling/nuclei-csp.yaml": "458c2ab7bc5a217a013582122a87b2e0d69fd903ee286be018a07abe5aa0d54c",
+      "checks_registry/tooling/conditional-pack.json": "2f7ffb7da55576053407158d7df3ccb1abf00e7ea1b8f812574202c8cc47548c",
+      "deploy/browser/seccomp.json": "67e00a27dd9c5b7d912ec78eff07f4cebf1d78bbe46c3d08208dd466e22fe1ed"
+    },
+    "versions": {
+      "zap": "2.17.0",
+      "nuclei": "3.11.1",
+      "testssl.sh": "3.2.4",
+      "playwright": "1.63.0",
+      "chromium": "153.0.8010.12"
+    },
+    "verification": "make verify-m3; runs/m3-verification/",
+    "provider_qualification": "contract tests only; no live provider selected"
+  },
+  "model_compatibility": [
+    {
+      "role": "planner",
+      "model": "zai-org/GLM-5.3",
+      "provider": "https://api.commandcode.ai/provider/v1",
+      "status": "synthetic_smoke_passed",
+      "recorded_at": "2026-09-26T10:20:47.759729+00:00",
+      "evidence_file": "checks_registry/model_qualification.json",
+      "evidence_sha256": "8a24453c58585c7a5fc894023e21eacc16d10d2c2d3f1960b03e278ab1728128",
+      "limitations": [
+        "Development smoke fixtures, not an independent model-quality benchmark.",
+        "Browser check measures a synthetic disclosure-button coordinate, not arbitrary-site action safety.",
+        "Script output is schema-checked, not executed by this qualification script.",
+        "Live smoke complements malformed-response, refusal, budget and fallback contract tests."
+      ]
+    },
+    {
+      "role": "verification",
+      "model": "zai-org/GLM-5.3",
+      "provider": "https://api.commandcode.ai/provider/v1",
+      "status": "synthetic_smoke_passed",
+      "recorded_at": "2026-09-26T10:20:47.759729+00:00",
+      "evidence_file": "checks_registry/model_qualification.json",
+      "evidence_sha256": "8a24453c58585c7a5fc894023e21eacc16d10d2c2d3f1960b03e278ab1728128",
+      "limitations": [
+        "Development smoke fixtures, not an independent model-quality benchmark.",
+        "Browser check measures a synthetic disclosure-button coordinate, not arbitrary-site action safety.",
+        "Script output is schema-checked, not executed by this qualification script.",
+        "Live smoke complements malformed-response, refusal, budget and fallback contract tests."
+      ]
+    },
+    {
+      "role": "report_writer",
+      "model": "zai-org/GLM-5.3",
+      "provider": "https://api.commandcode.ai/provider/v1",
+      "status": "synthetic_smoke_passed",
+      "recorded_at": "2026-09-26T10:20:47.759729+00:00",
+      "evidence_file": "checks_registry/model_qualification.json",
+      "evidence_sha256": "8a24453c58585c7a5fc894023e21eacc16d10d2c2d3f1960b03e278ab1728128",
+      "limitations": [
+        "Development smoke fixtures, not an independent model-quality benchmark.",
+        "Browser check measures a synthetic disclosure-button coordinate, not arbitrary-site action safety.",
+        "Script output is schema-checked, not executed by this qualification script.",
+        "Live smoke complements malformed-response, refusal, budget and fallback contract tests."
+      ]
+    },
+    {
+      "role": "script",
+      "model": "zai-org/GLM-5.3",
+      "provider": "https://api.commandcode.ai/provider/v1",
+      "status": "synthetic_smoke_passed",
+      "recorded_at": "2026-09-26T10:20:47.759729+00:00",
+      "evidence_file": "checks_registry/model_qualification.json",
+      "evidence_sha256": "8a24453c58585c7a5fc894023e21eacc16d10d2c2d3f1960b03e278ab1728128",
+      "limitations": [
+        "Development smoke fixtures, not an independent model-quality benchmark.",
+        "Browser check measures a synthetic disclosure-button coordinate, not arbitrary-site action safety.",
+        "Script output is schema-checked, not executed by this qualification script.",
+        "Live smoke complements malformed-response, refusal, budget and fallback contract tests."
+      ]
+    },
+    {
+      "role": "browser",
+      "model": "z-ai/glm-5.3-flash",
+      "provider": "https://api.commandcode.ai/provider/v1",
+      "status": "synthetic_smoke_passed",
+      "recorded_at": "2026-09-26T10:20:47.759729+00:00",
+      "evidence_file": "checks_registry/model_qualification.json",
+      "evidence_sha256": "8a24453c58585c7a5fc894023e21eacc16d10d2c2d3f1960b03e278ab1728128",
+      "limitations": [
+        "Development smoke fixtures, not an independent model-quality benchmark.",
+        "Browser check measures a synthetic disclosure-button coordinate, not arbitrary-site action safety.",
+        "Script output is schema-checked, not executed by this qualification script.",
+        "Live smoke complements malformed-response, refusal, budget and fallback contract tests."
+      ]
+    }
+  ],
+  "unimplemented": [
+    "reviewed_zap_active_task_capabilities",
+    "adaptive_browser_identity_callback_dispatch",
+    "expansion_qualification_harness"
+  ],
+  "expansion": {
+    "status": "integration_pending",
+    "configuration_schema": "immutable-assessment-configuration-v1",
+    "discovery_imports": "bounded_offline_intake_and_frozen_configuration_connected_source",
+    "browser_request_discovery": "normalized_request_intentions_captured_without_authorizing_blocked_actions",
+    "assessment_revisions": "coordinator_history_and_write_ahead_no_replay_claims_connected_source",
+    "browser_workflows": "dispatch_lease_intake_and_report_proof_connected_experimental",
+    "http_identity_workflow_proofs": "connected_in_source_local_fixture_tests_passed",
+    "authenticated_http_inputs": "role_isolated_transport_and_report_identity_proof_connected_source",
+    "authenticated_browser_inputs": "three_context_identity_proof_deployed_lab_pair_passed_experimental",
+    "credentialed_cors": "native_browser_cookie_proof_connected_source_experimental_deployed_gate_pending",
+    "callback_assessments": "broker_dispatch_and_signed_receipt_proof_deployed_four_case_gate_passed_experimental",
+    "cleanup_recovery": "fresh_authority_read_only_verification_deployed_synthetic_pending_intent_gate_passed",
+    "expanded_scanner_runner": "five_pinned_templates_proxy_fixture_tested_runtime_connected_source",
+    "expanded_scoring": "versioned_pilot_rubrics_locally_tested_not_qualified",
+    "report_reach": "frozen_plan_instance_completion_and_unknown_capability_totals_connected_source",
+    "expanded_components": "pinned_12_package_194_record_corpus_connected_in_source",
+    "qualified_new_families": [],
+    "note": "Source registry inventory does not attest to deployment of current worker images."
+  },
+  "release_qualification": {
+    "status": "not_qualified",
+    "required": [
+      "independent held-out benchmark",
+      "configured provider qualification",
+      "authorized owned-site pilot",
+      "final production worker-boundary validation"
+    ],
+    "note": "Implemented backend paths are distinct from independently validated release claims."
+  },
+  "m4": {
+    "graph": "baseline-observe-plan-admit-execute-verify",
+    "prompt_version": "roles-v1",
+    "sandbox": "dedicated-lima-vz-systemd-v1",
+    "model_adapter": "bounded non-streaming JSON proposals; all roles share reservations",
+    "mcp": "disabled; no remote MCP servers configured",
+    "skills_manifest_sha256": "e3c4f41bf08814ad6b5919e303773e84d0fe3736fddc5b1fea722ffa80c14ea4"
+  }
+}

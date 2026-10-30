@@ -1,0 +1,25 @@
+# Isolated synthetic fault service. Add to labs/docker-compose.yml.
+services:
+  labs-academic-faults:
+    image: python:3.12-slim@sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9
+    container_name: scopelens-labs-academic-faults
+    user: "65534:65534"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    working_dir: /fixture
+    environment:
+      PYTHONPATH: /fixture
+    volumes:
+      - ./academic_workflows:/fixture/labs/academic_workflows:ro
+      - ./academic_faults:/fixture/labs/academic_faults:ro
+    tmpfs: [/tmp]
+    command: ["python", "-m", "labs.academic_faults.app", "--host", "0.0.0.0"]
+    networks:
+      labs_net:
+        ipv4_address: 172.28.0.24
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/healthz')"]
+      interval: 3s
+      timeout: 3s
+      retries: 20

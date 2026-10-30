@@ -1,0 +1,104 @@
+# Evaluation manifest — DEVELOPMENT split
+#
+# SCHEMA EXAMPLE ONLY. There are no results in this file and there cannot be: the
+# runner is M4 and the held-out harness is M5. `status: schema_only` records that.
+#
+# Development cases may be used freely for parser, prompt, rule and threshold tuning
+# (Implementation Plan §13.3). Anything tuned against here must not also appear in the
+# holdout split.
+manifest_version: evaluation-manifest-v1
+split_version: split-v0.1-unpopulated
+status: schema_only
+created: 2026-09-24
+
+cases:
+  - case:
+      id: dev-labs-bad-hsts-01
+      canonical_control: transport.hsts.effective_policy
+      family: F33
+      route_or_input: "/"
+      role_or_context: unauthenticated
+      expected_label: vulnerable
+      claim_boundary: >
+        Asserts only that the labs-bad HTTPS listener sends no Strict-Transport-Security
+        header. It does not assert anything else about the fixture.
+    build:
+      project: scopelens-owned-nginx-fixtures
+      source_url: "local: labs/docker-compose.yml"
+      commit: null
+      image_digest: "sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10"
+      architecture: linux/arm64, linux/amd64
+      dependencies: [nginx]
+      license: "BSD-2-Clause (nginx)"
+    lifecycle:
+      seed_method: "labs/scripts/seed.sh"
+      reset_method: "labs/scripts/reset.sh"
+      readiness_check: "labs/scripts/readiness.sh"
+      disposable_volumes: [scopelens-labs_labs_net]
+      cleanup_proof: >
+        `make labs-verify` asserts the good/bad difference survives a reset. The reset
+        path itself has not been exercised between measured runs yet — the runner is M4.
+    proof:
+      positive_validation: >
+        Observed: labs-bad HTTPS response carries no Strict-Transport-Security header
+        (labs/scripts/verify.sh, 2026-09-24).
+      negative_validation: >
+        Observed: labs-good HTTPS response carries max-age=63072000; includeSubDomains
+        (labs/scripts/verify.sh, 2026-09-24).
+      permitted_confirmation_method: "direct observation of the response header over TLS"
+      forbidden_side_effects:
+        - "requesting the origin over cleartext to judge HSTS"
+        - "asserting preload status, which a response cannot show"
+    split:
+      partition: development
+      scenario_group: owned-nginx-config-fixtures
+      split_version: split-v0.1-unpopulated
+      exposure_history: never used for tuning
+      contaminated: false
+    notes: >
+      The counterpart case (labs-good) belongs in the same scenario group so a sibling
+      pair is never split across partitions.
+
+  - case:
+      id: dev-labs-good-hsts-01
+      canonical_control: transport.hsts.effective_policy
+      family: F33
+      route_or_input: "/"
+      role_or_context: unauthenticated
+      expected_label: fixed
+      claim_boundary: >
+        Asserts only that the labs-good HTTPS listener sends an effective HSTS header.
+    build:
+      project: scopelens-owned-nginx-fixtures
+      source_url: "local: labs/docker-compose.yml"
+      commit: null
+      image_digest: "sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10"
+      architecture: linux/arm64, linux/amd64
+      dependencies: [nginx]
+      license: "BSD-2-Clause (nginx)"
+    lifecycle:
+      seed_method: "labs/scripts/seed.sh"
+      reset_method: "labs/scripts/reset.sh"
+      readiness_check: "labs/scripts/readiness.sh"
+      disposable_volumes: [scopelens-labs_labs_net]
+      cleanup_proof: "as above"
+    proof:
+      positive_validation: "n/a for a negative case"
+      negative_validation: >
+        Observed: labs-good sends Strict-Transport-Security: max-age=63072000;
+        includeSubDomains (labs/scripts/verify.sh, 2026-09-24).
+      permitted_confirmation_method: "direct observation of the response header over TLS"
+      forbidden_side_effects:
+        - "treating an abstention on this case as a true negative"
+    split:
+      partition: development
+      scenario_group: owned-nginx-config-fixtures
+      split_version: split-v0.1-unpopulated
+      exposure_history: never used for tuning
+      contaminated: false
+    notes: "Negative counterpart of dev-labs-bad-hsts-01."
+
+# No runs and no evaluations. They stay empty until the runner exists (M4) and the
+# frozen held-out evaluation is performed (M5).
+runs: []
+evaluations: []

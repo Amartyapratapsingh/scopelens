@@ -1,0 +1,24 @@
+id: scopelens-private-key-candidate
+info:
+  name: private key candidate
+  author: scopelens
+  severity: info
+  description: Candidate only. Requires independent negative control and trusted exposure-pack
+    verifier.
+http:
+- method: GET
+  path:
+  - '{{RootURL}}/server.key'
+  redirects: false
+  max-redirects: 0
+  matchers-condition: and
+  matchers:
+  - type: status
+    status:
+    - 200
+  - type: regex
+    part: body
+    regex:
+    - '-----BEGIN (?:RSA |EC |DSA |OPENSSH )?PRIVATE KEY-----'
+    - '-----END (?:RSA |EC |DSA |OPENSSH )?PRIVATE KEY-----'
+    condition: and

@@ -1,0 +1,60 @@
+id: SL-C09-TENANT-01
+title: Tenant isolation
+canonical_control: authorization.tenant
+root_cause: authorization.tenant
+category: C09
+standards:
+  mapping_review: pending
+availability:
+  profiles:
+  - authenticated-api-v1
+  - staging-stateful-v1
+  phase: B4
+  stance: FIXTURE
+applicability:
+  description: Operator-supplied identities and synthetic seeded objects with declared
+    permission/session policy
+  evidence_required: Trusted fixed collector responses and browser capture for CORS
+  not_applicable_when: Missing identity/policy is blocked, never N/A
+prerequisites:
+  credentials: Encrypted operator credential references
+  fixtures: labs/expansion_identity
+allowed_action:
+  destinations: Explicit target and controlled foreign-origin grants only
+  methods:
+  - GET
+  - POST
+  max_requests: 30
+  max_response_bytes: 1048576
+  timeout_seconds: 10
+side_effects:
+  expectation: Login/logout alter only dedicated test-account sessions; protected
+    objects read only
+  cleanup: Discard isolated cookie stores and browser contexts
+  stop_conditions:
+  - Cancellation
+  - Expired identity
+  - Broker denial
+  - Missing seeded baseline
+detection:
+  signal: Tenant isolation
+  negative_controls:
+  - Fixed permission checks
+  - Shared/redacted view
+  - Expired sessions
+  - WAF denial
+  - Anonymous protected-resource control for CORS
+  confirmation_criteria: Exact synthetic protected marker returned twice under verified
+    forbidden identity, or declared session lifecycle failure demonstrated by authenticated
+    replay; CORS requires real foreign browser read
+  false_positive_considerations:
+  - HTTP 200 and model verdict alone cannot confirm
+  - Blocked cross-origin read remains inconclusive
+fixtures:
+  vulnerable: labs/expansion_identity/app.py --vulnerable
+  fixed: labs/expansion_identity/app.py
+  verified: true
+mandatory: false
+coverage_weight: 1
+review_state: experimental
+owner: Aditya Pratap Singh

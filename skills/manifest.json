@@ -1,0 +1,41 @@
+{
+  "version": "skills-v1",
+  "packs": {
+    "discovery": {
+      "file": "discovery.md",
+      "version": "1.0",
+      "sha256": "c1d4e5e8d9cc90d67ee94f0554964c96684635729c379cc8a9702b58639bce29",
+      "review_state": "reviewed"
+    },
+    "browser": {
+      "file": "browser.md",
+      "version": "1.0",
+      "sha256": "cffc9341310f5e2fd9a388c1dce6d44db77d0fc5e101cac64adb8236184b70ce",
+      "review_state": "reviewed"
+    },
+    "proof": {
+      "file": "proof.md",
+      "version": "1.0",
+      "sha256": "47005810d82fed080ba0713a3b726d1a498d2ae8ffada91a6958b85b3a341e77",
+      "review_state": "reviewed"
+    },
+    "challenge": {
+      "file": "challenge.md",
+      "version": "1.0",
+      "sha256": "2d3b4ffc2bf44aca33711980a827ee1838805ad7d6f6b6aed8e0b31a0cf94708",
+      "review_state": "reviewed"
+    },
+    "recovery": {
+      "file": "recovery.md",
+      "version": "1.0",
+      "sha256": "371abac655ea5624df8d98c93e9b8afc85b2aa44a6ae02a35554b316eae4bf7a",
+      "review_state": "reviewed"
+    },
+    "remediation": {
+      "file": "remediation.md",
+      "version": "1.0",
+      "sha256": "237f5380f884ef0d80f18a1ebe07982d0bedf37571bd6331f22d9e6cab4ebdf4",
+      "review_state": "reviewed"
+    }
+  }
+}

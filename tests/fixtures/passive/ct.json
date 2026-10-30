@@ -1,0 +1,5 @@
+[
+  {"id": 1001, "name_value": "example.com\n*.example.com\nportal.example.com"},
+  {"id": 1002, "name_value": "PORTAL.EXAMPLE.COM\ngone.example.com"},
+  {"id": 1003, "name_value": "lookalike-example.com\nexample.com.evil.invalid\n*.evil.invalid\nhttps://bad.example.com\ninvalid label.example.com"}
+]

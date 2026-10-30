@@ -1,0 +1,11 @@
+# Apply after release.yml. Only the trusted supervisor gets the VM's Docker client key.
+services:
+  supervisor:
+    environment:
+      DOCKER_HOST: tcp://host.docker.internal:23976
+      DOCKER_TLS_VERIFY: "1"
+      DOCKER_CERT_PATH: /worker-docker-certs
+    volumes: !override
+      - evidence:/app/runs/evidence
+      - proxy_ca:/var/lib/mitmproxy:ro
+      - ../runs/worker-vm/client:/worker-docker-certs:ro

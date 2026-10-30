@@ -1,0 +1,11 @@
+# SYNTHETIC FIXTURE FILE — not a real credential.
+#
+# Served at /.git/config on the labs-bad fixture so the exposed-sensitive-file control has a
+# vulnerable counterpart. Every value is fabricated.
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+[remote "origin"]
+	url = https://fixture-user:fixture-not-a-real-token@git.example.invalid/example/repo.git
+	fetch = +refs/heads/*:refs/remotes/origin/*

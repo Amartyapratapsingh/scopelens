@@ -1,0 +1,73 @@
+id: SL-C07-SSRF-02
+title: SSRF controlled HTTP canary interaction
+canonical_control: api.unexpected_server_fetch
+root_cause: api.unexpected_server_fetch
+category: C07
+standards:
+  wstg_v42: []
+  cwe: []
+  owasp_top10_2025: []
+  asvs_500: []
+  api_top10_2023: []
+  mapping_review: pending
+availability:
+  profiles:
+  - staging-stateful-v1
+  phase: B5
+  stance: ACTIVE
+  family: null
+applicability:
+  description: Selected by observed technology or discovered same-origin source-map
+    URL; explicit per-probe allowlist supported.
+  evidence_required: Trusted captured structure/hash observations for probe and independent
+    fallback control.
+  not_applicable_when: No absence inference from failed discovery; unselected controls
+    remain unassessed.
+prerequisites:
+  credentials: operator policy references; no discovered credentials
+  fixtures: labs/expansion_callbacks/verify.py
+  notes: Registered callback origin; exact known target egress distinct from scanner/browser
+    egress. Approved staging and policy forbidding callback behavior.
+allowed_action:
+  destinations: scope origin only
+  methods:
+  - GET
+  max_requests: 3
+  max_response_bytes: 65536
+  timeout_seconds: 10.0
+side_effects:
+  expectation: Three exact approved input requests; two callback interactions to collector
+    only; no file/metadata/data extraction.
+  cleanup: Revoke every scoped nonce in finally; do not replay on cancellation.
+  stop_conditions:
+  - authorization expires
+  - callback origin/peer attribution unavailable
+  - cancellation
+  - transport denial
+detection:
+  signal: HTTP receipt from declared target egress, correlated to a per-attempt nonce.
+  negative_controls:
+  - Separate inert query scheme for SSRF or ordinary XML content without DTD for XXE
+  - Fixed parser/no-fetch fixture
+  - Scanner-origin and DNS-only receipts cannot confirm
+  - No target interactions at control nonce during complete wait window
+  confirmation_criteria: Two independently issued positive nonces each receive HTTP
+    GET/HEAD from exact known target egress, with valid HMAC receipt signatures; no
+    target interaction for negative nonce; full observation window; trusted capture.
+    Proof limited to controlled canary interaction.
+  false_positive_considerations:
+  - NAT overlaps must block attribution
+  - Legitimate URL fetchers require explicit policy violation; callback alone is not
+    a flaw
+  - DNS-only or scanner/browser callbacks are insufficient
+fixtures:
+  vulnerable: labs/expansion_callbacks/verify.py:target fetch enabled / real SAX external
+    entity enabled
+  fixed: same application with target fetching / XML external entities disabled
+  verified: false
+tool_version: "not applicable \u2014 implemented directly in Python"
+mandatory: false
+coverage_weight: 1
+review_state: experimental
+owner: Aditya Pratap Singh
+last_reviewed: null

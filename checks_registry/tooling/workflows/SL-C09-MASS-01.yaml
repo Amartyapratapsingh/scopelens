@@ -1,0 +1,66 @@
+id: SL-C09-MASS-01
+title: Mass assignment
+canonical_control: workflow.mass_assignment
+root_cause: workflow.mass_assignment
+category: C09
+standards:
+  mapping_review: pending
+availability:
+  profiles:
+  - staging-stateful-v1
+  phase: B5
+  stance: FIXTURE
+applicability:
+  description: Operator-reviewed recipe bound to synthetic seeded disposable records
+    and exact endpoint/input grants
+  evidence_required: Trusted fixed collector ordered baseline, negative-control, mutation/read-back
+    and cleanup records
+  not_applicable_when: Missing grant, identity, canary or cleanup is blocked, never
+    N/A
+prerequisites:
+  credentials: Encrypted operator credential references
+  fixtures: labs/expansion_workflows
+allowed_action:
+  destinations: Explicit target-origin/action grant only
+  methods:
+  - GET
+  - POST
+  - PUT
+  - PATCH
+  - DELETE
+  max_requests: 40
+  max_response_bytes: 1048576
+  timeout_seconds: 10
+side_effects:
+  expectation: Only declared staging disposable-record changes; no system files, arbitrary
+    commands or normal user records
+  cleanup: Durable intent before mutation; verified reset before same resource can
+    be mutated again
+  stop_conditions:
+  - Cancellation
+  - Expired identity
+  - Broker denial
+  - Missing seed
+  - Unresolved cleanup
+detection:
+  signal: mass_assignment
+  negative_controls:
+  - Fixed authorization/escaping fixture
+  - Distinct negative request
+  - Independent owner baseline
+  - Literal template input
+  confirmation_criteria: workflows.assessment pure proof compares exact synthetic
+    markers and protected state against independent repeated read-back; response status,
+    scanner match or model claim alone cannot confirm
+  false_positive_considerations:
+  - Missing baseline and inconsistent negative controls abstain
+  - HTTP 200 alone not proof
+  - No timing or data-extraction inference
+fixtures:
+  vulnerable: labs/expansion_workflows/app.py handler(vulnerable=True)
+  fixed: labs/expansion_workflows/app.py handler(vulnerable=False)
+  verified: true
+mandatory: false
+coverage_weight: 1
+review_state: experimental
+owner: Aditya Pratap Singh

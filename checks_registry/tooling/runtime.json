@@ -1,0 +1,54 @@
+{
+  "images": {
+    "scopelens/kali-tool:dev": {
+      "image_id": "sha256:f59315ca4e269118a0ea7466322ca8ac17ecb1a3874b23ba4e2542a049a223d3",
+      "architecture": "arm64",
+      "repo_digests": [
+        "scopelens/kali-tool@sha256:f59315ca4e269118a0ea7466322ca8ac17ecb1a3874b23ba4e2542a049a223d3"
+      ]
+    },
+    "scopelens/browser-worker:dev": {
+      "image_id": "sha256:3070d23cb872319f2e1365d531240ce10d6c130aecf07379360327530efa8243",
+      "architecture": "arm64",
+      "repo_digests": [
+        "scopelens/browser-worker@sha256:3070d23cb872319f2e1365d531240ce10d6c130aecf07379360327530efa8243"
+      ]
+    },
+    "scopelens/proxy:dev": {
+      "image_id": "sha256:96b61489a00ed3eaba0e043bd9d3b46dcbd00d546e97976b3c678a371484994f",
+      "architecture": "arm64",
+      "repo_digests": [
+        "scopelens/proxy@sha256:96b61489a00ed3eaba0e043bd9d3b46dcbd00d546e97976b3c678a371484994f"
+      ]
+    },
+    "scopelens-dev-tls-lane": {
+      "image_id": "sha256:627229a84187694d3d505cf167e82268ab62a2f6f176866538e54f84bf009ba6",
+      "architecture": "arm64",
+      "repo_digests": [
+        "scopelens-dev-tls-lane@sha256:627229a84187694d3d505cf167e82268ab62a2f6f176866538e54f84bf009ba6"
+      ]
+    },
+    "scopelens-dev-model-gateway": {
+      "image_id": "sha256:cca4d0898625a2b63d8e88f0a4035906c239ebf6b689aa6ccda0cf4211fbbf44",
+      "architecture": "arm64",
+      "repo_digests": [
+        "scopelens-dev-model-gateway@sha256:cca4d0898625a2b63d8e88f0a4035906c239ebf6b689aa6ccda0cf4211fbbf44"
+      ]
+    }
+  },
+  "files": {
+    "uv.lock": "30e83820e4f4f254186f14562dca2ef16b559627c0fdb4003768ee71bd08b225",
+    "checks_registry/tooling/nuclei-csp.yaml": "458c2ab7bc5a217a013582122a87b2e0d69fd903ee286be018a07abe5aa0d54c",
+    "checks_registry/tooling/conditional-pack.json": "2f7ffb7da55576053407158d7df3ccb1abf00e7ea1b8f812574202c8cc47548c",
+    "deploy/browser/seccomp.json": "67e00a27dd9c5b7d912ec78eff07f4cebf1d78bbe46c3d08208dd466e22fe1ed"
+  },
+  "versions": {
+    "zap": "2.17.0",
+    "nuclei": "3.11.1",
+    "testssl.sh": "3.2.4",
+    "playwright": "1.63.0",
+    "chromium": "153.0.8010.12"
+  },
+  "verification": "make verify-m3; runs/m3-verification/",
+  "provider_qualification": "contract tests only; no live provider selected"
+}

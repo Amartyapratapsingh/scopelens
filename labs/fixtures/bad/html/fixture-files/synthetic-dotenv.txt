@@ -1,0 +1,7 @@
+# SYNTHETIC FIXTURE FILE — not a real credential.
+#
+# This file exists only so that the `labs-bad` fixture serves a sensitive-looking
+# path. Every value below is fabricated and grants access to nothing.
+DATABASE_URL=postgresql://fixture:fixture-not-a-real-password@localhost:5432/fixture
+API_KEY=sk-fixture000000000000000000000000000000000000
+SESSION_SECRET=fixture-not-a-real-secret-0000000000000000

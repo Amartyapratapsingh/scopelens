@@ -1,0 +1,84 @@
+{
+  "version": "exposure-tools-v1",
+  "nuclei_version": "3.11.1",
+  "author": "scopelens",
+  "signature": "local unsigned templates; SHA256 pins reviewed content; no upstream signature claimed",
+  "templates": [
+    {
+      "id": "scopelens-config-backup-candidate",
+      "file": "scopelens-config-backup-candidate.yaml",
+      "sha256": "9bd150f855e4043afef6aa2e3ec0861bdfc1caa2f6109e92f7558b155945f476",
+      "control_id": "SL-C05-CONFIG-02",
+      "canonical_control": "exposure.configuration_backup",
+      "technologies": [],
+      "method": "GET",
+      "path": "/.env",
+      "max_requests": 1,
+      "proof": "exposure-v2.1 independent verifier",
+      "review_state": "experimental"
+    },
+    {
+      "id": "scopelens-phpinfo-candidate",
+      "file": "scopelens-phpinfo-candidate.yaml",
+      "sha256": "99c48e5ef5a9d5a3030e62af940f233ed8ec12e115f6bc26413ba2d25b4a5478",
+      "control_id": "SL-C05-DEBUG-02",
+      "canonical_control": "exposure.runtime_diagnostics",
+      "technologies": [
+        "php"
+      ],
+      "method": "GET",
+      "path": "/phpinfo.php",
+      "max_requests": 1,
+      "proof": "exposure-v2.1 independent verifier",
+      "review_state": "experimental"
+    },
+    {
+      "id": "scopelens-apache-status-candidate",
+      "file": "scopelens-apache-status-candidate.yaml",
+      "sha256": "f4176506c95a48c237df42e34c520766a7ca871ca648ddacc9fc328e0fe619e9",
+      "control_id": "SL-C05-DEBUG-02",
+      "canonical_control": "exposure.runtime_diagnostics",
+      "technologies": [
+        "apache"
+      ],
+      "method": "GET",
+      "path": "/server-status?auto",
+      "max_requests": 1,
+      "proof": "exposure-v2.1 independent verifier",
+      "review_state": "experimental"
+    },
+    {
+      "id": "scopelens-spring-env-candidate",
+      "file": "scopelens-spring-env-candidate.yaml",
+      "sha256": "f0af47e7432f2c51d2bbbe2a8154da3be812eceba689e284a2a9ac2bdaaa72f0",
+      "control_id": "SL-C05-MANAGEMENT-01",
+      "canonical_control": "exposure.management_data",
+      "technologies": [
+        "spring",
+        "spring boot"
+      ],
+      "method": "GET",
+      "path": "/actuator/env",
+      "max_requests": 1,
+      "proof": "exposure-v2.1 independent verifier",
+      "review_state": "experimental"
+    },
+    {
+      "id": "scopelens-private-key-candidate",
+      "file": "scopelens-private-key-candidate.yaml",
+      "sha256": "ab976cd0f372a30a1bbc5636961b5ac0b086fda22037300810227ec79704db53",
+      "control_id": "SL-C05-PRIVATE-02",
+      "canonical_control": "exposure.private_key_material",
+      "technologies": [],
+      "method": "GET",
+      "path": "/server.key",
+      "max_requests": 1,
+      "proof": "exposure-v2.1 independent verifier",
+      "review_state": "experimental"
+    }
+  ],
+  "zap_active": {
+    "state": "blocked",
+    "reason": "No per-rule enforced method/path/input capability wired into tool runner; AF includePaths alone is not an input boundary."
+  }
+}

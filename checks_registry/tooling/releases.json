@@ -1,0 +1,39 @@
+{
+  "testssl": {
+    "version": "3.2.4",
+    "commit": "97763a411c525720a5f9bd9d2cded416b10f210a",
+    "url": "https://codeload.github.com/testssl/testssl.sh/tar.gz/97763a411c525720a5f9bd9d2cded416b10f210a",
+    "sha256": "6c33f1386f8d8a1cf2f6332a18e183fda8209974775d574e41dab01682cf04eb",
+    "file": "testssl.tar.gz"
+  },
+  "zap": {
+    "version": "2.17.0",
+    "url": "https://github.com/zaproxy/zaproxy/releases/download/v2.17.0/ZAP_2.17.0_Linux.tar.gz",
+    "sha256": "efe799aaa3627db683b43f00c9c210aea0b75c00cc8f0a0f0434d12bb3ddde5a",
+    "file": "zap.tar.gz"
+  },
+  "nuclei-arm64": {
+    "version": "3.11.1",
+    "url": "https://github.com/projectdiscovery/nuclei/releases/download/v3.11.1/nuclei_3.11.1_linux_arm64.zip",
+    "sha256": "8044e3d9768ba0a744b2872c1a87e813006f013da97ca9f50f7661a4203bec07",
+    "file": "nuclei-arm64.zip"
+  },
+  "nuclei-amd64": {
+    "version": "3.11.1",
+    "url": "https://github.com/projectdiscovery/nuclei/releases/download/v3.11.1/nuclei_3.11.1_linux_amd64.zip",
+    "sha256": "ea63d4ae232808cd7c6bc00d0142428e231fab59dae01042246097d195835ab6",
+    "file": "nuclei-amd64.zip"
+  },
+  "gost-amd64": {
+    "version": "3.0.3+git20251212.7f6d61a-2",
+    "url": "https://http.kali.org/pool/main/libe/libengine-gost-openssl/libengine-gost-openssl_3.0.3+git20251212.7f6d61a-2_amd64.deb",
+    "sha256": "318b907c6099f6777f8b2e2156caef5a6f031c3345ceec8a81eb0716d6ae4b61",
+    "file": "gost-amd64.deb"
+  },
+  "gost-arm64": {
+    "version": "3.0.3+git20251212.7f6d61a-2",
+    "url": "https://http.kali.org/pool/main/libe/libengine-gost-openssl/libengine-gost-openssl_3.0.3+git20251212.7f6d61a-2_arm64.deb",
+    "sha256": "36de14ae70b0cd1060a340417f7b71cb640a9899a9d990e267c125ff76a9e152",
+    "file": "gost-arm64.deb"
+  }
+}
